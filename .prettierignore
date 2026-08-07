@@ -1,0 +1,11 @@
+.next/
+**/AGENTS.md
+**/CLAUDE.md
+90PLUS9_YOL_HARITASI.md
+coverage/
+node_modules/
+packages/database/src/generated/
+pnpm-lock.yaml
+data/raw/
+data/staging/
+reports/data-quality/

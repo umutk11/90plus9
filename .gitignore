@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+.next/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Generated clients
+packages/database/src/generated/
+
+# Local data and generated reports
+data/raw/*
+!data/raw/.gitignore
+data/staging/*
+!data/staging/.gitignore
+reports/data-quality/*
+!reports/data-quality/.gitignore
+
+# Logs and local tooling
+*.log
+.DS_Store
+.idea/
+.vscode/

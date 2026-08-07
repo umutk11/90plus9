@@ -1,0 +1,76 @@
+# 90+9
+
+**90+9, Türkiye Süper Lig oyuncularını tahmin ederek her gün tamamladığın 3×3 günlük grid oyunudur.**
+
+Bu depo 90+9'un web uygulamasını, veritabanı katmanını, kural motorunu ve veri hazırlama araçlarını birlikte barındırır. Proje şu anda geliştirme altyapısı aşamasındadır.
+
+## MVP kapsamı
+
+- 2012/13–2025/26 Türkiye erkekler Süper Lig sezonları
+- Her gün herkes için aynı 3×3 grid
+- Sunucu tarafında cevap doğrulama
+- Sınırsız yanlış tahmin hakkı; kaybetme durumu yok
+- Hesap gerektirmeyen anonim oyun oturumu
+- Responsive web deneyimi
+
+Ayrıntılı kararlar için [ürün kararları](docs/PRODUCT_DECISIONS.md), uygulanabilir görevler için [geliştirme yol haritası](90PLUS9_YOL_HARITASI.md) belgelerine bakın.
+
+## Teknik temel
+
+- Next.js App Router ve TypeScript
+- pnpm workspaces
+- PostgreSQL ve Prisma ORM
+- ESLint, Prettier ve Vitest
+
+## Klasör yapısı
+
+```text
+apps/web                 Next.js web uygulaması
+packages/database        Prisma şeması ve veritabanı katmanı
+packages/rules           Paylaşılan oyun/kural mantığı
+scripts/data             Veri indirme ve ETL komutları
+data/reference           Elle doğrulanan küçük referans verileri
+data/raw                 Yerel ham veriler; Git'e alınmaz
+data/staging             Yerel ara çıktılar; Git'e alınmaz
+reports/data-quality     Üretilen veri kalite raporları; Git'e alınmaz
+docs/adr                 Mimari karar kayıtları
+docs/api                 API belgeleri
+```
+
+## Yerel kurulum
+
+Gereksinimler:
+
+- Node.js 24 LTS
+- pnpm 11.16
+- PostgreSQL (veritabanı geliştirme adımında eklenecek)
+
+```bash
+pnpm install
+cp .env.example .env
+pnpm dev
+```
+
+Web uygulaması varsayılan olarak `http://localhost:3000` adresinde açılır.
+
+## Komutlar
+
+```bash
+pnpm dev          # Web geliştirme sunucusu
+pnpm build        # Tüm çalışma alanlarını üretim için doğrula/derle
+pnpm lint         # Statik kod kontrolleri
+pnpm typecheck    # TypeScript kontrolleri
+pnpm test         # Birim testleri
+pnpm format       # Biçim kontrolü
+pnpm format:write # Dosyaları biçimlendir
+pnpm db:generate  # Prisma istemcisini üret
+pnpm db:validate  # Prisma yapılandırmasını doğrula
+```
+
+## Veri kaynağı ve atıf
+
+Ana veri kaynağı [dcaribou/transfermarkt-datasets](https://github.com/dcaribou/transfermarkt-datasets) projesidir. Kaynak veri [CC0-1.0](https://github.com/dcaribou/transfermarkt-datasets/blob/master/LICENSE) ile yayımlanmaktadır. Kullanılan her snapshot'ın kaynak commit'i, indirme adresi ve checksum'ı veri sürümüyle birlikte kaydedilecektir.
+
+Transfermarkt adı ve ilgili markalar kendi sahiplerine aittir. 90+9 bağımsız bir projedir ve Transfermarkt ile bağlantılı veya onun tarafından desteklenmiş değildir.
+
+Bu depodaki uygulama kodu için henüz ayrıca bir açık kaynak lisansı seçilmemiştir.
