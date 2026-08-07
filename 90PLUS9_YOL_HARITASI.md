@@ -347,7 +347,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] Tek komutla geliştirme sunucusu çalışıyor.
 - [x] Tek komutla testler çalışıyor.
 - [ ] Tek komutla yerel PostgreSQL hazır oluyor.
-- [ ] Boş projede CI yeşil.
+- [x] Boş projede CI yeşil.
 
 ---
 
