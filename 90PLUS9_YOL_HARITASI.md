@@ -389,11 +389,11 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] Arşivde `clubs.csv` olduğunu kontrol et.
 - [x] Arşivde `countries.csv` olduğunu kontrol et.
 - [x] Arşivde `transfers.csv` olduğunu kontrol et; oyun kaynağı değil QA kaynağı olarak işaretle.
-- [ ] Her dosyanın beklenen başlıklarını doğrula.
-- [ ] Beklenen sütun eksikse importu durdur.
-- [ ] Yeni, bilinmeyen sütunlar varsa uyarı üret ama güvenliyse importu durdurma.
-- [ ] Sütun tipleri beklenmedik biçimde değişmişse importu durdur.
-- [ ] CSV encoding ve ayırıcı kontrolü yap.
+- [x] Her dosyanın beklenen başlıklarını doğrula.
+- [x] Beklenen sütun eksikse importu durdur.
+- [x] Yeni, bilinmeyen sütunlar varsa uyarı üret ama güvenliyse importu durdurma.
+- [x] Sütun tipleri beklenmedik biçimde değişmişse importu durdur.
+- [x] CSV encoding ve ayırıcı kontrolü yap.
 
 ## 2.4. Veri sürümü tablosu
 
@@ -416,7 +416,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 - [x] Sabitlenmiş bir dcaribou sürümü tekrar indirilebiliyor.
 - [x] İndirilen dosyanın bütünlüğü doğrulanıyor.
-- [ ] Kaynak şeması değiştiğinde pipeline sessizce yanlış veri üretmiyor.
+- [x] Kaynak şeması değiştiğinde pipeline sessizce yanlış veri üretmiyor.
 - [ ] Hangi sürümün production’da olduğu sorgulanabiliyor.
 
 ---

@@ -46,6 +46,7 @@ Gereksinimler:
 - Node.js 24 LTS
 - pnpm 11.16
 - Docker Desktop veya Docker uyumlu bir local container ortamı (örneğin Colima)
+- DuckDB CLI (yalnızca veri snapshot'larını inceleme ve doğrulama adımları için)
 
 ```bash
 pnpm install
@@ -78,6 +79,7 @@ pnpm test         # Birim testleri
 pnpm format       # Biçim kontrolü
 pnpm format:write # Dosyaları biçimlendir
 pnpm data:download -- --version 677 # Sabitlenmiş ham veri snapshot'ını indir
+pnpm data:validate -- --version 677 # CSV dosya, sütun, tip ve encoding kontrolü
 pnpm db:up        # Local PostgreSQL'i başlat ve bağlantıları doğrula
 pnpm db:check     # Uygulama ve test veritabanı bağlantılarını kontrol et
 pnpm db:status    # PostgreSQL durumunu göster

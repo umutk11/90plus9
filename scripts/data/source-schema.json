@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "csv": {
+    "delimiter": ",",
+    "quote": "\"",
+    "escape": "\"",
+    "encoding": "utf-8"
+  },
+  "files": {
+    "appearances.csv": {
+      "columns": {
+        "appearance_id": "VARCHAR",
+        "game_id": "BIGINT",
+        "player_id": "BIGINT",
+        "player_club_id": "BIGINT",
+        "player_current_club_id": "BIGINT",
+        "date": "DATE",
+        "player_name": "VARCHAR",
+        "competition_id": "VARCHAR",
+        "yellow_cards": "BIGINT",
+        "red_cards": "BIGINT",
+        "goals": "BIGINT",
+        "assists": "BIGINT",
+        "minutes_played": "BIGINT"
+      }
+    },
+    "club_games.csv": {
+      "columns": {
+        "game_id": "BIGINT",
+        "club_id": "BIGINT",
+        "own_goals": "BIGINT",
+        "own_position": "BIGINT",
+        "own_manager_name": "VARCHAR",
+        "opponent_id": "BIGINT",
+        "opponent_goals": "BIGINT",
+        "opponent_position": "BIGINT",
+        "opponent_manager_name": "VARCHAR",
+        "hosting": "VARCHAR",
+        "is_win": "BIGINT"
+      }
+    },
+    "clubs.csv": {
+      "columns": {
+        "club_id": "BIGINT",
+        "club_code": "VARCHAR",
+        "name": "VARCHAR",
+        "domestic_competition_id": "VARCHAR",
+        "total_market_value": "VARCHAR",
+        "squad_size": "BIGINT",
+        "average_age": "DOUBLE",
+        "foreigners_number": "BIGINT",
+        "foreigners_percentage": "DOUBLE",
+        "national_team_players": "BIGINT",
+        "stadium_name": "VARCHAR",
+        "stadium_seats": "BIGINT",
+        "net_transfer_record": "VARCHAR",
+        "coach_name": "VARCHAR",
+        "last_season": "BIGINT",
+        "filename": "VARCHAR",
+        "url": "VARCHAR"
+      }
+    },
+    "competitions.csv": {
+      "columns": {
+        "competition_id": "VARCHAR",
+        "competition_code": "VARCHAR",
+        "name": "VARCHAR",
+        "sub_type": "VARCHAR",
+        "type": "VARCHAR",
+        "country_id": "BIGINT",
+        "country_name": "VARCHAR",
+        "domestic_league_code": "VARCHAR",
+        "confederation": "VARCHAR",
+        "total_clubs": "BIGINT",
+        "url": "VARCHAR"
+      }
+    },
+    "countries.csv": {
+      "columns": {
+        "country_id": "BIGINT",
+        "country_name": "VARCHAR",
+        "country_code": "VARCHAR",
+        "confederation": "VARCHAR",
+        "total_clubs": "BIGINT",
+        "total_players": "BIGINT",
+        "average_age": "DOUBLE",
+        "url": "VARCHAR"
+      }
+    },
+    "game_events.csv": {
+      "columns": {
+        "game_event_id": "VARCHAR",
+        "date": "DATE",
+        "game_id": "BIGINT",
+        "minute": "BIGINT",
+        "type": "VARCHAR",
+        "club_id": "BIGINT",
+        "club_name": "VARCHAR",
+        "player_id": "BIGINT",
+        "description": "VARCHAR",
+        "player_in_id": "BIGINT",
+        "player_assist_id": "BIGINT"
+      }
+    },
+    "game_lineups.csv": {
+      "columns": {
+        "game_lineups_id": "VARCHAR",
+        "date": "DATE",
+        "game_id": "BIGINT",
+        "player_id": "BIGINT",
+        "club_id": "BIGINT",
+        "player_name": "VARCHAR",
+        "type": "VARCHAR",
+        "position": "VARCHAR",
+        "number": "VARCHAR",
+        "team_captain": "BIGINT"
+      }
+    },
+    "games.csv": {
+      "columns": {
+        "game_id": "BIGINT",
+        "competition_id": "VARCHAR",
+        "season": "BIGINT",
+        "round": "VARCHAR",
+        "date": "DATE",
+        "home_club_id": "BIGINT",
+        "away_club_id": "BIGINT",
+        "home_club_goals": "BIGINT",
+        "away_club_goals": "BIGINT",
+        "home_club_position": "BIGINT",
+        "away_club_position": "BIGINT",
+        "home_club_manager_name": "VARCHAR",
+        "away_club_manager_name": "VARCHAR",
+        "stadium": "VARCHAR",
+        "attendance": "BIGINT",
+        "referee": "VARCHAR",
+        "url": "VARCHAR",
+        "home_club_formation": "VARCHAR",
+        "away_club_formation": "VARCHAR",
+        "home_club_name": "VARCHAR",
+        "away_club_name": "VARCHAR",
+        "aggregate": "VARCHAR",
+        "competition_type": "VARCHAR"
+      }
+    },
+    "national_teams.csv": {
+      "columns": {
+        "national_team_id": "BIGINT",
+        "name": "VARCHAR",
+        "team_code": "VARCHAR",
+        "country_id": "BIGINT",
+        "country_name": "VARCHAR",
+        "country_code": "VARCHAR",
+        "confederation": "VARCHAR",
+        "team_image_url": "VARCHAR",
+        "squad_size": "BIGINT",
+        "average_age": "DOUBLE",
+        "foreigners_number": "BIGINT",
+        "foreigners_percentage": "DOUBLE",
+        "total_market_value": "BIGINT",
+        "coach_name": "VARCHAR",
+        "fifa_ranking": "BIGINT",
+        "last_season": "BIGINT",
+        "url": "VARCHAR"
+      }
+    },
+    "player_valuations.csv": {
+      "columns": {
+        "player_id": "BIGINT",
+        "date": "DATE",
+        "market_value_in_eur": "BIGINT",
+        "current_club_name": "VARCHAR",
+        "current_club_id": "BIGINT",
+        "player_club_domestic_competition_id": "VARCHAR"
+      }
+    },
+    "players.csv": {
+      "columns": {
+        "player_id": "BIGINT",
+        "first_name": "VARCHAR",
+        "last_name": "VARCHAR",
+        "name": "VARCHAR",
+        "last_season": "BIGINT",
+        "current_club_id": "BIGINT",
+        "player_code": "VARCHAR",
+        "country_of_birth": "VARCHAR",
+        "city_of_birth": "VARCHAR",
+        "country_of_citizenship": "VARCHAR",
+        "date_of_birth": "TIMESTAMP",
+        "sub_position": "VARCHAR",
+        "position": "VARCHAR",
+        "foot": "VARCHAR",
+        "height_in_cm": "BIGINT",
+        "contract_expiration_date": "TIMESTAMP",
+        "agent_name": "VARCHAR",
+        "image_url": "VARCHAR",
+        "international_caps": "BIGINT",
+        "international_goals": "BIGINT",
+        "current_national_team_id": "BIGINT",
+        "url": "VARCHAR",
+        "current_club_domestic_competition_id": "VARCHAR",
+        "current_club_name": "VARCHAR",
+        "market_value_in_eur": "BIGINT",
+        "highest_market_value_in_eur": "BIGINT"
+      }
+    },
+    "transfers.csv": {
+      "columns": {
+        "player_id": "BIGINT",
+        "transfer_date": "DATE",
+        "transfer_season": "VARCHAR",
+        "from_club_id": "BIGINT",
+        "to_club_id": "BIGINT",
+        "from_club_name": "VARCHAR",
+        "to_club_name": "VARCHAR",
+        "transfer_fee": "DOUBLE",
+        "market_value_in_eur": "DOUBLE",
+        "player_name": "VARCHAR"
+      }
+    }
+  }
+}

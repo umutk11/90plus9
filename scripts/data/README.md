@@ -25,3 +25,23 @@ PLUS9_ENVIRONMENT=production pnpm data:download -- --version 677 --expected-sha2
 Ham snapshot'lar değiştirilemez kabul edilir ve Git'e eklenmez. Local ortamda yalnızca üzerinde
 çalışılan sürümün tutulması yeterlidir. Staging ve production arşivinde aktif snapshot ile bir
 önceki snapshot saklanır.
+
+## Kaynak şema doğrulaması
+
+İndirilen snapshot'ın 12 CSV dosyası tam taramayla doğrulanır:
+
+```bash
+pnpm data:validate -- --version 677
+```
+
+Bu kontrol:
+
+- Beklenen CSV dosyalarından veya sütunlardan biri eksikse başarısız olur.
+- Beklenen bir sütunun DuckDB tipi değişmişse başarısız olur.
+- UTF-8, virgül ayırıcı ve çift tırnak kurallarıyla herhangi bir satır ayrıştırılamıyorsa başarısız
+  olur.
+- Yeni dosya veya sütunları raporlar; bilinen şema hâlâ güvenliyse yalnızca uyarı verir.
+- Sonucu `reports/data-quality` altında Git'e eklenmeyen bir JSON raporuna yazar.
+
+Beklenen kaynak sözleşmesi `scripts/data/source-schema.json` dosyasında sürümlenir. Kaynak şema
+bilinçli biçimde değiştiğinde önce fark incelenir, ardından bu sözleşme güncellenir.

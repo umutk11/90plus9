@@ -28,6 +28,10 @@ adrese dayanmasına izin verilmez.
 [`data/reference/source-snapshots/dcaribou-kaggle-v677.json`](../data/reference/source-snapshots/dcaribou-kaggle-v677.json)
 dosyasındadır.
 
+Beklenen 12 CSV dosyasının sütun ve tip sözleşmesi
+[`scripts/data/source-schema.json`](../scripts/data/source-schema.json) içinde sürümlenir. Her
+snapshot importtan önce `pnpm data:validate -- --version <sürüm>` ile tam taranır.
+
 ## Saklama ve değişmezlik
 
 - `data/raw` altındaki snapshot'lar Git'e eklenmez.
