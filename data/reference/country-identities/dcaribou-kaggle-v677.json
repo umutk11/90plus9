@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "datasetVersion": 677,
-  "reviewStatus": "pending",
-  "reviewedAt": null,
-  "reviewedBy": null,
+  "reviewStatus": "approved",
+  "reviewedAt": "2026-08-11T12:24:10Z",
+  "reviewedBy": "umutk11",
   "namingSource": {
     "name": "Unicode CLDR",
     "commit": "a79b499916d486dca4b0f74fe423ea457705fdd9",
@@ -18,7 +18,7 @@
       "proposedDisplayName": "Arnavutluk",
       "isoAlpha2": "AL",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 4,
@@ -27,7 +27,7 @@
       "proposedDisplayName": "Cezayir",
       "isoAlpha2": "DZ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 5,
@@ -36,7 +36,7 @@
       "proposedDisplayName": "Andorra",
       "isoAlpha2": "AD",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -45,7 +45,7 @@
       "proposedDisplayName": "Angola",
       "isoAlpha2": "AO",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 9,
@@ -54,7 +54,7 @@
       "proposedDisplayName": "Arjantin",
       "isoAlpha2": "AR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 10,
@@ -63,7 +63,7 @@
       "proposedDisplayName": "Ermenistan",
       "isoAlpha2": "AM",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -72,7 +72,7 @@
       "proposedDisplayName": "Aruba",
       "isoAlpha2": "AW",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 12,
@@ -81,7 +81,7 @@
       "proposedDisplayName": "Avustralya",
       "isoAlpha2": "AU",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 127,
@@ -90,7 +90,7 @@
       "proposedDisplayName": "Avusturya",
       "isoAlpha2": "AT",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 13,
@@ -99,7 +99,7 @@
       "proposedDisplayName": "Azerbaycan",
       "isoAlpha2": "AZ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 16,
@@ -108,7 +108,7 @@
       "proposedDisplayName": "Bangladeş",
       "isoAlpha2": "BD",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 18,
@@ -117,7 +117,7 @@
       "proposedDisplayName": "Belarus",
       "isoAlpha2": "BY",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 19,
@@ -126,7 +126,7 @@
       "proposedDisplayName": "Belçika",
       "isoAlpha2": "BE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 20,
@@ -135,7 +135,7 @@
       "proposedDisplayName": "Belize",
       "isoAlpha2": "BZ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -144,7 +144,7 @@
       "proposedDisplayName": "Benin",
       "isoAlpha2": "BJ",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 22,
@@ -153,7 +153,7 @@
       "proposedDisplayName": "Butan",
       "isoAlpha2": "BT",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 23,
@@ -162,7 +162,7 @@
       "proposedDisplayName": "Bolivya",
       "isoAlpha2": "BO",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 24,
@@ -171,7 +171,7 @@
       "proposedDisplayName": "Bosna-Hersek",
       "isoAlpha2": "BA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 26,
@@ -180,7 +180,7 @@
       "proposedDisplayName": "Brezilya",
       "isoAlpha2": "BR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 27,
@@ -189,7 +189,7 @@
       "proposedDisplayName": "Brunei",
       "isoAlpha2": "BN",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 28,
@@ -198,7 +198,7 @@
       "proposedDisplayName": "Bulgaristan",
       "isoAlpha2": "BG",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -207,7 +207,7 @@
       "proposedDisplayName": "Burkina Faso",
       "isoAlpha2": "BF",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -216,7 +216,7 @@
       "proposedDisplayName": "Burundi",
       "isoAlpha2": "BI",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 79,
@@ -225,7 +225,7 @@
       "proposedDisplayName": "Kamboçya",
       "isoAlpha2": "KH",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -234,7 +234,7 @@
       "proposedDisplayName": "Kamerun",
       "isoAlpha2": "CM",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 80,
@@ -243,7 +243,7 @@
       "proposedDisplayName": "Kanada",
       "isoAlpha2": "CA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -252,7 +252,7 @@
       "proposedDisplayName": "Cabo Verde",
       "isoAlpha2": "CV",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -261,7 +261,7 @@
       "proposedDisplayName": "Orta Afrika Cumhuriyeti",
       "isoAlpha2": "CF",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -270,7 +270,7 @@
       "proposedDisplayName": "Çad",
       "isoAlpha2": "TD",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 33,
@@ -279,7 +279,7 @@
       "proposedDisplayName": "Şili",
       "isoAlpha2": "CL",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 34,
@@ -288,7 +288,7 @@
       "proposedDisplayName": "Çin",
       "isoAlpha2": "CN",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 164,
@@ -297,7 +297,7 @@
       "proposedDisplayName": "Tayvan",
       "isoAlpha2": "TW",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 83,
@@ -306,7 +306,7 @@
       "proposedDisplayName": "Kolombiya",
       "isoAlpha2": "CO",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 35,
@@ -315,7 +315,7 @@
       "proposedDisplayName": "Komorlar",
       "isoAlpha2": "KM",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -324,7 +324,7 @@
       "proposedDisplayName": "Kongo Cumhuriyeti",
       "isoAlpha2": "CG",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 36,
@@ -333,7 +333,7 @@
       "proposedDisplayName": "Kosta Rika",
       "isoAlpha2": "CR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -342,7 +342,7 @@
       "proposedDisplayName": "Fildişi Sahili",
       "isoAlpha2": "CI",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 37,
@@ -351,7 +351,7 @@
       "proposedDisplayName": "Hırvatistan",
       "isoAlpha2": "HR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -360,7 +360,7 @@
       "proposedDisplayName": "Curaçao",
       "isoAlpha2": "CW",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 188,
@@ -369,7 +369,7 @@
       "proposedDisplayName": "Kıbrıs",
       "isoAlpha2": "CY",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 172,
@@ -378,7 +378,7 @@
       "proposedDisplayName": "Çekya",
       "isoAlpha2": "CZ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -387,7 +387,7 @@
       "proposedDisplayName": "Çekoslovakya",
       "isoAlpha2": null,
       "origin": "historical",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 39,
@@ -396,7 +396,7 @@
       "proposedDisplayName": "Danimarka",
       "isoAlpha2": "DK",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 43,
@@ -405,16 +405,16 @@
       "proposedDisplayName": "Dominik Cumhuriyeti",
       "isoAlpha2": "DO",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
       "sourceName": null,
       "canonicalName": "DR Congo",
-      "proposedDisplayName": "Kongo Demokratik Cumhuriyeti",
+      "proposedDisplayName": "Demokratik Kongo",
       "isoAlpha2": "CD",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 44,
@@ -423,7 +423,7 @@
       "proposedDisplayName": "Ekvador",
       "isoAlpha2": "EC",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 2,
@@ -432,7 +432,7 @@
       "proposedDisplayName": "Mısır",
       "isoAlpha2": "EG",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 45,
@@ -441,7 +441,7 @@
       "proposedDisplayName": "El Salvador",
       "isoAlpha2": "SV",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 189,
@@ -450,7 +450,7 @@
       "proposedDisplayName": "İngiltere",
       "isoAlpha2": null,
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -459,7 +459,7 @@
       "proposedDisplayName": "Ekvator Ginesi",
       "isoAlpha2": "GQ",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 47,
@@ -468,7 +468,7 @@
       "proposedDisplayName": "Estonya",
       "isoAlpha2": "EE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 11,
@@ -477,7 +477,7 @@
       "proposedDisplayName": "Etiyopya",
       "isoAlpha2": "ET",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 208,
@@ -486,7 +486,7 @@
       "proposedDisplayName": "Faroe Adaları",
       "isoAlpha2": "FO",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 48,
@@ -495,7 +495,7 @@
       "proposedDisplayName": "Fiji",
       "isoAlpha2": "FJ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 49,
@@ -504,7 +504,7 @@
       "proposedDisplayName": "Finlandiya",
       "isoAlpha2": "FI",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 50,
@@ -513,7 +513,7 @@
       "proposedDisplayName": "Fransa",
       "isoAlpha2": "FR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -522,7 +522,7 @@
       "proposedDisplayName": "Fransız Guyanası",
       "isoAlpha2": "GF",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -531,7 +531,7 @@
       "proposedDisplayName": "Gabon",
       "isoAlpha2": "GA",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 53,
@@ -540,7 +540,7 @@
       "proposedDisplayName": "Gürcistan",
       "isoAlpha2": "GE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 40,
@@ -549,7 +549,7 @@
       "proposedDisplayName": "Almanya",
       "isoAlpha2": "DE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 54,
@@ -558,7 +558,7 @@
       "proposedDisplayName": "Gana",
       "isoAlpha2": "GH",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 266,
@@ -567,7 +567,7 @@
       "proposedDisplayName": "Cebelitarık",
       "isoAlpha2": "GI",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 56,
@@ -576,7 +576,7 @@
       "proposedDisplayName": "Yunanistan",
       "isoAlpha2": "GR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -585,7 +585,7 @@
       "proposedDisplayName": "Guadeloupe",
       "isoAlpha2": "GP",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 58,
@@ -594,7 +594,7 @@
       "proposedDisplayName": "Guatemala",
       "isoAlpha2": "GT",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -603,7 +603,7 @@
       "proposedDisplayName": "Gine",
       "isoAlpha2": "GN",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -612,7 +612,7 @@
       "proposedDisplayName": "Gine-Bissau",
       "isoAlpha2": "GW",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -621,7 +621,7 @@
       "proposedDisplayName": "Haiti",
       "isoAlpha2": "HT",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 66,
@@ -630,7 +630,7 @@
       "proposedDisplayName": "Honduras",
       "isoAlpha2": "HN",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 218,
@@ -639,7 +639,7 @@
       "proposedDisplayName": "Hong Kong",
       "isoAlpha2": "HK",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 178,
@@ -648,7 +648,7 @@
       "proposedDisplayName": "Macaristan",
       "isoAlpha2": "HU",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 73,
@@ -657,7 +657,7 @@
       "proposedDisplayName": "İzlanda",
       "isoAlpha2": "IS",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 67,
@@ -666,7 +666,7 @@
       "proposedDisplayName": "Hindistan",
       "isoAlpha2": "IN",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 68,
@@ -675,7 +675,7 @@
       "proposedDisplayName": "Endonezya",
       "isoAlpha2": "ID",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 71,
@@ -684,7 +684,7 @@
       "proposedDisplayName": "İran",
       "isoAlpha2": "IR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 70,
@@ -693,7 +693,7 @@
       "proposedDisplayName": "Irak",
       "isoAlpha2": "IQ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 72,
@@ -702,7 +702,7 @@
       "proposedDisplayName": "İrlanda",
       "isoAlpha2": "IE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 74,
@@ -711,7 +711,7 @@
       "proposedDisplayName": "İsrail",
       "isoAlpha2": "IL",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 75,
@@ -720,7 +720,7 @@
       "proposedDisplayName": "İtalya",
       "isoAlpha2": "IT",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 76,
@@ -729,7 +729,7 @@
       "proposedDisplayName": "Jamaika",
       "isoAlpha2": "JM",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 77,
@@ -738,7 +738,7 @@
       "proposedDisplayName": "Japonya",
       "isoAlpha2": "JP",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 78,
@@ -747,7 +747,7 @@
       "proposedDisplayName": "Ürdün",
       "isoAlpha2": "JO",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 81,
@@ -756,7 +756,7 @@
       "proposedDisplayName": "Kazakistan",
       "isoAlpha2": "KZ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -765,7 +765,7 @@
       "proposedDisplayName": "Kenya",
       "isoAlpha2": "KE",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 87,
@@ -774,7 +774,7 @@
       "proposedDisplayName": "Güney Kore",
       "isoAlpha2": "KR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 244,
@@ -783,7 +783,7 @@
       "proposedDisplayName": "Kosova",
       "isoAlpha2": "XK",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 90,
@@ -792,7 +792,7 @@
       "proposedDisplayName": "Kırgızistan",
       "isoAlpha2": "KG",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 91,
@@ -801,7 +801,7 @@
       "proposedDisplayName": "Laos",
       "isoAlpha2": "LA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 92,
@@ -810,7 +810,7 @@
       "proposedDisplayName": "Letonya",
       "isoAlpha2": "LV",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 94,
@@ -819,7 +819,7 @@
       "proposedDisplayName": "Lübnan",
       "isoAlpha2": "LB",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -828,7 +828,7 @@
       "proposedDisplayName": "Liberya",
       "isoAlpha2": "LR",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 96,
@@ -837,7 +837,7 @@
       "proposedDisplayName": "Libya",
       "isoAlpha2": "LY",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -846,7 +846,7 @@
       "proposedDisplayName": "Lihtenştayn",
       "isoAlpha2": "LI",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 98,
@@ -855,7 +855,7 @@
       "proposedDisplayName": "Litvanya",
       "isoAlpha2": "LT",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 99,
@@ -864,7 +864,7 @@
       "proposedDisplayName": "Lüksemburg",
       "isoAlpha2": "LU",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 103,
@@ -873,7 +873,7 @@
       "proposedDisplayName": "Malezya",
       "isoAlpha2": "MY",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 104,
@@ -882,7 +882,7 @@
       "proposedDisplayName": "Maldivler",
       "isoAlpha2": "MV",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -891,7 +891,7 @@
       "proposedDisplayName": "Mali",
       "isoAlpha2": "ML",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 106,
@@ -900,7 +900,7 @@
       "proposedDisplayName": "Malta",
       "isoAlpha2": "MT",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -909,7 +909,7 @@
       "proposedDisplayName": "Martinik",
       "isoAlpha2": "MQ",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -918,7 +918,7 @@
       "proposedDisplayName": "Moritanya",
       "isoAlpha2": "MR",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 110,
@@ -927,7 +927,7 @@
       "proposedDisplayName": "Meksika",
       "isoAlpha2": "MX",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 112,
@@ -936,7 +936,7 @@
       "proposedDisplayName": "Moldova",
       "isoAlpha2": "MD",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 216,
@@ -945,7 +945,7 @@
       "proposedDisplayName": "Karadağ",
       "isoAlpha2": "ME",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 107,
@@ -954,7 +954,7 @@
       "proposedDisplayName": "Fas",
       "isoAlpha2": "MA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 116,
@@ -963,7 +963,7 @@
       "proposedDisplayName": "Myanmar",
       "isoAlpha2": "MM",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 122,
@@ -972,7 +972,7 @@
       "proposedDisplayName": "Hollanda",
       "isoAlpha2": "NL",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 120,
@@ -981,7 +981,7 @@
       "proposedDisplayName": "Yeni Zelanda",
       "isoAlpha2": "NZ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 121,
@@ -990,7 +990,7 @@
       "proposedDisplayName": "Nikaragua",
       "isoAlpha2": "NI",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 124,
@@ -999,7 +999,7 @@
       "proposedDisplayName": "Nijerya",
       "isoAlpha2": "NG",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 100,
@@ -1008,7 +1008,7 @@
       "proposedDisplayName": "Kuzey Makedonya",
       "isoAlpha2": "MK",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 192,
@@ -1017,7 +1017,7 @@
       "proposedDisplayName": "Kuzey İrlanda",
       "isoAlpha2": null,
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 125,
@@ -1026,7 +1026,7 @@
       "proposedDisplayName": "Norveç",
       "isoAlpha2": "NO",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 126,
@@ -1035,7 +1035,7 @@
       "proposedDisplayName": "Umman",
       "isoAlpha2": "OM",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 130,
@@ -1044,7 +1044,7 @@
       "proposedDisplayName": "Panama",
       "isoAlpha2": "PA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 132,
@@ -1053,7 +1053,7 @@
       "proposedDisplayName": "Paraguay",
       "isoAlpha2": "PY",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 133,
@@ -1062,7 +1062,7 @@
       "proposedDisplayName": "Peru",
       "isoAlpha2": "PE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 134,
@@ -1071,7 +1071,7 @@
       "proposedDisplayName": "Filipinler",
       "isoAlpha2": "PH",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 135,
@@ -1080,7 +1080,7 @@
       "proposedDisplayName": "Polonya",
       "isoAlpha2": "PL",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 136,
@@ -1089,7 +1089,7 @@
       "proposedDisplayName": "Portekiz",
       "isoAlpha2": "PT",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 228,
@@ -1098,7 +1098,7 @@
       "proposedDisplayName": "Porto Riko",
       "isoAlpha2": "PR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 137,
@@ -1107,7 +1107,7 @@
       "proposedDisplayName": "Katar",
       "isoAlpha2": "QA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 140,
@@ -1116,7 +1116,7 @@
       "proposedDisplayName": "Romanya",
       "isoAlpha2": "RO",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 141,
@@ -1125,7 +1125,7 @@
       "proposedDisplayName": "Rusya",
       "isoAlpha2": "RU",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1134,7 +1134,7 @@
       "proposedDisplayName": "Ruanda",
       "isoAlpha2": "RW",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 144,
@@ -1143,7 +1143,7 @@
       "proposedDisplayName": "San Marino",
       "isoAlpha2": "SM",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1152,7 +1152,7 @@
       "proposedDisplayName": "São Tomé ve Príncipe",
       "isoAlpha2": "ST",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 146,
@@ -1161,7 +1161,7 @@
       "proposedDisplayName": "Suudi Arabistan",
       "isoAlpha2": "SA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 190,
@@ -1170,7 +1170,7 @@
       "proposedDisplayName": "İskoçya",
       "isoAlpha2": null,
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 149,
@@ -1179,7 +1179,7 @@
       "proposedDisplayName": "Senegal",
       "isoAlpha2": "SN",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 215,
@@ -1188,7 +1188,7 @@
       "proposedDisplayName": "Sırbistan",
       "isoAlpha2": "RS",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1197,7 +1197,7 @@
       "proposedDisplayName": "Sierra Leone",
       "isoAlpha2": "SL",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 153,
@@ -1206,7 +1206,7 @@
       "proposedDisplayName": "Singapur",
       "isoAlpha2": "SG",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 154,
@@ -1215,7 +1215,7 @@
       "proposedDisplayName": "Slovakya",
       "isoAlpha2": "SK",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 155,
@@ -1224,7 +1224,7 @@
       "proposedDisplayName": "Slovenya",
       "isoAlpha2": "SI",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1233,7 +1233,7 @@
       "proposedDisplayName": "Somali",
       "isoAlpha2": "SO",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 159,
@@ -1242,7 +1242,7 @@
       "proposedDisplayName": "Güney Afrika",
       "isoAlpha2": "ZA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1251,7 +1251,7 @@
       "proposedDisplayName": "Sovyetler Birliği",
       "isoAlpha2": null,
       "origin": "historical",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 157,
@@ -1260,7 +1260,7 @@
       "proposedDisplayName": "İspanya",
       "isoAlpha2": "ES",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 158,
@@ -1269,7 +1269,7 @@
       "proposedDisplayName": "Sri Lanka",
       "isoAlpha2": "LK",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1278,7 +1278,7 @@
       "proposedDisplayName": "Surinam",
       "isoAlpha2": "SR",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 147,
@@ -1287,7 +1287,7 @@
       "proposedDisplayName": "İsveç",
       "isoAlpha2": "SE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 148,
@@ -1296,7 +1296,7 @@
       "proposedDisplayName": "İsviçre",
       "isoAlpha2": "CH",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1305,7 +1305,7 @@
       "proposedDisplayName": "Suriye",
       "isoAlpha2": "SY",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 165,
@@ -1314,7 +1314,7 @@
       "proposedDisplayName": "Tacikistan",
       "isoAlpha2": "TJ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1323,7 +1323,7 @@
       "proposedDisplayName": "Tanzanya",
       "isoAlpha2": "TZ",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 167,
@@ -1332,7 +1332,7 @@
       "proposedDisplayName": "Tayland",
       "isoAlpha2": "TH",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1341,7 +1341,7 @@
       "proposedDisplayName": "Gambiya",
       "isoAlpha2": "GM",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 242,
@@ -1350,7 +1350,7 @@
       "proposedDisplayName": "Doğu Timor",
       "isoAlpha2": "TL",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1359,7 +1359,7 @@
       "proposedDisplayName": "Togo",
       "isoAlpha2": "TG",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1368,7 +1368,7 @@
       "proposedDisplayName": "Trinidad ve Tobago",
       "isoAlpha2": "TT",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 173,
@@ -1377,7 +1377,7 @@
       "proposedDisplayName": "Tunus",
       "isoAlpha2": "TN",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 174,
@@ -1386,7 +1386,7 @@
       "proposedDisplayName": "Türkiye",
       "isoAlpha2": "TR",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 176,
@@ -1395,7 +1395,7 @@
       "proposedDisplayName": "Uganda",
       "isoAlpha2": "UG",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 177,
@@ -1404,7 +1404,7 @@
       "proposedDisplayName": "Ukrayna",
       "isoAlpha2": "UA",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 183,
@@ -1413,7 +1413,7 @@
       "proposedDisplayName": "Birleşik Arap Emirlikleri",
       "isoAlpha2": "AE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 184,
@@ -1422,7 +1422,7 @@
       "proposedDisplayName": "Amerika Birleşik Devletleri",
       "isoAlpha2": "US",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 179,
@@ -1431,7 +1431,7 @@
       "proposedDisplayName": "Uruguay",
       "isoAlpha2": "UY",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 180,
@@ -1440,7 +1440,7 @@
       "proposedDisplayName": "Özbekistan",
       "isoAlpha2": "UZ",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 182,
@@ -1449,7 +1449,7 @@
       "proposedDisplayName": "Venezuela",
       "isoAlpha2": "VE",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 185,
@@ -1458,7 +1458,7 @@
       "proposedDisplayName": "Vietnam",
       "isoAlpha2": "VN",
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": 191,
@@ -1467,7 +1467,7 @@
       "proposedDisplayName": "Galler",
       "isoAlpha2": null,
       "origin": "source",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1476,7 +1476,7 @@
       "proposedDisplayName": "Yugoslavya",
       "isoAlpha2": null,
       "origin": "historical",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1485,7 +1485,7 @@
       "proposedDisplayName": "Zambiya",
       "isoAlpha2": "ZM",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceCountryId": null,
@@ -1494,7 +1494,7 @@
       "proposedDisplayName": "Zimbabve",
       "isoAlpha2": "ZW",
       "origin": "player_value",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     }
   ]
 }

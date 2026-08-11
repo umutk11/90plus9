@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "datasetVersion": 677,
-  "reviewStatus": "pending",
+  "reviewStatus": "approved",
   "mapExactSourceNames": true,
-  "reviewedAt": null,
-  "reviewedBy": null,
+  "reviewedAt": "2026-08-11T12:24:10Z",
+  "reviewedBy": "umutk11",
   "overrides": [
     {
       "sourceName": "Angola",
@@ -13,7 +13,7 @@
       "proposedDisplayName": "Angola",
       "isoAlpha2": "AO",
       "isoAlpha3": "AGO",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Aruba",
@@ -22,7 +22,7 @@
       "proposedDisplayName": "Aruba",
       "isoAlpha2": "AW",
       "isoAlpha3": "ABW",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Benin",
@@ -31,7 +31,7 @@
       "proposedDisplayName": "Benin",
       "isoAlpha2": "BJ",
       "isoAlpha3": "BEN",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Burkina Faso",
@@ -40,7 +40,7 @@
       "proposedDisplayName": "Burkina Faso",
       "isoAlpha2": "BF",
       "isoAlpha3": "BFA",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Burundi",
@@ -49,7 +49,7 @@
       "proposedDisplayName": "Burundi",
       "isoAlpha2": "BI",
       "isoAlpha3": "BDI",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "CSSR",
@@ -58,7 +58,7 @@
       "proposedDisplayName": "Çekoslovakya",
       "isoAlpha2": null,
       "isoAlpha3": null,
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "reviewNote": "Doğum ülkesi tarihsel adıyla korunur; vatandaşlık yerine kullanılmaz."
     },
     {
@@ -68,7 +68,7 @@
       "proposedDisplayName": "Kamerun",
       "isoAlpha2": "CM",
       "isoAlpha3": "CMR",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Cape Verde",
@@ -77,7 +77,7 @@
       "proposedDisplayName": "Cabo Verde",
       "isoAlpha2": "CV",
       "isoAlpha3": "CPV",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Central African Republic",
@@ -86,7 +86,7 @@
       "proposedDisplayName": "Orta Afrika Cumhuriyeti",
       "isoAlpha2": "CF",
       "isoAlpha3": "CAF",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Chad",
@@ -95,7 +95,7 @@
       "proposedDisplayName": "Çad",
       "isoAlpha2": "TD",
       "isoAlpha3": "TCD",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Congo",
@@ -104,7 +104,7 @@
       "proposedDisplayName": "Kongo Cumhuriyeti",
       "isoAlpha2": "CG",
       "isoAlpha3": "COG",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Cote d'Ivoire",
@@ -113,7 +113,7 @@
       "proposedDisplayName": "Fildişi Sahili",
       "isoAlpha2": "CI",
       "isoAlpha3": "CIV",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Curacao",
@@ -122,16 +122,16 @@
       "proposedDisplayName": "Curaçao",
       "isoAlpha2": "CW",
       "isoAlpha3": "CUW",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "DR Congo",
       "resolution": "additional_canonical",
       "targetCanonicalName": "DR Congo",
-      "proposedDisplayName": "Kongo Demokratik Cumhuriyeti",
+      "proposedDisplayName": "Demokratik Kongo",
       "isoAlpha2": "CD",
       "isoAlpha3": "COD",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "East Germany (GDR)",
@@ -140,7 +140,7 @@
       "proposedDisplayName": "Almanya",
       "isoAlpha2": "DE",
       "isoAlpha3": "DEU",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Equatorial Guinea",
@@ -149,7 +149,7 @@
       "proposedDisplayName": "Ekvator Ginesi",
       "isoAlpha2": "GQ",
       "isoAlpha3": "GNQ",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "French Guiana",
@@ -158,7 +158,7 @@
       "proposedDisplayName": "Fransız Guyanası",
       "isoAlpha2": "GF",
       "isoAlpha3": "GUF",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Gabon",
@@ -167,7 +167,7 @@
       "proposedDisplayName": "Gabon",
       "isoAlpha2": "GA",
       "isoAlpha3": "GAB",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Guadeloupe",
@@ -176,7 +176,7 @@
       "proposedDisplayName": "Guadeloupe",
       "isoAlpha2": "GP",
       "isoAlpha3": "GLP",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Guinea",
@@ -185,7 +185,7 @@
       "proposedDisplayName": "Gine",
       "isoAlpha2": "GN",
       "isoAlpha3": "GIN",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Guinea-Bissau",
@@ -194,7 +194,7 @@
       "proposedDisplayName": "Gine-Bissau",
       "isoAlpha2": "GW",
       "isoAlpha3": "GNB",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Haiti",
@@ -203,7 +203,7 @@
       "proposedDisplayName": "Haiti",
       "isoAlpha2": "HT",
       "isoAlpha3": "HTI",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Jugoslawien (SFR)",
@@ -212,7 +212,7 @@
       "proposedDisplayName": "Yugoslavya",
       "isoAlpha2": null,
       "isoAlpha3": null,
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "reviewNote": "Doğum ülkesi tarihsel adıyla korunur; vatandaşlık yerine kullanılmaz."
     },
     {
@@ -222,7 +222,7 @@
       "proposedDisplayName": "Kenya",
       "isoAlpha2": "KE",
       "isoAlpha3": "KEN",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Liberia",
@@ -231,7 +231,7 @@
       "proposedDisplayName": "Liberya",
       "isoAlpha2": "LR",
       "isoAlpha3": "LBR",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Liechtenstein",
@@ -240,7 +240,7 @@
       "proposedDisplayName": "Lihtenştayn",
       "isoAlpha2": "LI",
       "isoAlpha3": "LIE",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Macedonia",
@@ -249,7 +249,7 @@
       "proposedDisplayName": "Kuzey Makedonya",
       "isoAlpha2": "MK",
       "isoAlpha3": "MKD",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Mali",
@@ -258,7 +258,7 @@
       "proposedDisplayName": "Mali",
       "isoAlpha2": "ML",
       "isoAlpha3": "MLI",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Martinique",
@@ -267,7 +267,7 @@
       "proposedDisplayName": "Martinik",
       "isoAlpha2": "MQ",
       "isoAlpha3": "MTQ",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Mauritania",
@@ -276,7 +276,7 @@
       "proposedDisplayName": "Moritanya",
       "isoAlpha2": "MR",
       "isoAlpha3": "MRT",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "People's republic of the Congo",
@@ -285,7 +285,7 @@
       "proposedDisplayName": "Kongo Cumhuriyeti",
       "isoAlpha2": "CG",
       "isoAlpha3": "COG",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Rwanda",
@@ -294,7 +294,7 @@
       "proposedDisplayName": "Ruanda",
       "isoAlpha2": "RW",
       "isoAlpha3": "RWA",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Sao Tome and Principe",
@@ -303,7 +303,7 @@
       "proposedDisplayName": "São Tomé ve Príncipe",
       "isoAlpha2": "ST",
       "isoAlpha3": "STP",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Sierra Leone",
@@ -312,7 +312,7 @@
       "proposedDisplayName": "Sierra Leone",
       "isoAlpha2": "SL",
       "isoAlpha3": "SLE",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Somalia",
@@ -321,7 +321,7 @@
       "proposedDisplayName": "Somali",
       "isoAlpha2": "SO",
       "isoAlpha3": "SOM",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Suriname",
@@ -330,7 +330,7 @@
       "proposedDisplayName": "Surinam",
       "isoAlpha2": "SR",
       "isoAlpha3": "SUR",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Syria",
@@ -339,7 +339,7 @@
       "proposedDisplayName": "Suriye",
       "isoAlpha2": "SY",
       "isoAlpha3": "SYR",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Tanzania",
@@ -348,7 +348,7 @@
       "proposedDisplayName": "Tanzanya",
       "isoAlpha2": "TZ",
       "isoAlpha3": "TZA",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "The Gambia",
@@ -357,7 +357,7 @@
       "proposedDisplayName": "Gambiya",
       "isoAlpha2": "GM",
       "isoAlpha3": "GMB",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Togo",
@@ -366,7 +366,7 @@
       "proposedDisplayName": "Togo",
       "isoAlpha2": "TG",
       "isoAlpha3": "TGO",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Trinidad and Tobago",
@@ -375,7 +375,7 @@
       "proposedDisplayName": "Trinidad ve Tobago",
       "isoAlpha2": "TT",
       "isoAlpha3": "TTO",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Turkey",
@@ -384,7 +384,7 @@
       "proposedDisplayName": "Türkiye",
       "isoAlpha2": "TR",
       "isoAlpha3": "TUR",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "UdSSR",
@@ -393,7 +393,7 @@
       "proposedDisplayName": "Sovyetler Birliği",
       "isoAlpha2": null,
       "isoAlpha3": null,
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "reviewNote": "Doğum ülkesi tarihsel adıyla korunur; vatandaşlık yerine kullanılmaz."
     },
     {
@@ -403,17 +403,17 @@
       "proposedDisplayName": "Yugoslavya",
       "isoAlpha2": null,
       "isoAlpha3": null,
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "reviewNote": "Doğum ülkesi tarihsel adıyla korunur; vatandaşlık yerine kullanılmaz."
     },
     {
       "sourceName": "Zaire",
       "resolution": "historical_alias",
       "targetCanonicalName": "DR Congo",
-      "proposedDisplayName": "Kongo Demokratik Cumhuriyeti",
+      "proposedDisplayName": "Demokratik Kongo",
       "isoAlpha2": "CD",
       "isoAlpha3": "COD",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Zambia",
@@ -422,7 +422,7 @@
       "proposedDisplayName": "Zambiya",
       "isoAlpha2": "ZM",
       "isoAlpha3": "ZMB",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceName": "Zimbabwe",
@@ -431,7 +431,7 @@
       "proposedDisplayName": "Zimbabve",
       "isoAlpha2": "ZW",
       "isoAlpha3": "ZWE",
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     }
   ]
 }
