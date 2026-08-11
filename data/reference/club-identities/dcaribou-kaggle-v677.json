@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "datasetVersion": 677,
-  "reviewStatus": "pending",
-  "reviewedAt": null,
-  "reviewedBy": null,
+  "reviewStatus": "approved",
+  "reviewedAt": "2026-08-11T12:10:03Z",
+  "reviewedBy": "umutk11",
   "clubs": [
     {
       "sourceClubId": 3840,
@@ -12,7 +12,7 @@
       "city": "Adana",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 6,
@@ -21,7 +21,7 @@
       "city": "Adana",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 19771,
@@ -30,7 +30,7 @@
       "city": "Manisa",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 11282,
@@ -39,7 +39,7 @@
       "city": "Antalya",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 2375,
@@ -48,7 +48,7 @@
       "city": "İzmir",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 2944,
@@ -57,7 +57,7 @@
       "city": "Ankara",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "reviewNote": "Osmanlıspor tarihsel alias olarak ayrıca değerlendirilecek."
     },
     {
@@ -67,7 +67,7 @@
       "city": "Antalya",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 20698,
@@ -76,17 +76,16 @@
       "city": "Balıkesir",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 6890,
       "sourceName": "Basaksehir FK",
-      "proposedName": "Başakşehir FK",
+      "proposedName": "Başakşehir",
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": false,
-      "reviewStatus": "pending",
-      "reviewNote": "İstanbul Başakşehir seçeneğiyle birlikte gözden geçirilecek."
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 114,
@@ -95,7 +94,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": true,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 44006,
@@ -104,7 +103,7 @@
       "city": "Muğla",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 20,
@@ -113,7 +112,7 @@
       "city": "Bursa",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 126,
@@ -122,8 +121,7 @@
       "city": "Rize",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending",
-      "reviewNote": "Çaykur ibaresinin kalıcı kulüp adı olarak kullanımı onaylanacak."
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 833,
@@ -132,7 +130,7 @@
       "city": "Denizli",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 2292,
@@ -141,16 +139,16 @@
       "city": "Elazığ",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 39722,
       "sourceName": "Erzurumspor FK",
-      "proposedName": "Erzurumspor FK",
+      "proposedName": "Erzurumspor",
       "city": "Erzurum",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 825,
@@ -159,7 +157,7 @@
       "city": "Eskişehir",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 7160,
@@ -168,7 +166,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 6646,
@@ -177,7 +175,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 36,
@@ -186,7 +184,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": true,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 141,
@@ -195,7 +193,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": true,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 2832,
@@ -204,7 +202,7 @@
       "city": "Gaziantep",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 524,
@@ -213,7 +211,7 @@
       "city": "Gaziantep",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 820,
@@ -222,7 +220,7 @@
       "city": "Ankara",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 11688,
@@ -231,7 +229,7 @@
       "city": "Giresun",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 1467,
@@ -240,7 +238,7 @@
       "city": "İzmir",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 7775,
@@ -249,7 +247,7 @@
       "city": "Hatay",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 924,
@@ -258,7 +256,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 1506,
@@ -267,8 +265,7 @@
       "city": "Karabük",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending",
-      "reviewNote": "Kardemir ibaresinin kalıcı kulüp adı olarak kullanımı onaylanacak."
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 10484,
@@ -277,7 +274,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 6894,
@@ -286,7 +283,7 @@
       "city": "Kayseri",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 3205,
@@ -295,7 +292,7 @@
       "city": "Kayseri",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 120,
@@ -304,7 +301,7 @@
       "city": "Kocaeli",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 2293,
@@ -313,7 +310,7 @@
       "city": "Konya",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 868,
@@ -322,8 +319,7 @@
       "city": "Ankara",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending",
-      "reviewNote": "MKE ibaresinin kalıcı kulüp adı olarak kullanımı onaylanacak."
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 3216,
@@ -332,7 +328,7 @@
       "city": "Mersin",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending",
+      "reviewStatus": "approved",
       "reviewNote": "Kaynak adı ile 2012–2016 dönemindeki tarihsel kulüp adı birlikte doğrulanacak."
     },
     {
@@ -342,7 +338,7 @@
       "city": "Ordu",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 3209,
@@ -351,7 +347,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 152,
@@ -360,7 +356,7 @@
       "city": "Samsun",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 2381,
@@ -369,7 +365,7 @@
       "city": "Sivas",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 449,
@@ -378,7 +374,7 @@
       "city": "Trabzon",
       "isIstanbul": false,
       "isBigFour": true,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 19789,
@@ -387,7 +383,7 @@
       "city": "Malatya",
       "isIstanbul": false,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     },
     {
       "sourceClubId": 24245,
@@ -396,7 +392,7 @@
       "city": "İstanbul",
       "isIstanbul": true,
       "isBigFour": false,
-      "reviewStatus": "pending"
+      "reviewStatus": "approved"
     }
   ]
 }
