@@ -18,6 +18,9 @@ jobs:
     name: Quality
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      # Prisma generate validates that a URL exists but does not connect during this job.
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/90plus9?schema=public
 
     steps:
       - name: Checkout
@@ -52,3 +55,50 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  database:
+    name: Database migration
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/90plus9_test?schema=public
+
+    services:
+      postgres:
+        image: postgres:18.4-alpine
+        env:
+          POSTGRES_DB: 90plus9_test
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready --username postgres --dbname 90plus9_test"
+          --health-interval 2s
+          --health-timeout 5s
+          --health-retries 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          run_install: false
+          version: 11.16.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          cache: pnpm
+          node-version-file: .nvmrc
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Apply migrations
+        run: pnpm db:migrate
+
+      - name: Verify database schema
+        run: pnpm --filter @90plus9/database db:verify

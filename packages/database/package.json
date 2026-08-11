@@ -7,9 +7,15 @@
     ".": "./src/index.ts"
   },
   "scripts": {
+    "prebuild": "pnpm db:generate",
+    "prelint": "pnpm db:generate",
+    "pretypecheck": "pnpm db:generate",
     "build": "tsc --noEmit",
     "db:format": "prisma format",
     "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:migrate:status": "prisma migrate status",
+    "db:verify": "prisma db execute --file ../../scripts/database/verify-schema.sql",
     "db:validate": "prisma validate",
     "lint": "eslint src prisma.config.ts",
     "typecheck": "tsc --noEmit"

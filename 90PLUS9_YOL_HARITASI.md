@@ -336,7 +336,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] Her pull request’te lint çalıştır.
 - [x] Her pull request’te tip kontrolü çalıştır.
 - [x] Her pull request’te unit test çalıştır.
-- [ ] Test veritabanı gerektiren integration test işini ekle.
+- [x] Test veritabanı gerektiren integration test işini ekle.
 - [ ] Başarısız CI varken merge’i engelle.
 - [x] Bağımlılık cache’i ekle.
 - [ ] CI sırlarını yalnızca gerekli job’lara aç.
@@ -397,27 +397,27 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 2.4. Veri sürümü tablosu
 
-- [ ] `dataset_versions` tablosunu tasarla.
-- [ ] Kaynak adını sakla.
-- [ ] Kaynak sürüm numarasını sakla.
-- [ ] Kaynak güncelleme tarihini sakla.
-- [ ] İndirme tarihini sakla.
-- [ ] Checksum sakla.
-- [ ] Import başlangıç zamanını sakla.
-- [ ] Import bitiş zamanını sakla.
-- [ ] Import durumunu sakla: pending, validating, ready, failed, active, archived.
-- [ ] Oyuncu sayısını sakla.
-- [ ] Kulüp sayısını sakla.
-- [ ] Maç sayısını sakla.
-- [ ] Oyuncu–kulüp–sezon ilişki sayısını sakla.
-- [ ] Aktif production sürümünü tekil hale getir.
+- [x] `dataset_versions` tablosunu tasarla.
+- [x] Kaynak adını sakla.
+- [x] Kaynak sürüm numarasını sakla.
+- [x] Kaynak güncelleme tarihini sakla.
+- [x] İndirme tarihini sakla.
+- [x] Checksum sakla.
+- [x] Import başlangıç zamanını sakla.
+- [x] Import bitiş zamanını sakla.
+- [x] Import durumunu sakla: pending, validating, ready, failed, active, archived.
+- [x] Oyuncu sayısını sakla.
+- [x] Kulüp sayısını sakla.
+- [x] Maç sayısını sakla.
+- [x] Oyuncu–kulüp–sezon ilişki sayısını sakla.
+- [x] Aktif production sürümünü tekil hale getir.
 
 ## Faz 2 kabul kriterleri
 
 - [x] Sabitlenmiş bir dcaribou sürümü tekrar indirilebiliyor.
 - [x] İndirilen dosyanın bütünlüğü doğrulanıyor.
 - [x] Kaynak şeması değiştiğinde pipeline sessizce yanlış veri üretmiyor.
-- [ ] Hangi sürümün production’da olduğu sorgulanabiliyor.
+- [x] Hangi sürümün production’da olduğu sorgulanabiliyor.
 
 ---
 
@@ -425,158 +425,158 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 3.1. Temel referans tabloları
 
-- [ ] `seasons` tablosunu oluştur.
-- [ ] `seasons.start_year` alanını oluştur.
-- [ ] `seasons.end_year` alanını oluştur.
-- [ ] `seasons.label` alanını oluştur.
-- [ ] `2012/13`–`2025/26` sezonlarını seed et.
-- [ ] `countries` tablosunu oluştur.
-- [ ] ISO ülke kodu alanını ekle.
-- [ ] Kaynak ülke adını sakla.
-- [ ] Türkçe görünen ülke adını sakla.
-- [ ] Konfederasyon/kıta alanını ekle.
+- [x] `seasons` tablosunu oluştur.
+- [x] `seasons.start_year` alanını oluştur.
+- [x] `seasons.end_year` alanını oluştur.
+- [x] `seasons.label` alanını oluştur.
+- [x] `2012/13`–`2025/26` sezonlarını seed et.
+- [x] `countries` tablosunu oluştur.
+- [x] ISO ülke kodu alanını ekle.
+- [x] Kaynak ülke adını sakla.
+- [x] Türkçe görünen ülke adını sakla.
+- [x] Konfederasyon/kıta alanını ekle.
 
 ## 3.2. Kulüp tabloları
 
-- [ ] `clubs` tablosunu oluştur.
-- [ ] Dahili UUID veya sayısal primary key seç.
-- [ ] `source_club_id` alanına dcaribou kulüp kimliğini koy.
-- [ ] `canonical_name` alanını ekle.
-- [ ] `display_name` alanını ekle.
-- [ ] `normalized_name` alanını ekle.
-- [ ] `city` alanını ekle.
-- [ ] `is_istanbul` alanını ekle.
-- [ ] `is_non_istanbul` alanını ekle.
-- [ ] `is_big_four` alanını ekle.
-- [ ] `is_active_in_scope` alanını ekle.
-- [ ] `source_url` alanını ekle.
-- [ ] `club_aliases` tablosunu oluştur.
-- [ ] Sponsor adlarını alias olarak saklamaya izin ver.
-- [ ] Eski yazım biçimlerini alias olarak saklamaya izin ver.
-- [ ] Alias’ın hangi tarih aralığında kullanıldığını isteğe bağlı sakla.
+- [x] `clubs` tablosunu oluştur.
+- [x] Dahili UUID veya sayısal primary key seç.
+- [x] `source_club_id` alanına dcaribou kulüp kimliğini koy.
+- [x] `canonical_name` alanını ekle.
+- [x] `display_name` alanını ekle.
+- [x] `normalized_name` alanını ekle.
+- [x] `city` alanını ekle.
+- [x] `is_istanbul` alanını ekle.
+- [x] `is_non_istanbul` alanını ekle.
+- [x] `is_big_four` alanını ekle.
+- [x] `is_active_in_scope` alanını ekle.
+- [x] `source_url` alanını ekle.
+- [x] `club_aliases` tablosunu oluştur.
+- [x] Sponsor adlarını alias olarak saklamaya izin ver.
+- [x] Eski yazım biçimlerini alias olarak saklamaya izin ver.
+- [x] Alias’ın hangi tarih aralığında kullanıldığını isteğe bağlı sakla.
 - [ ] Aynı hukuki devamlılıktaki kulüp adlarını tek canonical kulübe bağla.
-- [ ] Ayrı kulüpleri yanlışlıkla birleştirmemek için manuel onay alanı ekle.
+- [x] Ayrı kulüpleri yanlışlıkla birleştirmemek için manuel onay alanı ekle.
 
 ## 3.3. Oyuncu tabloları
 
-- [ ] `players` tablosunu oluştur.
-- [ ] Dahili player primary key oluştur.
-- [ ] `source_player_id` alanına dcaribou kimliğini koy.
-- [ ] `display_name` alanını ekle.
-- [ ] `normalized_name` alanını ekle.
-- [ ] `first_name` alanını ekle.
-- [ ] `last_name` alanını ekle.
-- [ ] `date_of_birth` alanını ekle.
-- [ ] `country_of_birth_id` alanını ekle.
-- [ ] `citizenship_country_id` alanını ekle.
-- [ ] `raw_citizenship` alanını QA için sakla.
-- [ ] `position_group` alanını ekle.
-- [ ] `raw_position` alanını ekle.
-- [ ] `raw_sub_position` alanını ekle.
-- [ ] `preferred_foot` alanını ekle.
-- [ ] `height_cm` alanını ekle.
-- [ ] `source_url` alanını ekle.
-- [ ] `is_active_for_game` alanını ekle.
-- [ ] `review_status` alanını ekle.
-- [ ] `player_aliases` tablosunu oluştur.
+- [x] `players` tablosunu oluştur.
+- [x] Dahili player primary key oluştur.
+- [x] `source_player_id` alanına dcaribou kimliğini koy.
+- [x] `display_name` alanını ekle.
+- [x] `normalized_name` alanını ekle.
+- [x] `first_name` alanını ekle.
+- [x] `last_name` alanını ekle.
+- [x] `date_of_birth` alanını ekle.
+- [x] `country_of_birth_id` alanını ekle.
+- [x] `citizenship_country_id` alanını ekle.
+- [x] `raw_citizenship` alanını QA için sakla.
+- [x] `position_group` alanını ekle.
+- [x] `raw_position` alanını ekle.
+- [x] `raw_sub_position` alanını ekle.
+- [x] `preferred_foot` alanını ekle.
+- [x] `height_cm` alanını ekle.
+- [x] `source_url` alanını ekle.
+- [x] `is_active_for_game` alanını ekle.
+- [x] `review_status` alanını ekle.
+- [x] `player_aliases` tablosunu oluştur.
 - [ ] Türkçe karakter içermeyen arama alias’ı üret.
-- [ ] İsim sırası değişikliği için manuel alias’a izin ver.
-- [ ] Lakap veya yaygın kısa ad için manuel alias’a izin ver.
-- [ ] Aynı isimli oyuncuları doğum tarihi ve source ID ile ayır.
+- [x] İsim sırası değişikliği için manuel alias’a izin ver.
+- [x] Lakap veya yaygın kısa ad için manuel alias’a izin ver.
+- [x] Aynı isimli oyuncuları doğum tarihi ve source ID ile ayır.
 
 ## 3.4. Maç ve kanıt tabloları
 
-- [ ] `matches` tablosunu oluştur.
-- [ ] `source_game_id` alanını ekle.
-- [ ] `season_id` alanını ekle.
-- [ ] `match_date` alanını ekle.
-- [ ] `home_club_id` alanını ekle.
-- [ ] `away_club_id` alanını ekle.
-- [ ] Skor alanlarını isteğe bağlı sakla.
-- [ ] `match_status` alanını ekle.
-- [ ] Durum değerlerini tanımla: played, awarded, cancelled, postponed, unknown.
-- [ ] `status_source` alanını ekle.
-- [ ] `is_player_evidence_allowed` alanını ekle.
-- [ ] Hükmen maçlarda bu alanı false yap.
-- [ ] `player_match_evidence` tablosunu oluştur.
-- [ ] `player_id` alanını ekle.
-- [ ] `match_id` alanını ekle.
-- [ ] `club_id` alanını ekle.
-- [ ] `evidence_type` alanını ekle.
-- [ ] Kanıt değerlerini tanımla: appearance, starting_lineup, substitute.
-- [ ] `minutes_played` kaynakta olsa bile oyun kuralına bağlama.
-- [ ] Aynı oyuncu–maç–kanıt türünü tekil yap.
+- [x] `matches` tablosunu oluştur.
+- [x] `source_game_id` alanını ekle.
+- [x] `season_id` alanını ekle.
+- [x] `match_date` alanını ekle.
+- [x] `home_club_id` alanını ekle.
+- [x] `away_club_id` alanını ekle.
+- [x] Skor alanlarını isteğe bağlı sakla.
+- [x] `match_status` alanını ekle.
+- [x] Durum değerlerini tanımla: played, awarded, cancelled, postponed, unknown.
+- [x] `status_source` alanını ekle.
+- [x] `is_player_evidence_allowed` alanını ekle.
+- [x] Hükmen maçlarda bu alanı false yap.
+- [x] `player_match_evidence` tablosunu oluştur.
+- [x] `player_id` alanını ekle.
+- [x] `match_id` alanını ekle.
+- [x] `club_id` alanını ekle.
+- [x] `evidence_type` alanını ekle.
+- [x] Kanıt değerlerini tanımla: appearance, starting_lineup, substitute.
+- [x] `minutes_played` kaynakta olsa bile oyun kuralına bağlama.
+- [x] Aynı oyuncu–maç–kanıt türünü tekil yap.
 
 ## 3.5. Oyuncu–kulüp–sezon tablosu
 
-- [ ] `player_club_seasons` tablosunu oluştur.
-- [ ] `player_id` alanını ekle.
-- [ ] `club_id` alanını ekle.
-- [ ] `season_id` alanını ekle.
-- [ ] Üç alanı birlikte tekil yap.
-- [ ] `has_appearance` alanını ekle.
-- [ ] `has_start` alanını ekle.
-- [ ] `has_bench` alanını ekle.
-- [ ] `first_seen_date` alanını ekle.
-- [ ] `last_seen_date` alanını ekle.
-- [ ] `appearance_count` alanını ekle.
-- [ ] `lineup_count` alanını ekle.
-- [ ] `evidence_count` alanını ekle.
-- [ ] `evidence_level` alanını ekle.
-- [ ] `is_accepted_for_game` alanını ekle.
-- [ ] `review_status` alanını ekle.
-- [ ] `dataset_version_id` alanını ekle.
+- [x] `player_club_seasons` tablosunu oluştur.
+- [x] `player_id` alanını ekle.
+- [x] `club_id` alanını ekle.
+- [x] `season_id` alanını ekle.
+- [x] Üç alanı dataset sürümü içinde birlikte tekil yap.
+- [x] `has_appearance` alanını ekle.
+- [x] `has_start` alanını ekle.
+- [x] `has_bench` alanını ekle.
+- [x] `first_seen_date` alanını ekle.
+- [x] `last_seen_date` alanını ekle.
+- [x] `appearance_count` alanını ekle.
+- [x] `lineup_count` alanını ekle.
+- [x] `evidence_count` alanını ekle.
+- [x] `evidence_level` alanını ekle.
+- [x] `is_accepted_for_game` alanını ekle.
+- [x] `review_status` alanını ekle.
+- [x] `dataset_version_id` alanını ekle.
 
 ## 3.6. Kulüp–sezon ve şampiyonluk tabloları
 
-- [ ] `club_seasons` tablosunu oluştur.
-- [ ] `club_id` alanını ekle.
-- [ ] `season_id` alanını ekle.
-- [ ] Kulüp–sezon çiftini tekil yap.
-- [ ] `participated_in_super_lig` alanını ekle.
-- [ ] `is_champion` alanını ekle.
-- [ ] `championship_source_url` alanını ekle.
-- [ ] `championship_verified_at` alanını ekle.
-- [ ] `championship_verified_by` alanını ekle.
+- [x] `club_seasons` tablosunu oluştur.
+- [x] `club_id` alanını ekle.
+- [x] `season_id` alanını ekle.
+- [x] Kulüp–sezon çiftini tekil yap.
+- [x] `participated_in_super_lig` alanını ekle.
+- [x] `is_champion` alanını ekle.
+- [x] `championship_source_url` alanını ekle.
+- [x] `championship_verified_at` alanını ekle.
+- [x] `championship_verified_by` alanını ekle.
 - [ ] Her sezonda tam bir şampiyon olmasını constraint veya QA testiyle doğrula.
 
 ## 3.7. Manuel düzeltme ve veri kalite tabloları
 
-- [ ] `data_overrides` tablosunu oluştur.
-- [ ] Override hedef tablo ve kayıt kimliğini sakla.
-- [ ] Önceki değeri sakla.
-- [ ] Yeni değeri sakla.
-- [ ] Gerekçeyi zorunlu yap.
-- [ ] Kaynak URL’sini isteğe bağlı değil, kritik düzeltmelerde zorunlu yap.
-- [ ] Değişikliği yapan yöneticiyi sakla.
-- [ ] Değişiklik zamanını sakla.
-- [ ] Override’ı geri alma alanı ekle.
-- [ ] `data_quality_issues` tablosunu oluştur.
-- [ ] Sorun türünü sakla.
-- [ ] Önem derecesini sakla.
-- [ ] İlgili kayıt kimliklerini sakla.
-- [ ] Açıklamayı sakla.
-- [ ] Durumu sakla: open, reviewing, resolved, ignored.
-- [ ] Çözüm notunu sakla.
+- [x] `data_overrides` tablosunu oluştur.
+- [x] Override hedef tablo ve kayıt kimliğini sakla.
+- [x] Önceki değeri sakla.
+- [x] Yeni değeri sakla.
+- [x] Gerekçeyi zorunlu yap.
+- [x] Kaynak URL’sini isteğe bağlı değil, kritik düzeltmelerde zorunlu yap.
+- [x] Değişikliği yapan yöneticiyi sakla.
+- [x] Değişiklik zamanını sakla.
+- [x] Override’ı geri alma alanı ekle.
+- [x] `data_quality_issues` tablosunu oluştur.
+- [x] Sorun türünü sakla.
+- [x] Önem derecesini sakla.
+- [x] İlgili kayıt kimliklerini sakla.
+- [x] Açıklamayı sakla.
+- [x] Durumu sakla: open, reviewing, resolved, ignored.
+- [x] Çözüm notunu sakla.
 
 ## 3.8. İlk indeksler
 
-- [ ] `players(source_player_id)` için unique index ekle.
-- [ ] `players(normalized_name)` için arama indexi ekle.
-- [ ] `clubs(source_club_id)` için unique index ekle.
-- [ ] `player_club_seasons(player_id, season_id)` indexi ekle.
-- [ ] `player_club_seasons(club_id, season_id, player_id)` indexi ekle.
-- [ ] `player_club_seasons(position)` benzeri gereksiz indexleri gerçek sorgu ölçülmeden ekleme.
-- [ ] `player_match_evidence(match_id, club_id)` indexi ekle.
-- [ ] `club_seasons(season_id, is_champion)` indexi ekle.
+- [x] `players(source_player_id)` için unique index ekle.
+- [x] `players(normalized_name)` için arama indexi ekle.
+- [x] `clubs(source_club_id)` için unique index ekle.
+- [x] `player_club_seasons(player_id, season_id)` indexi ekle.
+- [x] `player_club_seasons(club_id, season_id, player_id)` indexi ekle.
+- [x] `player_club_seasons(position)` benzeri gereksiz indexleri gerçek sorgu ölçülmeden ekleme.
+- [x] `player_match_evidence(match_id, club_id)` indexi ekle.
+- [x] `club_seasons(season_id, is_champion)` indexi ekle.
 
 ## Faz 3 kabul kriterleri
 
-- [ ] Bütün tablolar migration ile sıfırdan kurulabiliyor.
-- [ ] Migration geri alma veya ileri düzeltme yöntemi belgeli.
-- [ ] Tabloların amacı şema belgesinde açıklanıyor.
-- [ ] Aynı kaynak kimliği iki farklı canonical kayda yanlışlıkla bağlanamıyor.
-- [ ] Temel sorgular için gerekli indeksler mevcut.
+- [x] Bütün tablolar migration ile sıfırdan kurulabiliyor.
+- [x] Migration geri alma veya ileri düzeltme yöntemi belgeli.
+- [x] Tabloların amacı şema belgesinde açıklanıyor.
+- [x] Aynı kaynak kimliği iki farklı canonical kayda yanlışlıkla bağlanamıyor.
+- [x] Temel sorgular için gerekli indeksler mevcut.
 
 ---
 

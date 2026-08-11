@@ -15,6 +15,7 @@ Bu depo 90+9'un web uygulamasını, veritabanı katmanını, kural motorunu ve v
 
 Ayrıntılı kararlar için [ürün kararları](docs/PRODUCT_DECISIONS.md), [veri kaynağı ve snapshot
 politikası](docs/DATA_SOURCES.md), [veri kalite taban çizgisi](docs/DATA_QUALITY_BASELINE.md),
+[veritabanı şeması ve migration politikası](docs/DATABASE_SCHEMA.md),
 uygulanabilir görevler için [geliştirme yol haritası](90PLUS9_YOL_HARITASI.md) belgelerine bakın.
 
 ## Teknik temel
@@ -86,6 +87,9 @@ pnpm db:check     # Uygulama ve test veritabanı bağlantılarını kontrol et
 pnpm db:status    # PostgreSQL durumunu göster
 pnpm db:down      # PostgreSQL'i durdur; verileri koru
 pnpm db:generate  # Prisma istemcisini üret
+pnpm db:migrate   # Bekleyen migration'ları güvenli biçimde uygula
+pnpm db:migrate:status # Migration durumunu göster
+pnpm db:test:schema # Test DB migration ve şema kabul kontrolü
 pnpm db:validate  # Prisma yapılandırmasını doğrula
 ```
 

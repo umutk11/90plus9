@@ -6,3 +6,373 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+enum DatasetVersionStatus {
+  PENDING    @map("pending")
+  VALIDATING @map("validating")
+  READY      @map("ready")
+  FAILED     @map("failed")
+  ACTIVE     @map("active")
+  ARCHIVED   @map("archived")
+
+  @@map("dataset_version_status")
+}
+
+enum ReviewStatus {
+  PENDING  @map("pending")
+  APPROVED @map("approved")
+  REJECTED @map("rejected")
+
+  @@map("review_status")
+}
+
+enum AliasType {
+  SOURCE          @map("source")
+  TRANSLITERATION @map("transliteration")
+  HISTORICAL      @map("historical")
+  SPONSOR         @map("sponsor")
+  NICKNAME        @map("nickname")
+  MANUAL          @map("manual")
+
+  @@map("alias_type")
+}
+
+enum PositionGroup {
+  GK  @map("gk")
+  DEF @map("def")
+  MID @map("mid")
+  FWD @map("fwd")
+
+  @@map("position_group")
+}
+
+enum PreferredFoot {
+  LEFT  @map("left")
+  RIGHT @map("right")
+  BOTH  @map("both")
+
+  @@map("preferred_foot")
+}
+
+enum MatchStatus {
+  PLAYED    @map("played")
+  AWARDED   @map("awarded")
+  CANCELLED @map("cancelled")
+  POSTPONED @map("postponed")
+  UNKNOWN   @map("unknown")
+
+  @@map("match_status")
+}
+
+enum EvidenceType {
+  APPEARANCE      @map("appearance")
+  STARTING_LINEUP @map("starting_lineup")
+  SUBSTITUTE      @map("substitute")
+
+  @@map("evidence_type")
+}
+
+enum EvidenceLevel {
+  APPEARANCE @map("appearance")
+  LINEUP     @map("lineup")
+
+  @@map("evidence_level")
+}
+
+enum DataQualitySeverity {
+  INFO     @map("info")
+  WARNING  @map("warning")
+  ERROR    @map("error")
+  CRITICAL @map("critical")
+
+  @@map("data_quality_severity")
+}
+
+enum DataQualityStatus {
+  OPEN      @map("open")
+  REVIEWING @map("reviewing")
+  RESOLVED  @map("resolved")
+  IGNORED   @map("ignored")
+
+  @@map("data_quality_status")
+}
+
+model DatasetVersion {
+  id                    Int                   @id @default(autoincrement())
+  sourceName            String                @map("source_name")
+  sourceVersion         Int                   @map("source_version")
+  distribution          String
+  sourceUpdatedAt       DateTime?             @map("source_updated_at") @db.Timestamptz(3)
+  downloadedAt          DateTime              @map("downloaded_at") @db.Timestamptz(3)
+  checksumSha256        String                @map("checksum_sha256") @db.VarChar(64)
+  importStartedAt       DateTime?             @map("import_started_at") @db.Timestamptz(3)
+  importFinishedAt      DateTime?             @map("import_finished_at") @db.Timestamptz(3)
+  status                DatasetVersionStatus  @default(PENDING)
+  playerCount           Int?                  @map("player_count")
+  clubCount             Int?                  @map("club_count")
+  matchCount            Int?                  @map("match_count")
+  playerClubSeasonCount Int?                  @map("player_club_season_count")
+  createdAt             DateTime              @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt             DateTime              @updatedAt @map("updated_at") @db.Timestamptz(3)
+  matches               Match[]
+  playerMatchEvidence   PlayerMatchEvidence[]
+  playerClubSeasons     PlayerClubSeason[]
+
+  @@unique([sourceName, sourceVersion])
+  @@index([status])
+  @@map("dataset_versions")
+}
+
+model Season {
+  id                Int                @id @default(autoincrement())
+  startYear         Int                @unique @map("start_year")
+  endYear           Int                @unique @map("end_year")
+  label             String             @unique @db.VarChar(7)
+  matches           Match[]
+  playerClubSeasons PlayerClubSeason[]
+  clubSeasons       ClubSeason[]
+
+  @@map("seasons")
+}
+
+model Country {
+  id                Int      @id @default(autoincrement())
+  sourceCountryId   Int?     @unique @map("source_country_id")
+  sourceCountryCode String?  @map("source_country_code")
+  sourceName        String   @unique @map("source_name")
+  displayName       String   @map("display_name")
+  isoAlpha2         String?  @unique @map("iso_alpha_2") @db.Char(2)
+  isoAlpha3         String?  @unique @map("iso_alpha_3") @db.Char(3)
+  confederation     String?
+  continent         String?
+  playersBornHere   Player[] @relation("PlayerCountryOfBirth")
+  citizenPlayers    Player[] @relation("PlayerCitizenship")
+
+  @@map("countries")
+}
+
+model Club {
+  id                  Int                   @id @default(autoincrement())
+  sourceClubId        Int                   @unique @map("source_club_id")
+  canonicalName       String                @map("canonical_name")
+  displayName         String                @map("display_name")
+  normalizedName      String                @map("normalized_name")
+  city                String?
+  isIstanbul          Boolean?              @map("is_istanbul")
+  isNonIstanbul       Boolean?              @map("is_non_istanbul")
+  isBigFour           Boolean               @default(false) @map("is_big_four")
+  isActiveInScope     Boolean               @default(true) @map("is_active_in_scope")
+  sourceUrl           String?               @map("source_url")
+  identityReviewed    Boolean               @default(false) @map("identity_reviewed")
+  identityReviewedAt  DateTime?             @map("identity_reviewed_at") @db.Timestamptz(3)
+  identityReviewedBy  String?               @map("identity_reviewed_by")
+  createdAt           DateTime              @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt           DateTime              @updatedAt @map("updated_at") @db.Timestamptz(3)
+  aliases             ClubAlias[]
+  homeMatches         Match[]               @relation("HomeClub")
+  awayMatches         Match[]               @relation("AwayClub")
+  playerMatchEvidence PlayerMatchEvidence[]
+  playerClubSeasons   PlayerClubSeason[]
+  clubSeasons         ClubSeason[]
+
+  @@index([normalizedName])
+  @@map("clubs")
+}
+
+model ClubAlias {
+  id              Int       @id @default(autoincrement())
+  clubId          Int       @map("club_id")
+  alias           String
+  normalizedAlias String    @map("normalized_alias")
+  aliasType       AliasType @map("alias_type")
+  validFrom       DateTime? @map("valid_from") @db.Date
+  validUntil      DateTime? @map("valid_until") @db.Date
+  isManual        Boolean   @default(false) @map("is_manual")
+  sourceNote      String?   @map("source_note")
+  club            Club      @relation(fields: [clubId], references: [id], onDelete: Cascade)
+
+  @@unique([clubId, normalizedAlias])
+  @@index([normalizedAlias])
+  @@map("club_aliases")
+}
+
+model Player {
+  id                   Int                   @id @default(autoincrement())
+  sourcePlayerId       Int                   @unique @map("source_player_id")
+  displayName          String                @map("display_name")
+  normalizedName       String                @map("normalized_name")
+  firstName            String?               @map("first_name")
+  lastName             String?               @map("last_name")
+  dateOfBirth          DateTime?             @map("date_of_birth") @db.Date
+  countryOfBirthId     Int?                  @map("country_of_birth_id")
+  citizenshipCountryId Int?                  @map("citizenship_country_id")
+  rawCountryOfBirth    String?               @map("raw_country_of_birth")
+  rawCitizenship       String?               @map("raw_citizenship")
+  positionGroup        PositionGroup?        @map("position_group")
+  rawPosition          String?               @map("raw_position")
+  rawSubPosition       String?               @map("raw_sub_position")
+  preferredFoot        PreferredFoot?        @map("preferred_foot")
+  heightCm             Int?                  @map("height_cm")
+  sourceUrl            String?               @map("source_url")
+  isActiveForGame      Boolean               @default(true) @map("is_active_for_game")
+  reviewStatus         ReviewStatus          @default(APPROVED) @map("review_status")
+  createdAt            DateTime              @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt            DateTime              @updatedAt @map("updated_at") @db.Timestamptz(3)
+  countryOfBirth       Country?              @relation("PlayerCountryOfBirth", fields: [countryOfBirthId], references: [id], onDelete: SetNull)
+  citizenshipCountry   Country?              @relation("PlayerCitizenship", fields: [citizenshipCountryId], references: [id], onDelete: SetNull)
+  aliases              PlayerAlias[]
+  playerMatchEvidence  PlayerMatchEvidence[]
+  playerClubSeasons    PlayerClubSeason[]
+
+  @@index([normalizedName])
+  @@index([citizenshipCountryId])
+  @@index([positionGroup])
+  @@map("players")
+}
+
+model PlayerAlias {
+  id              Int       @id @default(autoincrement())
+  playerId        Int       @map("player_id")
+  alias           String
+  normalizedAlias String    @map("normalized_alias")
+  aliasType       AliasType @map("alias_type")
+  isManual        Boolean   @default(false) @map("is_manual")
+  sourceNote      String?   @map("source_note")
+  player          Player    @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@unique([playerId, normalizedAlias])
+  @@index([normalizedAlias])
+  @@map("player_aliases")
+}
+
+model Match {
+  id                      Int                   @id @default(autoincrement())
+  sourceGameId            Int                   @map("source_game_id")
+  seasonId                Int                   @map("season_id")
+  datasetVersionId        Int                   @map("dataset_version_id")
+  matchDate               DateTime              @map("match_date") @db.Date
+  homeClubId              Int                   @map("home_club_id")
+  awayClubId              Int                   @map("away_club_id")
+  homeScore               Int?                  @map("home_score")
+  awayScore               Int?                  @map("away_score")
+  status                  MatchStatus           @default(UNKNOWN)
+  statusSource            String?               @map("status_source")
+  isPlayerEvidenceAllowed Boolean               @default(false) @map("is_player_evidence_allowed")
+  createdAt               DateTime              @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt               DateTime              @updatedAt @map("updated_at") @db.Timestamptz(3)
+  season                  Season                @relation(fields: [seasonId], references: [id], onDelete: Restrict)
+  datasetVersion          DatasetVersion        @relation(fields: [datasetVersionId], references: [id], onDelete: Restrict)
+  homeClub                Club                  @relation("HomeClub", fields: [homeClubId], references: [id], onDelete: Restrict)
+  awayClub                Club                  @relation("AwayClub", fields: [awayClubId], references: [id], onDelete: Restrict)
+  playerMatchEvidence     PlayerMatchEvidence[]
+
+  @@unique([datasetVersionId, sourceGameId])
+  @@index([seasonId, matchDate])
+  @@index([homeClubId, seasonId])
+  @@index([awayClubId, seasonId])
+  @@index([datasetVersionId])
+  @@map("matches")
+}
+
+model PlayerMatchEvidence {
+  id               Int            @id @default(autoincrement())
+  playerId         Int            @map("player_id")
+  matchId          Int            @map("match_id")
+  clubId           Int            @map("club_id")
+  datasetVersionId Int            @map("dataset_version_id")
+  evidenceType     EvidenceType   @map("evidence_type")
+  minutesPlayed    Int?           @map("minutes_played")
+  player           Player         @relation(fields: [playerId], references: [id], onDelete: Restrict)
+  match            Match          @relation(fields: [matchId], references: [id], onDelete: Restrict)
+  club             Club           @relation(fields: [clubId], references: [id], onDelete: Restrict)
+  datasetVersion   DatasetVersion @relation(fields: [datasetVersionId], references: [id], onDelete: Restrict)
+
+  @@unique([playerId, matchId, evidenceType])
+  @@index([matchId, clubId])
+  @@index([playerId, clubId])
+  @@index([datasetVersionId])
+  @@map("player_match_evidence")
+}
+
+model PlayerClubSeason {
+  id                Int            @id @default(autoincrement())
+  playerId          Int            @map("player_id")
+  clubId            Int            @map("club_id")
+  seasonId          Int            @map("season_id")
+  datasetVersionId  Int            @map("dataset_version_id")
+  hasAppearance     Boolean        @default(false) @map("has_appearance")
+  hasStart          Boolean        @default(false) @map("has_start")
+  hasBench          Boolean        @default(false) @map("has_bench")
+  firstSeenDate     DateTime       @map("first_seen_date") @db.Date
+  lastSeenDate      DateTime       @map("last_seen_date") @db.Date
+  appearanceCount   Int            @default(0) @map("appearance_count")
+  lineupCount       Int            @default(0) @map("lineup_count")
+  evidenceCount     Int            @default(0) @map("evidence_count")
+  evidenceLevel     EvidenceLevel  @map("evidence_level")
+  isAcceptedForGame Boolean        @default(true) @map("is_accepted_for_game")
+  reviewStatus      ReviewStatus   @default(APPROVED) @map("review_status")
+  player            Player         @relation(fields: [playerId], references: [id], onDelete: Restrict)
+  club              Club           @relation(fields: [clubId], references: [id], onDelete: Restrict)
+  season            Season         @relation(fields: [seasonId], references: [id], onDelete: Restrict)
+  datasetVersion    DatasetVersion @relation(fields: [datasetVersionId], references: [id], onDelete: Restrict)
+
+  @@unique([datasetVersionId, playerId, clubId, seasonId])
+  @@index([playerId, seasonId])
+  @@index([clubId, seasonId, playerId])
+  @@index([datasetVersionId])
+  @@map("player_club_seasons")
+}
+
+model ClubSeason {
+  id                     Int       @id @default(autoincrement())
+  clubId                 Int       @map("club_id")
+  seasonId               Int       @map("season_id")
+  participatedInSuperLig Boolean   @default(true) @map("participated_in_super_lig")
+  isChampion             Boolean   @default(false) @map("is_champion")
+  championshipSourceUrl  String?   @map("championship_source_url")
+  championshipVerifiedAt DateTime? @map("championship_verified_at") @db.Timestamptz(3)
+  championshipVerifiedBy String?   @map("championship_verified_by")
+  club                   Club      @relation(fields: [clubId], references: [id], onDelete: Restrict)
+  season                 Season    @relation(fields: [seasonId], references: [id], onDelete: Restrict)
+
+  @@unique([clubId, seasonId])
+  @@index([seasonId, isChampion])
+  @@map("club_seasons")
+}
+
+model DataOverride {
+  id             Int       @id @default(autoincrement())
+  targetTable    String    @map("target_table")
+  targetRecordId String    @map("target_record_id")
+  targetField    String?   @map("target_field")
+  previousValue  Json?     @map("previous_value")
+  newValue       Json      @map("new_value")
+  reason         String
+  isCritical     Boolean   @default(false) @map("is_critical")
+  sourceUrl      String?   @map("source_url")
+  changedBy      String    @map("changed_by")
+  changedAt      DateTime  @default(now()) @map("changed_at") @db.Timestamptz(3)
+  revertedAt     DateTime? @map("reverted_at") @db.Timestamptz(3)
+  revertedBy     String?   @map("reverted_by")
+  revertReason   String?   @map("revert_reason")
+
+  @@index([targetTable, targetRecordId])
+  @@map("data_overrides")
+}
+
+model DataQualityIssue {
+  id             Int                 @id @default(autoincrement())
+  issueType      String              @map("issue_type")
+  severity       DataQualitySeverity
+  relatedRecords Json?               @map("related_records")
+  description    String
+  status         DataQualityStatus   @default(OPEN)
+  resolutionNote String?             @map("resolution_note")
+  createdAt      DateTime            @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt      DateTime            @updatedAt @map("updated_at") @db.Timestamptz(3)
+  resolvedAt     DateTime?           @map("resolved_at") @db.Timestamptz(3)
+
+  @@index([status, severity])
+  @@index([issueType])
+  @@map("data_quality_issues")
+}
