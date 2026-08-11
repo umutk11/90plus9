@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": 677,
+  "reviewStatus": "pending",
+  "mapExactSourceNames": true,
+  "reviewedAt": null,
+  "reviewedBy": null,
+  "overrides": [
+    {
+      "sourceName": "Angola",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Angola",
+      "proposedDisplayName": "Angola",
+      "isoAlpha2": "AO",
+      "isoAlpha3": "AGO",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Aruba",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Aruba",
+      "proposedDisplayName": "Aruba",
+      "isoAlpha2": "AW",
+      "isoAlpha3": "ABW",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Benin",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Benin",
+      "proposedDisplayName": "Benin",
+      "isoAlpha2": "BJ",
+      "isoAlpha3": "BEN",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Burkina Faso",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Burkina Faso",
+      "proposedDisplayName": "Burkina Faso",
+      "isoAlpha2": "BF",
+      "isoAlpha3": "BFA",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Burundi",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Burundi",
+      "proposedDisplayName": "Burundi",
+      "isoAlpha2": "BI",
+      "isoAlpha3": "BDI",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "CSSR",
+      "resolution": "unresolved_historical",
+      "targetCanonicalName": null,
+      "proposedDisplayName": null,
+      "isoAlpha2": null,
+      "isoAlpha3": null,
+      "reviewStatus": "pending",
+      "reviewNote": "Çekoslovakya doğum kaydı tek başına Çekya/Slovakya ayrımı için yeterli değil."
+    },
+    {
+      "sourceName": "Cameroon",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Cameroon",
+      "proposedDisplayName": "Kamerun",
+      "isoAlpha2": "CM",
+      "isoAlpha3": "CMR",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Cape Verde",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Cape Verde",
+      "proposedDisplayName": "Cabo Verde",
+      "isoAlpha2": "CV",
+      "isoAlpha3": "CPV",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Central African Republic",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Central African Republic",
+      "proposedDisplayName": "Orta Afrika Cumhuriyeti",
+      "isoAlpha2": "CF",
+      "isoAlpha3": "CAF",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Chad",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Chad",
+      "proposedDisplayName": "Çad",
+      "isoAlpha2": "TD",
+      "isoAlpha3": "TCD",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Congo",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Congo",
+      "proposedDisplayName": "Kongo Cumhuriyeti",
+      "isoAlpha2": "CG",
+      "isoAlpha3": "COG",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Cote d'Ivoire",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Cote d'Ivoire",
+      "proposedDisplayName": "Fildişi Sahili",
+      "isoAlpha2": "CI",
+      "isoAlpha3": "CIV",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Curacao",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Curacao",
+      "proposedDisplayName": "Curaçao",
+      "isoAlpha2": "CW",
+      "isoAlpha3": "CUW",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "DR Congo",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "DR Congo",
+      "proposedDisplayName": "Kongo Demokratik Cumhuriyeti",
+      "isoAlpha2": "CD",
+      "isoAlpha3": "COD",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "East Germany (GDR)",
+      "resolution": "historical_alias",
+      "targetCanonicalName": "Germany",
+      "proposedDisplayName": "Almanya",
+      "isoAlpha2": "DE",
+      "isoAlpha3": "DEU",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Equatorial Guinea",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Equatorial Guinea",
+      "proposedDisplayName": "Ekvator Ginesi",
+      "isoAlpha2": "GQ",
+      "isoAlpha3": "GNQ",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "French Guiana",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "French Guiana",
+      "proposedDisplayName": "Fransız Guyanası",
+      "isoAlpha2": "GF",
+      "isoAlpha3": "GUF",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Gabon",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Gabon",
+      "proposedDisplayName": "Gabon",
+      "isoAlpha2": "GA",
+      "isoAlpha3": "GAB",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Guadeloupe",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Guadeloupe",
+      "proposedDisplayName": "Guadeloupe",
+      "isoAlpha2": "GP",
+      "isoAlpha3": "GLP",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Guinea",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Guinea",
+      "proposedDisplayName": "Gine",
+      "isoAlpha2": "GN",
+      "isoAlpha3": "GIN",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Guinea-Bissau",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Guinea-Bissau",
+      "proposedDisplayName": "Gine-Bissau",
+      "isoAlpha2": "GW",
+      "isoAlpha3": "GNB",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Haiti",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Haiti",
+      "proposedDisplayName": "Haiti",
+      "isoAlpha2": "HT",
+      "isoAlpha3": "HTI",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Jugoslawien (SFR)",
+      "resolution": "unresolved_historical",
+      "targetCanonicalName": null,
+      "proposedDisplayName": null,
+      "isoAlpha2": null,
+      "isoAlpha3": null,
+      "reviewStatus": "pending",
+      "reviewNote": "Yugoslavya doğum kaydı oyuncu bazında halef ülkeye bağlanmalı."
+    },
+    {
+      "sourceName": "Kenya",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Kenya",
+      "proposedDisplayName": "Kenya",
+      "isoAlpha2": "KE",
+      "isoAlpha3": "KEN",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Liberia",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Liberia",
+      "proposedDisplayName": "Liberya",
+      "isoAlpha2": "LR",
+      "isoAlpha3": "LBR",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Liechtenstein",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Liechtenstein",
+      "proposedDisplayName": "Lihtenştayn",
+      "isoAlpha2": "LI",
+      "isoAlpha3": "LIE",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Macedonia",
+      "resolution": "alternative_alias",
+      "targetCanonicalName": "North Macedonia",
+      "proposedDisplayName": "Kuzey Makedonya",
+      "isoAlpha2": "MK",
+      "isoAlpha3": "MKD",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Mali",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Mali",
+      "proposedDisplayName": "Mali",
+      "isoAlpha2": "ML",
+      "isoAlpha3": "MLI",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Martinique",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Martinique",
+      "proposedDisplayName": "Martinik",
+      "isoAlpha2": "MQ",
+      "isoAlpha3": "MTQ",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Mauritania",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Mauritania",
+      "proposedDisplayName": "Moritanya",
+      "isoAlpha2": "MR",
+      "isoAlpha3": "MRT",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "People's republic of the Congo",
+      "resolution": "historical_alias",
+      "targetCanonicalName": "Congo",
+      "proposedDisplayName": "Kongo Cumhuriyeti",
+      "isoAlpha2": "CG",
+      "isoAlpha3": "COG",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Rwanda",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Rwanda",
+      "proposedDisplayName": "Ruanda",
+      "isoAlpha2": "RW",
+      "isoAlpha3": "RWA",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Sao Tome and Principe",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Sao Tome and Principe",
+      "proposedDisplayName": "São Tomé ve Príncipe",
+      "isoAlpha2": "ST",
+      "isoAlpha3": "STP",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Sierra Leone",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Sierra Leone",
+      "proposedDisplayName": "Sierra Leone",
+      "isoAlpha2": "SL",
+      "isoAlpha3": "SLE",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Somalia",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Somalia",
+      "proposedDisplayName": "Somali",
+      "isoAlpha2": "SO",
+      "isoAlpha3": "SOM",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Suriname",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Suriname",
+      "proposedDisplayName": "Surinam",
+      "isoAlpha2": "SR",
+      "isoAlpha3": "SUR",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Syria",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Syria",
+      "proposedDisplayName": "Suriye",
+      "isoAlpha2": "SY",
+      "isoAlpha3": "SYR",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Tanzania",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Tanzania",
+      "proposedDisplayName": "Tanzanya",
+      "isoAlpha2": "TZ",
+      "isoAlpha3": "TZA",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "The Gambia",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "The Gambia",
+      "proposedDisplayName": "Gambiya",
+      "isoAlpha2": "GM",
+      "isoAlpha3": "GMB",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Togo",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Togo",
+      "proposedDisplayName": "Togo",
+      "isoAlpha2": "TG",
+      "isoAlpha3": "TGO",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Trinidad and Tobago",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Trinidad and Tobago",
+      "proposedDisplayName": "Trinidad ve Tobago",
+      "isoAlpha2": "TT",
+      "isoAlpha3": "TTO",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Turkey",
+      "resolution": "alternative_alias",
+      "targetCanonicalName": "Türkiye",
+      "proposedDisplayName": "Türkiye",
+      "isoAlpha2": "TR",
+      "isoAlpha3": "TUR",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "UdSSR",
+      "resolution": "unresolved_historical",
+      "targetCanonicalName": null,
+      "proposedDisplayName": null,
+      "isoAlpha2": null,
+      "isoAlpha3": null,
+      "reviewStatus": "pending",
+      "reviewNote": "SSCB doğum kaydı oyuncu bazında halef ülkeye bağlanmalı."
+    },
+    {
+      "sourceName": "Yugoslavia (Republic)",
+      "resolution": "unresolved_historical",
+      "targetCanonicalName": null,
+      "proposedDisplayName": null,
+      "isoAlpha2": null,
+      "isoAlpha3": null,
+      "reviewStatus": "pending",
+      "reviewNote": "Yugoslavya doğum kaydı oyuncu bazında halef ülkeye bağlanmalı."
+    },
+    {
+      "sourceName": "Zaire",
+      "resolution": "historical_alias",
+      "targetCanonicalName": "DR Congo",
+      "proposedDisplayName": "Kongo Demokratik Cumhuriyeti",
+      "isoAlpha2": "CD",
+      "isoAlpha3": "COD",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Zambia",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Zambia",
+      "proposedDisplayName": "Zambiya",
+      "isoAlpha2": "ZM",
+      "isoAlpha3": "ZMB",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceName": "Zimbabwe",
+      "resolution": "additional_canonical",
+      "targetCanonicalName": "Zimbabwe",
+      "proposedDisplayName": "Zimbabve",
+      "isoAlpha2": "ZW",
+      "isoAlpha3": "ZWE",
+      "reviewStatus": "pending"
+    }
+  ]
+}

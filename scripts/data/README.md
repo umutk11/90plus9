@@ -98,3 +98,23 @@ Komut beklenen regresyon sayılarını, source ID tekrarlarını, foreign-key ad
 tarih eşleşmelerini, enum dönüşümlerini, ilişki toplamlarını ve dışlanan kayıtların yokluğunu
 kontrol eder. Tek bir hata bile bulunursa geçerli staging çıktısı yayımlanmaz. Sonuç özeti aynı
 klasördeki `manifest.json` dosyasına yazılır.
+
+## Kulüp ve ülke referans taslakları
+
+Staging kapsamındaki 43 kulübün kaynak kimliğiyle önerilen Türkçe adı/şehri ve oyuncularda geçen
+ülke metinlerinin eşleştirme kapsamı şu komutla doğrulanır:
+
+```bash
+pnpm data:references -- --version 677
+```
+
+Kulüp adları `data/reference/club-identities`, ülke override kayıtları
+`data/reference/country-mappings` altında sürümlenir. Kaynak ülke adıyla birebir eşleşen değerler
+otomatik kapsanır; kaynak ülke tablosunda bulunmayan modern ülkeler ve alias'lar açık override
+kaydına ihtiyaç duyar. Çekoslovakya, SSCB ve Yugoslavya gibi tek başına halef ülkeyi belirlemeyen
+doğum değerleri oyuncu bazlı incelemeye bırakılır.
+
+Komut eksik/fazla kaynak kimliği, tekrar eden canonical kulüp adı, şehir/İstanbul bayrağı,
+`dört büyük` bayrakları, ülke override kapsamı ve ISO kod biçimini kontrol eder. Yapısal kontrol
+başarılı olsa bile `pending` kayıtlar canonical importa hazır sayılmaz. İnceleme tablosu
+`reports/data-quality/dcaribou-kaggle-v<version>-reference-mappings.md` altında üretilir.

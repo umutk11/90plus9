@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": 677,
+  "reviewStatus": "pending",
+  "reviewedAt": null,
+  "reviewedBy": null,
+  "clubs": [
+    {
+      "sourceClubId": 3840,
+      "sourceName": "Adana Demirspor",
+      "proposedName": "Adana Demirspor",
+      "city": "Adana",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 6,
+      "sourceName": "Adanaspor",
+      "proposedName": "Adanaspor",
+      "city": "Adana",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 19771,
+      "sourceName": "Akhisarspor",
+      "proposedName": "Akhisarspor",
+      "city": "Manisa",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 11282,
+      "sourceName": "Alanyaspor",
+      "proposedName": "Alanyaspor",
+      "city": "Antalya",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 2375,
+      "sourceName": "Altay SK",
+      "proposedName": "Altay",
+      "city": "İzmir",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 2944,
+      "sourceName": "Ankaraspor",
+      "proposedName": "Ankaraspor",
+      "city": "Ankara",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending",
+      "reviewNote": "Osmanlıspor tarihsel alias olarak ayrıca değerlendirilecek."
+    },
+    {
+      "sourceClubId": 589,
+      "sourceName": "Antalyaspor",
+      "proposedName": "Antalyaspor",
+      "city": "Antalya",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 20698,
+      "sourceName": "Balikesirspor",
+      "proposedName": "Balıkesirspor",
+      "city": "Balıkesir",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 6890,
+      "sourceName": "Basaksehir FK",
+      "proposedName": "Başakşehir FK",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": false,
+      "reviewStatus": "pending",
+      "reviewNote": "İstanbul Başakşehir seçeneğiyle birlikte gözden geçirilecek."
+    },
+    {
+      "sourceClubId": 114,
+      "sourceName": "Beşiktaş Jimnastik Kulübü",
+      "proposedName": "Beşiktaş",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 44006,
+      "sourceName": "Bodrum FK",
+      "proposedName": "Bodrum FK",
+      "city": "Muğla",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 20,
+      "sourceName": "Bursaspor",
+      "proposedName": "Bursaspor",
+      "city": "Bursa",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 126,
+      "sourceName": "Caykur Rizespor",
+      "proposedName": "Çaykur Rizespor",
+      "city": "Rize",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending",
+      "reviewNote": "Çaykur ibaresinin kalıcı kulüp adı olarak kullanımı onaylanacak."
+    },
+    {
+      "sourceClubId": 833,
+      "sourceName": "Denizlispor",
+      "proposedName": "Denizlispor",
+      "city": "Denizli",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 2292,
+      "sourceName": "Elazigspor",
+      "proposedName": "Elazığspor",
+      "city": "Elazığ",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 39722,
+      "sourceName": "Erzurumspor FK",
+      "proposedName": "Erzurumspor FK",
+      "city": "Erzurum",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 825,
+      "sourceName": "Eskisehirspor",
+      "proposedName": "Eskişehirspor",
+      "city": "Eskişehir",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 7160,
+      "sourceName": "Eyüpspor",
+      "proposedName": "Eyüpspor",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 6646,
+      "sourceName": "Fatih Karagümrük",
+      "proposedName": "Fatih Karagümrük",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 36,
+      "sourceName": "Fenerbahce",
+      "proposedName": "Fenerbahçe",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 141,
+      "sourceName": "Galatasaray",
+      "proposedName": "Galatasaray",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 2832,
+      "sourceName": "Gaziantep FK",
+      "proposedName": "Gaziantep FK",
+      "city": "Gaziantep",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 524,
+      "sourceName": "Gaziantepspor (- 2020)",
+      "proposedName": "Gaziantepspor",
+      "city": "Gaziantep",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 820,
+      "sourceName": "Gençlerbirliği Spor Kulübü",
+      "proposedName": "Gençlerbirliği",
+      "city": "Ankara",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 11688,
+      "sourceName": "Giresunspor",
+      "proposedName": "Giresunspor",
+      "city": "Giresun",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 1467,
+      "sourceName": "Göztepe",
+      "proposedName": "Göztepe",
+      "city": "İzmir",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 7775,
+      "sourceName": "Hatayspor",
+      "proposedName": "Hatayspor",
+      "city": "Hatay",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 924,
+      "sourceName": "Istanbulspor",
+      "proposedName": "İstanbulspor",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 1506,
+      "sourceName": "Kardemir Karabükspor",
+      "proposedName": "Kardemir Karabükspor",
+      "city": "Karabük",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending",
+      "reviewNote": "Kardemir ibaresinin kalıcı kulüp adı olarak kullanımı onaylanacak."
+    },
+    {
+      "sourceClubId": 10484,
+      "sourceName": "Kasimpasa",
+      "proposedName": "Kasımpaşa",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 6894,
+      "sourceName": "Kayseri Erciyesspor",
+      "proposedName": "Kayseri Erciyesspor",
+      "city": "Kayseri",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 3205,
+      "sourceName": "Kayserispor",
+      "proposedName": "Kayserispor",
+      "city": "Kayseri",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 120,
+      "sourceName": "Kocaelispor",
+      "proposedName": "Kocaelispor",
+      "city": "Kocaeli",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 2293,
+      "sourceName": "Konyaspor",
+      "proposedName": "Konyaspor",
+      "city": "Konya",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 868,
+      "sourceName": "MKE Ankaragücü",
+      "proposedName": "MKE Ankaragücü",
+      "city": "Ankara",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending",
+      "reviewNote": "MKE ibaresinin kalıcı kulüp adı olarak kullanımı onaylanacak."
+    },
+    {
+      "sourceClubId": 3216,
+      "sourceName": "Mersin Talimyurdu SK",
+      "proposedName": "Mersin İdman Yurdu",
+      "city": "Mersin",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending",
+      "reviewNote": "Kaynak adı ile 2012–2016 dönemindeki tarihsel kulüp adı birlikte doğrulanacak."
+    },
+    {
+      "sourceClubId": 2323,
+      "sourceName": "Orduspor",
+      "proposedName": "Orduspor",
+      "city": "Ordu",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 3209,
+      "sourceName": "Pendikspor",
+      "proposedName": "Pendikspor",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 152,
+      "sourceName": "Samsunspor",
+      "proposedName": "Samsunspor",
+      "city": "Samsun",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 2381,
+      "sourceName": "Sivasspor",
+      "proposedName": "Sivasspor",
+      "city": "Sivas",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 449,
+      "sourceName": "Trabzonspor",
+      "proposedName": "Trabzonspor",
+      "city": "Trabzon",
+      "isIstanbul": false,
+      "isBigFour": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 19789,
+      "sourceName": "Yeni Malatyaspor",
+      "proposedName": "Yeni Malatyaspor",
+      "city": "Malatya",
+      "isIstanbul": false,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceClubId": 24245,
+      "sourceName": "Ümraniyespor",
+      "proposedName": "Ümraniyespor",
+      "city": "İstanbul",
+      "isIstanbul": true,
+      "isBigFour": false,
+      "reviewStatus": "pending"
+    }
+  ]
+}

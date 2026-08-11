@@ -81,6 +81,7 @@ pnpm format       # Biçim kontrolü
 pnpm format:write # Dosyaları biçimlendir
 pnpm data:download -- --version 677 # Sabitlenmiş ham veri snapshot'ını indir
 pnpm data:profile -- --version 677 # Sezon bazlı veri doluluk raporu
+pnpm data:references -- --version 677 # Kulüp ve ülke referans taslaklarını doğrula
 pnpm data:stage -- --version 677 # Doğrulanmış ETL staging veritabanını üret
 pnpm data:validate -- --version 677 # CSV dosya, sütun, tip ve encoding kontrolü
 pnpm db:up        # Local PostgreSQL'i başlat ve bağlantıları doğrula

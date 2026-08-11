@@ -631,7 +631,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] Sadece bu kulüpleri `clubs.csv` içinden seç.
 - [x] Kaynak kulüp adını sakla.
 - [ ] Canonical görünen adı referans dosyasından uygula.
-- [ ] Türkçe karakter düzeltmelerini manuel referans dosyasında tut.
+- [x] Türkçe karakter düzeltmelerini manuel referans dosyasında tut.
 - [ ] Sponsor adını canonical ad yapma.
 - [ ] Kulüp alias’larını seed et.
 - [x] 43 kulübün tamamının kaynak profili olduğunu doğrula.
@@ -645,7 +645,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] Büyük/küçük harf farklarını normalize et.
 - [ ] Noktalama farklarını normalize et.
 - [ ] Tarihsel veya alternatif ülke adları için alias tablosu oluştur.
-- [ ] Eşleşmeyen vatandaşlıkları `unknown` yapmadan önce QA listesine çıkar.
+- [x] Eşleşmeyen vatandaşlıkları `unknown` yapmadan önce QA listesine çıkar.
 - [ ] Uyruk bilinmiyorsa null bırak.
 - [x] Doğum ülkesini uyruk yerine otomatik kullanma.
 - [ ] Kıta/konfederasyon bilgisini country ilişkisinden getir.

@@ -8,3 +8,8 @@
 `exclusions` klasöründe her snapshot sürümü için uygulama importuna alınmayacak kaynak maç ve
 oyuncu kimlikleri tutulur. Bu listeler ham snapshot'ı değiştirmez; staging ve canonical veri
 üretilmeden önce uygulanır.
+
+`club-identities` klasörü kaynak kulüp kimliğini önerilen canonical ada, şehre ve oyun
+bayraklarına bağlayan inceleme kayıtlarını içerir. `country-mappings` klasörü kaynak ülke adlarıyla
+oyuncu vatandaşlık/doğum metinlerinin ek canonical ülke, alias veya çözümsüz tarihsel değer olarak
+sınıflandırılmasını tutar. `pending` kayıtlar kullanıcı onayı olmadan canonical importa alınmaz.
