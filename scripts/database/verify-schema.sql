@@ -11,8 +11,8 @@ BEGIN
   WHERE schemaname = 'public'
     AND tablename <> '_prisma_migrations';
 
-  IF application_table_count <> 13 THEN
-    RAISE EXCEPTION 'Beklenen 13 uygulama tablosu yerine % tablo bulundu.', application_table_count;
+  IF application_table_count <> 14 THEN
+    RAISE EXCEPTION 'Beklenen 14 uygulama tablosu yerine % tablo bulundu.', application_table_count;
   END IF;
 
   SELECT COUNT(*)

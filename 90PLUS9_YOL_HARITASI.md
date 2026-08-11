@@ -630,25 +630,25 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] TR1 maçlarından kullanılan kaynak kulüp kimliklerini çıkar.
 - [x] Sadece bu kulüpleri `clubs.csv` içinden seç.
 - [x] Kaynak kulüp adını sakla.
-- [ ] Canonical görünen adı referans dosyasından uygula.
+- [x] Canonical görünen adı referans dosyasından uygula.
 - [x] Türkçe karakter düzeltmelerini manuel referans dosyasında tut.
-- [ ] Sponsor adını canonical ad yapma.
-- [ ] Kulüp alias’larını seed et.
+- [x] Sponsor adını canonical ad yapma.
+- [x] Kulüp alias’larını seed et.
 - [x] 43 kulübün tamamının kaynak profili olduğunu doğrula.
 - [x] Eşleşmeyen kulüp varsa importu durdur.
-- [ ] Birden fazla kaynak kulüp yanlışlıkla aynı canonical kulübe gidiyorsa manuel inceleme aç.
+- [x] Birden fazla kaynak kulüp yanlışlıkla aynı canonical kulübe gidiyorsa manuel inceleme aç.
 
 ## 4.5. Ülkeleri normalleştirme
 
 - [x] `countries.csv` ülke adlarını staging alanına al.
-- [ ] Kaynak vatandaşlık metniyle ülke tablosunu eşleştir.
+- [x] Kaynak vatandaşlık metniyle ülke tablosunu eşleştir.
 - [ ] Büyük/küçük harf farklarını normalize et.
 - [ ] Noktalama farklarını normalize et.
-- [ ] Tarihsel veya alternatif ülke adları için alias tablosu oluştur.
+- [x] Tarihsel veya alternatif ülke adları için alias tablosu oluştur.
 - [x] Eşleşmeyen vatandaşlıkları `unknown` yapmadan önce QA listesine çıkar.
-- [ ] Uyruk bilinmiyorsa null bırak.
+- [x] Uyruk bilinmiyorsa null bırak.
 - [x] Doğum ülkesini uyruk yerine otomatik kullanma.
-- [ ] Kıta/konfederasyon bilgisini country ilişkisinden getir.
+- [x] Kıta/konfederasyon bilgisini country ilişkisinden getir.
 
 ## 4.6. Oyuncuları içeri aktarma
 
@@ -661,8 +661,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] Ad ve soyadı aktar.
 - [x] Doğum tarihini parse et.
 - [x] Geçersiz doğum tarihini QA sorunu yap.
-- [ ] Uyruk eşleşmesini uygula.
-- [ ] Doğum ülkesi eşleşmesini uygula.
+- [x] Uyruk eşleşmesini uygula.
+- [x] Doğum ülkesi eşleşmesini uygula.
 - [x] Genel mevkiyi aktar.
 - [x] Ayrıntılı mevkiyi aktar.
 - [x] Ayak bilgisini aktar.
@@ -715,8 +715,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 - [x] Appearance satırlarını TR1 game ID’leriyle sınırla.
 - [x] Her appearance satırını doğru sezona bağla.
-- [ ] `player_club_id` değerini canonical kulübe bağla.
-- [ ] Oyuncuyu canonical player kaydına bağla.
+- [x] `player_club_id` değerini canonical kulübe bağla.
+- [x] Oyuncuyu canonical player kaydına bağla.
 - [x] Maçın ev sahibi veya deplasman kulüplerinden biriyle player club’ın uyuştuğunu doğrula.
 - [x] Uyuşmayan satırı QA sorunu yap.
 - [x] `evidence_type = appearance` kaydı oluştur.
@@ -729,8 +729,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] `starting_lineup` değerini tanı.
 - [x] `substitutes` değerini tanı.
 - [x] Bilinmeyen lineup type gelirse QA hatası oluştur.
-- [ ] Player ID’yi canonical oyuncuya bağla.
-- [ ] Club ID’yi canonical kulübe bağla.
+- [x] Player ID’yi canonical oyuncuya bağla.
+- [x] Club ID’yi canonical kulübe bağla.
 - [x] Maçın ev/deplasman kulübüyle lineup club’ın uyuştuğunu doğrula.
 - [x] `starting_lineup` için `has_start` kanıtı üret.
 - [x] `substitutes` için `has_bench` kanıtı üret.
@@ -770,26 +770,26 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 4.14. Staging’den canonical tablolara yükleme
 
-- [ ] Importu transaction veya sürümlü staging yaklaşımıyla çalıştır.
+- [x] Importu transaction veya sürümlü staging yaklaşımıyla çalıştır.
 - [x] Önce staging tablolarını doldur.
 - [x] Staging kalite testlerini çalıştır.
-- [ ] Test başarısızsa canonical tabloları değiştirme.
-- [ ] Test başarılıysa yeni dataset version’a bağlı canonical kayıtları yaz.
-- [ ] Aynı kaynak sürümün iki kez mükerrer yazılmasını engelle.
-- [ ] Import özetini rapor dosyasına yaz.
-- [ ] Başarılı importu `ready` durumuna getir.
-- [ ] Manuel onay olmadan yeni sürümü `active` yapma.
+- [x] Test başarısızsa canonical tabloları değiştirme.
+- [x] Test başarılıysa yeni dataset version’a bağlı canonical kayıtları yaz.
+- [x] Aynı kaynak sürümün iki kez mükerrer yazılmasını engelle.
+- [x] Import özetini rapor dosyasına yaz.
+- [x] Başarılı importu `ready` durumuna getir.
+- [x] Manuel onay olmadan yeni sürümü `active` yapma.
 
 ## Faz 4 kabul kriterleri
 
-- [ ] Tek komut sabitlenmiş snapshot’tan canonical veriyi üretiyor.
-- [ ] İşlem tekrar çalıştırıldığında mükerrer kayıt oluşturmuyor.
-- [ ] 14 sezon doğru etiketlerle mevcut.
-- [ ] 43 kulüp eşleşmiş durumda.
-- [ ] Referans sayılar açıklanabilir fark sınırları içinde.
-- [ ] 2012/13 kaynak sınırı açıkça raporlanıyor.
-- [ ] Hükmen maçlardan oyuncu ilişkisi oluşmuyor.
-- [ ] Transfer-only kayıtlar oyuna girmiyor.
+- [x] Tek komut sabitlenmiş snapshot’tan canonical veriyi üretiyor.
+- [x] İşlem tekrar çalıştırıldığında mükerrer kayıt oluşturmuyor.
+- [x] 14 sezon doğru etiketlerle mevcut.
+- [x] 43 kulüp eşleşmiş durumda.
+- [x] Referans sayılar açıklanabilir fark sınırları içinde.
+- [x] 2012/13 kaynak sınırı açıkça raporlanıyor.
+- [x] Hükmen maçlardan oyuncu ilişkisi oluşmuyor.
+- [x] Transfer-only kayıtlar oyuna girmiyor.
 
 ---
 
@@ -797,29 +797,29 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 5.1. Kulüp canonical isimleri
 
-- [ ] 43 kulübün kaynak ID listesini dışa aktar.
-- [ ] Her kaynak kulüp için canonical Türkçe ad belirle.
-- [ ] `Fenerbahce` değerini `Fenerbahçe` olarak göster.
-- [ ] `Caykur Rizespor` değerini `Çaykur Rizespor` olarak göster.
-- [ ] `Basaksehir FK` değerini uygun görünen ada dönüştür.
-- [ ] `Eskisehirspor` değerini `Eskişehirspor` olarak göster.
-- [ ] `Elazigspor` değerini `Elazığspor` olarak göster.
-- [ ] `Kasimpasa` değerini `Kasımpaşa` olarak göster.
-- [ ] `Balikesirspor` değerini `Balıkesirspor` olarak göster.
-- [ ] Kaynakta fesih notu bulunan kulüp adlarını kullanıcıya temiz adla göster.
+- [x] 43 kulübün kaynak ID listesini dışa aktar.
+- [x] Her kaynak kulüp için canonical Türkçe ad belirle.
+- [x] `Fenerbahce` değerini `Fenerbahçe` olarak göster.
+- [x] `Caykur Rizespor` değerini `Çaykur Rizespor` olarak göster.
+- [x] `Basaksehir FK` değerini uygun görünen ada dönüştür.
+- [x] `Eskisehirspor` değerini `Eskişehirspor` olarak göster.
+- [x] `Elazigspor` değerini `Elazığspor` olarak göster.
+- [x] `Kasimpasa` değerini `Kasımpaşa` olarak göster.
+- [x] `Balikesirspor` değerini `Balıkesirspor` olarak göster.
+- [x] Kaynakta fesih notu bulunan kulüp adlarını kullanıcıya temiz adla göster.
 - [ ] Kulüp adlarının tümünü bir kişi, ardından ikinci bir kişi gözden geçirsin.
 
 ## 5.2. Kulüp şehirleri ve etiketleri
 
-- [ ] 43 kulübün merkez şehrini doldur.
-- [ ] İstanbul merkezli kulüpleri listele.
+- [x] 43 kulübün merkez şehrini doldur.
+- [x] İstanbul merkezli kulüpleri listele.
 - [ ] İstanbul etiketlerini ikinci kez doğrula.
-- [ ] İstanbul dışındaki kulüpleri `is_non_istanbul = true` yap.
-- [ ] Dört Büyük kulüpleri `is_big_four = true` yap.
-- [ ] Dört Büyük olmayan bütün kulüplerde alanın false olduğunu doğrula.
-- [ ] İstanbul/İstanbul dışı alanlarının birbirinin mantıksal tersi olduğunu doğrula.
-- [ ] Şehri bilinmeyen kulüp bırakma.
-- [ ] Kulüp etiketleri için kaynak/not alanı tut.
+- [x] İstanbul dışındaki kulüpleri `is_non_istanbul = true` yap.
+- [x] Dört Büyük kulüpleri `is_big_four = true` yap.
+- [x] Dört Büyük olmayan bütün kulüplerde alanın false olduğunu doğrula.
+- [x] İstanbul/İstanbul dışı alanlarının birbirinin mantıksal tersi olduğunu doğrula.
+- [x] Şehri bilinmeyen kulüp bırakma.
+- [x] Kulüp etiketleri için kaynak/not alanı tut.
 
 ## 5.3. Sezon şampiyonları
 
@@ -843,14 +843,14 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 5.4. Maç kapsamı dışlamaları
 
-- [ ] Oyuncu kanıtı olmayan bütün game kayıtlarını raporla.
-- [ ] Snapshot sürümüne bağlı maç dışlama referansını importtan önce yükle.
-- [ ] `v677` için belirlenen 29 kaynak game ID'sinin tamamını uygulama importundan çıkar.
-- [ ] Dışlama listesindeki kimlik tekrarlarını ve snapshot sürümü uyumunu doğrula.
-- [ ] Dışlama kararının resmî maç durumu sınıflandırması olmadığını metadata içinde koru.
-- [ ] Oynanmış ama lineup eksik maçları awarded olarak yanlış işaretleme.
-- [ ] Appearance varsa maçı played kabul et.
-- [ ] Ne appearance ne lineup olan ve dışlama listesinde bulunmayan maçı `unknown` yap ve importu production için engelle.
+- [x] Oyuncu kanıtı olmayan bütün game kayıtlarını raporla.
+- [x] Snapshot sürümüne bağlı maç dışlama referansını importtan önce yükle.
+- [x] `v677` için belirlenen 29 kaynak game ID'sinin tamamını uygulama importundan çıkar.
+- [x] Dışlama listesindeki kimlik tekrarlarını ve snapshot sürümü uyumunu doğrula.
+- [x] Dışlama kararının resmî maç durumu sınıflandırması olmadığını metadata içinde koru.
+- [x] Oynanmış ama lineup eksik maçları awarded olarak yanlış işaretleme.
+- [x] Appearance varsa maçı played kabul et.
+- [x] Ne appearance ne lineup olan ve dışlama listesinde bulunmayan maçı `unknown` yap ve importu production için engelle.
 
 ## 5.5. Oyuncu alanı kalite kontrolleri
 

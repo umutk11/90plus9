@@ -136,19 +136,35 @@ model Season {
 }
 
 model Country {
-  id                Int      @id @default(autoincrement())
-  sourceCountryId   Int?     @unique @map("source_country_id")
-  sourceCountryCode String?  @map("source_country_code")
-  sourceName        String   @unique @map("source_name")
-  displayName       String   @map("display_name")
-  isoAlpha2         String?  @unique @map("iso_alpha_2") @db.Char(2)
-  isoAlpha3         String?  @unique @map("iso_alpha_3") @db.Char(3)
+  id                Int            @id @default(autoincrement())
+  sourceCountryId   Int?           @unique @map("source_country_id")
+  sourceCountryCode String?        @map("source_country_code")
+  sourceName        String         @unique @map("source_name")
+  displayName       String         @map("display_name")
+  isoAlpha2         String?        @unique @map("iso_alpha_2") @db.Char(2)
+  isoAlpha3         String?        @unique @map("iso_alpha_3") @db.Char(3)
   confederation     String?
   continent         String?
-  playersBornHere   Player[] @relation("PlayerCountryOfBirth")
-  citizenPlayers    Player[] @relation("PlayerCitizenship")
+  aliases           CountryAlias[]
+  playersBornHere   Player[]       @relation("PlayerCountryOfBirth")
+  citizenPlayers    Player[]       @relation("PlayerCitizenship")
 
   @@map("countries")
+}
+
+model CountryAlias {
+  id              Int       @id @default(autoincrement())
+  countryId       Int       @map("country_id")
+  alias           String
+  normalizedAlias String    @map("normalized_alias")
+  aliasType       AliasType @map("alias_type")
+  isManual        Boolean   @default(false) @map("is_manual")
+  sourceNote      String?   @map("source_note")
+  country         Country   @relation(fields: [countryId], references: [id], onDelete: Cascade)
+
+  @@unique([countryId, normalizedAlias])
+  @@index([normalizedAlias])
+  @@map("country_aliases")
 }
 
 model Club {

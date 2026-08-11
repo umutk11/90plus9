@@ -9,7 +9,7 @@ sırayla uygulanır.
 | Grup             | Tablolar                                             | Amaç                                                                            |
 | ---------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------- |
 | Veri sürümü      | `dataset_versions`                                   | Snapshot kaynağını, checksum'ı, import durumunu ve regresyon sayılarını saklar. |
-| Referans         | `seasons`, `countries`                               | Sezon etiketleri ile ülke ve konfederasyon eşleşmelerini tutar.                 |
+| Referans         | `seasons`, `countries`, `country_aliases`            | Sezon etiketleri ile ülke, alias ve konfederasyon eşleşmelerini tutar.          |
 | Canonical kimlik | `clubs`, `club_aliases`, `players`, `player_aliases` | Kaynak kimliklerini tekil canonical kayıtlara ve aranabilir alias'lara bağlar.  |
 | Maç kanıtı       | `matches`, `player_match_evidence`                   | Sürüme bağlı maçları ve appearance/ilk 11/yedek kanıtlarını saklar.             |
 | Oyun ilişkisi    | `player_club_seasons`, `club_seasons`                | Oyuncu–kulüp–sezon uygunluğunu, katılımı ve doğrulanmış şampiyonluğu saklar.    |

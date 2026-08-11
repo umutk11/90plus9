@@ -10,6 +10,7 @@
   "scripts": {
     "build": "pnpm --recursive --if-present run build",
     "data:download": "node scripts/data/download-snapshot.mjs",
+    "data:import": "node packages/database/scripts/import-canonical.mjs",
     "data:profile": "node scripts/data/profile-snapshot.mjs",
     "data:references": "node scripts/data/validate-reference-mappings.mjs",
     "data:stage": "node scripts/data/build-staging.mjs",

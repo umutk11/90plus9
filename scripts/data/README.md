@@ -121,3 +121,30 @@ kapsamını ve ISO kod biçimini kontrol eder. Yapısal kontrol başarılı olsa
 canonical importa hazır sayılmaz. Oyuncularda kullanılan tüm kaynak ülke metinlerini içeren
 inceleme tablosu
 `reports/data-quality/dcaribou-kaggle-v<version>-reference-mappings.md` altında üretilir.
+
+## PostgreSQL canonical importu
+
+Onaylanmış referanslar ve kalite kontrolünden geçmiş staging verisi tek transaction içinde
+uygulama tablolarına yüklenir:
+
+```bash
+pnpm data:import -- --version 677 --activate
+```
+
+`--activate` verilmezse yeni sürüm `ready` durumunda kalır. Bayrak yalnızca bütün satırlar ve son
+regresyon kontrolleri başarılı olduktan sonra sürümü `active` yapar; varsa önceki aktif sürümü
+arşivler. Test veritabanı için `--target test` kullanılabilir.
+
+Import; snapshot checksum bilgisini `dataset_versions` tablosunda saklar, canonical kulüp/ülke
+adlarını ve kaynak alias'larını uygular, oyuncu vatandaşlığı ile doğum ülkesini ayrı ilişkiler
+olarak bağlar. Maç, oyuncu kanıtı ve oyuncu-kulüp-sezon kayıtları aynı dataset sürümüne yazılır.
+Herhangi bir kontrol başarısız olursa transaction geri alınır ve canonical tablolar değişmez.
+Aynı snapshot sürümünü yeniden çalıştırmak mükerrer kayıt üretmez; mevcut yükü tekrar doğrular.
+
+Local/test dışındaki ortamlarda yanlışlıkla importu önlemek için ayrıca açık onay gerekir:
+
+```bash
+CONFIRM_DATASET_IMPORT=dcaribou-v677 pnpm data:import -- --version 677
+```
+
+Sonuç özeti `reports/data-quality` altında Git'e eklenmeyen bir JSON raporuna yazılır.

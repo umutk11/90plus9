@@ -17,11 +17,12 @@
     "db:migrate:status": "prisma migrate status",
     "db:verify": "prisma db execute --file ../../scripts/database/verify-schema.sql",
     "db:validate": "prisma validate",
-    "lint": "eslint src prisma.config.ts",
+    "lint": "eslint src prisma.config.ts scripts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@prisma/client": "^7.9.1"
+    "@prisma/client": "^7.9.1",
+    "pg": "^8.23.0"
   },
   "devDependencies": {
     "dotenv": "^17.4.2",
