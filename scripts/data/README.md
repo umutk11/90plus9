@@ -45,3 +45,22 @@ Bu kontrol:
 
 Beklenen kaynak sözleşmesi `scripts/data/source-schema.json` dosyasında sürümlenir. Kaynak şema
 bilinçli biçimde değiştiğinde önce fark incelenir, ardından bu sözleşme güncellenir.
+
+## Sezon bazlı doluluk profili
+
+Süper Lig kapsamındaki kritik alanlar ve oyuncu profili dolulukları sezon sezon ölçülür:
+
+```bash
+pnpm data:profile -- --version 677
+```
+
+Komut maç, appearance, lineup, oyuncu ve kulüp kayıtlarını birlikte inceler. Kimlik eksikleri,
+yanlış maç-kulüp eşleşmeleri, tekrarlar, oyuncu profil alanlarının doluluk oranları ve oyuncu
+kanıtı olmayan maçlar `reports/data-quality` altında JSON ve Markdown olarak raporlanır.
+
+Local ortamda açık sorunlar raporlanır ve incelemeye bırakılır. Production kontrolü açık kritik
+sorun varsa başarısız olur:
+
+```bash
+PLUS9_ENVIRONMENT=production pnpm data:profile -- --version 677
+```

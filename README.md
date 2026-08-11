@@ -14,8 +14,8 @@ Bu depo 90+9'un web uygulamasını, veritabanı katmanını, kural motorunu ve v
 - Responsive web deneyimi
 
 Ayrıntılı kararlar için [ürün kararları](docs/PRODUCT_DECISIONS.md), [veri kaynağı ve snapshot
-politikası](docs/DATA_SOURCES.md), uygulanabilir görevler için [geliştirme yol
-haritası](90PLUS9_YOL_HARITASI.md) belgelerine bakın.
+politikası](docs/DATA_SOURCES.md), [veri kalite taban çizgisi](docs/DATA_QUALITY_BASELINE.md),
+uygulanabilir görevler için [geliştirme yol haritası](90PLUS9_YOL_HARITASI.md) belgelerine bakın.
 
 ## Teknik temel
 
@@ -79,6 +79,7 @@ pnpm test         # Birim testleri
 pnpm format       # Biçim kontrolü
 pnpm format:write # Dosyaları biçimlendir
 pnpm data:download -- --version 677 # Sabitlenmiş ham veri snapshot'ını indir
+pnpm data:profile -- --version 677 # Sezon bazlı veri doluluk raporu
 pnpm data:validate -- --version 677 # CSV dosya, sütun, tip ve encoding kontrolü
 pnpm db:up        # Local PostgreSQL'i başlat ve bağlantıları doğrula
 pnpm db:check     # Uygulama ve test veritabanı bağlantılarını kontrol et

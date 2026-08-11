@@ -2253,7 +2253,7 @@ Bu sıra ekip tek kişi olsa bile uygulanabilir. Her satır ayrı bir iş kartı
 15. [x] 2012/13–2025/26 raw snapshot’ını indir.
 16. [x] Snapshot checksum ve kaynak commit bilgisini kaydet.
 17. [x] Kaynak dosya envanterini çıkar.
-18. [ ] Her sezonun alan ve doluluk profilini üret.
+18. [x] Her sezonun alan ve doluluk profilini üret.
 19. [ ] PostgreSQL temel tablolarının migration’ını yaz.
 20. [ ] Canonical kulüp ve alias tablolarını oluştur.
 21. [ ] Canonical oyuncu ve alias tablolarını oluştur.

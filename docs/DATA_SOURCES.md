@@ -32,6 +32,9 @@ Beklenen 12 CSV dosyasının sütun ve tip sözleşmesi
 [`scripts/data/source-schema.json`](../scripts/data/source-schema.json) içinde sürümlenir. Her
 snapshot importtan önce `pnpm data:validate -- --version <sürüm>` ile tam taranır.
 
+İlk snapshot'ın sezon bazlı alan dolulukları ve açık kalite sorunları
+[`docs/DATA_QUALITY_BASELINE.md`](DATA_QUALITY_BASELINE.md) belgesinde kayıtlıdır.
+
 ## Saklama ve değişmezlik
 
 - `data/raw` altındaki snapshot'lar Git'e eklenmez.
