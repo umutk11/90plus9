@@ -10,6 +10,9 @@ oyuncu kimlikleri tutulur. Bu listeler ham snapshot'ı değiştirmez; staging ve
 üretilmeden önce uygulanır.
 
 `club-identities` klasörü kaynak kulüp kimliğini önerilen canonical ada, şehre ve oyun
-bayraklarına bağlayan inceleme kayıtlarını içerir. `country-mappings` klasörü kaynak ülke adlarıyla
-oyuncu vatandaşlık/doğum metinlerinin ek canonical ülke, alias veya çözümsüz tarihsel değer olarak
-sınıflandırılmasını tutar. `pending` kayıtlar kullanıcı onayı olmadan canonical importa alınmaz.
+bayraklarına bağlayan inceleme kayıtlarını içerir. `country-identities` klasörü kaynak, oyuncu ve
+tarihsel ülke kayıtlarının canonical/Türkçe adlarını tutar. Türkçe ülke adları commit kimliğiyle
+sabitlenmiş Unicode CLDR verisinden hazırlanır; kullanıcı tercihi gereken kısa adlar referans
+kaydında açıkça sürümlenir. `country-mappings` klasörü oyuncu vatandaşlık/doğum metinlerini
+canonical ülke, alias veya tarihsel ülke olarak sınıflandırır. `pending` kayıtlar kullanıcı onayı
+olmadan canonical importa alınmaz.

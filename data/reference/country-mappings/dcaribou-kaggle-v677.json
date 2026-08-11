@@ -53,13 +53,13 @@
     },
     {
       "sourceName": "CSSR",
-      "resolution": "unresolved_historical",
-      "targetCanonicalName": null,
-      "proposedDisplayName": null,
+      "resolution": "historical_canonical",
+      "targetCanonicalName": "Czechoslovakia",
+      "proposedDisplayName": "Çekoslovakya",
       "isoAlpha2": null,
       "isoAlpha3": null,
       "reviewStatus": "pending",
-      "reviewNote": "Çekoslovakya doğum kaydı tek başına Çekya/Slovakya ayrımı için yeterli değil."
+      "reviewNote": "Doğum ülkesi tarihsel adıyla korunur; vatandaşlık yerine kullanılmaz."
     },
     {
       "sourceName": "Cameroon",
@@ -207,13 +207,13 @@
     },
     {
       "sourceName": "Jugoslawien (SFR)",
-      "resolution": "unresolved_historical",
-      "targetCanonicalName": null,
-      "proposedDisplayName": null,
+      "resolution": "historical_canonical",
+      "targetCanonicalName": "Yugoslavia",
+      "proposedDisplayName": "Yugoslavya",
       "isoAlpha2": null,
       "isoAlpha3": null,
       "reviewStatus": "pending",
-      "reviewNote": "Yugoslavya doğum kaydı oyuncu bazında halef ülkeye bağlanmalı."
+      "reviewNote": "Doğum ülkesi tarihsel adıyla korunur; vatandaşlık yerine kullanılmaz."
     },
     {
       "sourceName": "Kenya",
@@ -388,23 +388,23 @@
     },
     {
       "sourceName": "UdSSR",
-      "resolution": "unresolved_historical",
-      "targetCanonicalName": null,
-      "proposedDisplayName": null,
+      "resolution": "historical_canonical",
+      "targetCanonicalName": "Soviet Union",
+      "proposedDisplayName": "Sovyetler Birliği",
       "isoAlpha2": null,
       "isoAlpha3": null,
       "reviewStatus": "pending",
-      "reviewNote": "SSCB doğum kaydı oyuncu bazında halef ülkeye bağlanmalı."
+      "reviewNote": "Doğum ülkesi tarihsel adıyla korunur; vatandaşlık yerine kullanılmaz."
     },
     {
       "sourceName": "Yugoslavia (Republic)",
-      "resolution": "unresolved_historical",
-      "targetCanonicalName": null,
-      "proposedDisplayName": null,
+      "resolution": "historical_canonical",
+      "targetCanonicalName": "Yugoslavia",
+      "proposedDisplayName": "Yugoslavya",
       "isoAlpha2": null,
       "isoAlpha3": null,
       "reviewStatus": "pending",
-      "reviewNote": "Yugoslavya doğum kaydı oyuncu bazında halef ülkeye bağlanmalı."
+      "reviewNote": "Doğum ülkesi tarihsel adıyla korunur; vatandaşlık yerine kullanılmaz."
     },
     {
       "sourceName": "Zaire",

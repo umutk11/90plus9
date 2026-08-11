@@ -187,7 +187,139 @@ function validateClubs(reference, stagingClubs, version) {
   return { errors, pending, warnings };
 }
 
-function validateCountries(reference, sourceCountries, rawCountryValues, version) {
+function validateCountryIdentities(reference, sourceCountries, mappingReference, version) {
+  const errors = [];
+  const warnings = [];
+  validateCommonMetadata(reference, version, "Ülke kimlik referansı", errors);
+
+  if (!Array.isArray(reference.countries)) {
+    return {
+      byCanonicalName: new Map(),
+      errors: [...errors, "Ülke kimlik referansı: countries listesi bulunamadı."],
+      pending: [],
+      warnings,
+    };
+  }
+  if (
+    reference.namingSource?.name !== "Unicode CLDR" ||
+    !/^[a-f0-9]{40}$/.test(reference.namingSource?.commit ?? "")
+  ) {
+    errors.push("Ülke kimlik referansı: Unicode CLDR kaynak commit bilgisi eksik veya geçersiz.");
+  }
+
+  const sourceById = new Map(
+    sourceCountries.map((country) => [country.sourceCountryId, country.sourceName]),
+  );
+  const byCanonicalName = new Map(
+    reference.countries.map((country) => [country.canonicalName, country]),
+  );
+  const bySourceId = new Map(
+    reference.countries
+      .filter((country) => country.sourceCountryId !== null)
+      .map((country) => [country.sourceCountryId, country]),
+  );
+  const duplicateCanonicalNames = duplicateValues(
+    reference.countries.map((country) => normalizeName(country.canonicalName ?? "")),
+  );
+  const duplicateSourceIds = duplicateValues(
+    reference.countries
+      .filter((country) => country.sourceCountryId !== null)
+      .map((country) => country.sourceCountryId),
+  );
+  const duplicateIsoCodes = duplicateValues(
+    reference.countries
+      .filter((country) => country.isoAlpha2 !== null)
+      .map((country) => country.isoAlpha2),
+  );
+  const duplicateDisplayNames = duplicateValues(
+    reference.countries.map((country) => normalizeName(country.proposedDisplayName ?? "")),
+  );
+
+  if (duplicateCanonicalNames.length > 0) {
+    errors.push(
+      `Ülke kimlik referansı: çakışan canonical ad: ${duplicateCanonicalNames.join(", ")}`,
+    );
+  }
+  if (duplicateSourceIds.length > 0) {
+    errors.push(
+      `Ülke kimlik referansı: tekrar eden sourceCountryId: ${duplicateSourceIds.join(", ")}`,
+    );
+  }
+  if (duplicateIsoCodes.length > 0) {
+    errors.push(`Ülke kimlik referansı: tekrar eden ISO alpha-2: ${duplicateIsoCodes.join(", ")}`);
+  }
+  if (duplicateDisplayNames.length > 0) {
+    errors.push(`Ülke kimlik referansı: çakışan görünen ad: ${duplicateDisplayNames.join(", ")}`);
+  }
+
+  const expectedCanonicalNames = new Set(sourceCountries.map((country) => country.sourceName));
+  for (const override of mappingReference.overrides ?? []) {
+    if (["additional_canonical", "historical_canonical"].includes(override.resolution)) {
+      expectedCanonicalNames.add(override.targetCanonicalName);
+    }
+  }
+
+  for (const canonicalName of expectedCanonicalNames) {
+    if (!byCanonicalName.has(canonicalName)) {
+      errors.push(`Ülke kimlik referansı: canonical ülke eksik: ${canonicalName}`);
+    }
+  }
+  for (const country of reference.countries) {
+    if (!expectedCanonicalNames.has(country.canonicalName)) {
+      errors.push(`Ülke kimlik referansı: kapsam dışı canonical ülke: ${country.canonicalName}`);
+    }
+    if (!country.canonicalName?.trim() || !country.proposedDisplayName?.trim()) {
+      errors.push(`Ülke kimlik referansı: canonical veya görünen ad eksik.`);
+    }
+    if (country.isoAlpha2 !== null && !/^[A-Z]{2}$/.test(country.isoAlpha2)) {
+      errors.push(`Ülke kimlik referansı: ${country.canonicalName} ISO alpha-2 geçersiz.`);
+    }
+    if (!["source", "player_value", "historical"].includes(country.origin)) {
+      errors.push(`Ülke kimlik referansı: ${country.canonicalName} origin geçersiz.`);
+    }
+    if (!["pending", "approved"].includes(country.reviewStatus)) {
+      errors.push(`Ülke kimlik referansı: ${country.canonicalName} reviewStatus geçersiz.`);
+    }
+  }
+
+  for (const [sourceCountryId, sourceName] of sourceById) {
+    const country = bySourceId.get(sourceCountryId);
+    if (!country) {
+      errors.push(`Ülke kimlik referansı: kaynak ülke eksik: ${sourceCountryId} ${sourceName}`);
+      continue;
+    }
+    if (
+      country.sourceName !== sourceName ||
+      country.canonicalName !== sourceName ||
+      country.origin !== "source"
+    ) {
+      errors.push(`Ülke kimlik referansı: ${sourceCountryId} kaynak kimliği uyuşmuyor.`);
+    }
+  }
+  for (const country of reference.countries) {
+    if (country.sourceCountryId !== null && !sourceById.has(country.sourceCountryId)) {
+      errors.push(`Ülke kimlik referansı: kapsam dışı sourceCountryId: ${country.sourceCountryId}`);
+    }
+  }
+
+  const pending = reference.countries.filter((country) => country.reviewStatus === "pending");
+  if (pending.length > 0) {
+    warnings.push(`${pending.length} canonical ülke adı kullanıcı onayı bekliyor.`);
+  }
+  if (reference.reviewStatus === "approved" && pending.length > 0) {
+    errors.push("Ülke kimlik referansı approved olamaz; onay bekleyen ülkeler var.");
+  }
+
+  return { byCanonicalName, errors, pending, warnings };
+}
+
+function validateCountries(
+  reference,
+  identityReference,
+  sourceCountries,
+  rawCountryValues,
+  version,
+) {
   const errors = [];
   const warnings = [];
   validateCommonMetadata(reference, version, "Ülke referansı", errors);
@@ -233,15 +365,14 @@ function validateCountries(reference, sourceCountries, rawCountryValues, version
   const allowedResolutions = new Set([
     "additional_canonical",
     "alternative_alias",
+    "historical_canonical",
     "historical_alias",
     "unresolved_historical",
   ]);
-  const additionalTargets = new Set(
-    reference.overrides
-      .filter((override) => override.resolution === "additional_canonical")
-      .map((override) => override.targetCanonicalName),
+  const identitiesByName = new Map(
+    identityReference.countries.map((country) => [country.canonicalName, country]),
   );
-  const knownTargets = new Set([...sourceNames, ...additionalTargets]);
+  const knownTargets = new Set(identitiesByName.keys());
   const targetCodes = new Map();
 
   for (const override of reference.overrides) {
@@ -278,11 +409,27 @@ function validateCountries(reference, sourceCountries, rawCountryValues, version
     if (!override.proposedDisplayName?.trim()) {
       errors.push(`Ülke referansı: ${override.sourceName} için görünen ad eksik.`);
     }
-    if (!/^[A-Z]{2}$/.test(override.isoAlpha2 ?? "")) {
-      errors.push(`Ülke referansı: ${override.sourceName} ISO alpha-2 geçersiz.`);
+    const identity = identitiesByName.get(override.targetCanonicalName);
+    if (identity && override.proposedDisplayName !== identity.proposedDisplayName) {
+      errors.push(
+        `Ülke referansı: ${override.sourceName} görünen adı canonical kayıtla uyuşmuyor.`,
+      );
     }
-    if (!/^[A-Z]{3}$/.test(override.isoAlpha3 ?? "")) {
-      errors.push(`Ülke referansı: ${override.sourceName} ISO alpha-3 geçersiz.`);
+    if (identity && override.isoAlpha2 !== identity.isoAlpha2) {
+      errors.push(`Ülke referansı: ${override.sourceName} ISO kodu canonical kayıtla uyuşmuyor.`);
+    }
+
+    if (override.resolution === "historical_canonical") {
+      if (override.isoAlpha2 !== null || override.isoAlpha3 !== null) {
+        errors.push(`Ülke referansı: ${override.sourceName} tarihsel ISO kodları null olmalıdır.`);
+      }
+    } else {
+      if (!/^[A-Z]{2}$/.test(override.isoAlpha2 ?? "")) {
+        errors.push(`Ülke referansı: ${override.sourceName} ISO alpha-2 geçersiz.`);
+      }
+      if (!/^[A-Z]{3}$/.test(override.isoAlpha3 ?? "")) {
+        errors.push(`Ülke referansı: ${override.sourceName} ISO alpha-3 geçersiz.`);
+      }
     }
 
     const existingCodes = targetCodes.get(override.targetCanonicalName);
@@ -310,18 +457,45 @@ function validateCountries(reference, sourceCountries, rawCountryValues, version
   return { errors, pending, unresolved, warnings };
 }
 
-function buildReviewMarkdown(clubReference, countryReference, countryResult, report) {
+function buildCountryMappings(
+  rawCountryValues,
+  sourceCountries,
+  mappingReference,
+  identitiesByName,
+) {
+  const sourceNames = new Set(sourceCountries.map((country) => country.sourceName));
+  const overrideByName = new Map(
+    mappingReference.overrides.map((override) => [override.sourceName, override]),
+  );
+
+  return rawCountryValues.map((raw) => {
+    const override = overrideByName.get(raw.sourceName);
+    const targetCanonicalName = sourceNames.has(raw.sourceName)
+      ? raw.sourceName
+      : override?.targetCanonicalName;
+    const identity = identitiesByName.get(targetCanonicalName);
+
+    return {
+      ...raw,
+      resolution: override?.resolution ?? "exact_source_name",
+      targetCanonicalName,
+      displayName: identity?.proposedDisplayName,
+    };
+  });
+}
+
+function buildReviewMarkdown(clubReference, countryReference, report) {
   const clubRows = clubReference.clubs
     .map(
       (club) =>
         `| ${club.sourceClubId} | ${club.sourceName} | ${club.proposedName} | ${club.city} | ${club.reviewStatus} | ${club.reviewNote ?? ""} |`,
     )
     .join("\n");
-  const unresolvedRows = countryResult.unresolved
-    .map((entry) => {
-      const usage = report.countryUsage.find((item) => item.sourceName === entry.sourceName);
-      return `| ${entry.sourceName} | ${usage?.birthCount ?? 0} | ${entry.reviewNote ?? ""} |`;
-    })
+  const countryRows = report.countryMappings
+    .map(
+      (mapping) =>
+        `| ${mapping.sourceName} | ${mapping.displayName} | ${mapping.resolution} | ${mapping.citizenshipCount} | ${mapping.birthCount} |`,
+    )
     .join("\n");
 
   return `# Referans eşleştirme incelemesi — v${report.snapshotVersion}
@@ -339,14 +513,15 @@ ${clubRows}
 ## Ülke eşleştirme özeti
 
 - Kaynak ülke adı: ${report.summary.sourceCountries}
+- Canonical ülke: ${report.summary.canonicalCountries}
 - Oyuncularda kullanılan farklı ülke metni: ${report.summary.rawCountryValues}
 - Otomatik birebir eşleşen: ${report.summary.exactCountryMappings}
 - Override ile kapsanan: ${countryReference.overrides.length}
-- Oyuncu bazında çözülmesi gereken tarihsel değer: ${countryResult.unresolved.length}
+- Çözümsüz tarihsel değer: ${report.summary.unresolvedHistoricalCountries}
 
-| Çözümsüz tarihsel değer | Oyuncu | Not |
-| --- | ---: | --- |
-${unresolvedRows}
+| Kaynak değer | Kullanılacak ad | Eşleştirme | Vatandaşlık | Doğum |
+| --- | --- | --- | ---: | ---: |
+${countryRows}
 `;
 }
 
@@ -368,8 +543,17 @@ async function main() {
     repositoryRoot,
     `data/reference/country-mappings/dcaribou-kaggle-v${version}.json`,
   );
+  const countryIdentityPath = path.join(
+    repositoryRoot,
+    `data/reference/country-identities/dcaribou-kaggle-v${version}.json`,
+  );
 
-  for (const requiredPath of [databasePath, clubReferencePath, countryReferencePath]) {
+  for (const requiredPath of [
+    databasePath,
+    clubReferencePath,
+    countryReferencePath,
+    countryIdentityPath,
+  ]) {
     if (!(await fileExists(requiredPath))) {
       throw new Error(`Gerekli dosya bulunamadı: ${requiredPath}`);
     }
@@ -377,6 +561,7 @@ async function main() {
 
   const clubReference = JSON.parse(await readFile(clubReferencePath, "utf8"));
   const countryReference = JSON.parse(await readFile(countryReferencePath, "utf8"));
+  const countryIdentityReference = JSON.parse(await readFile(countryIdentityPath, "utf8"));
   const stagingClubs = runDuckDbJson(
     databasePath,
     `SELECT source_club_id AS "sourceClubId", source_name AS "sourceName" FROM stg_clubs ORDER BY source_club_id;`,
@@ -404,18 +589,38 @@ async function main() {
   );
 
   const clubResult = validateClubs(clubReference, stagingClubs, version);
+  const countryIdentityResult = validateCountryIdentities(
+    countryIdentityReference,
+    sourceCountries,
+    countryReference,
+    version,
+  );
   const countryResult = validateCountries(
     countryReference,
+    countryIdentityReference,
     sourceCountries,
     rawCountryValues,
     version,
   );
-  const errors = [...clubResult.errors, ...countryResult.errors];
-  const warnings = [...clubResult.warnings, ...countryResult.warnings];
+  const errors = [...clubResult.errors, ...countryIdentityResult.errors, ...countryResult.errors];
+  const warnings = [
+    ...clubResult.warnings,
+    ...countryIdentityResult.warnings,
+    ...countryResult.warnings,
+  ];
   const sourceCountryNames = new Set(sourceCountries.map((country) => country.sourceName));
   const exactCountryMappings = rawCountryValues.filter((country) =>
     sourceCountryNames.has(country.sourceName),
   ).length;
+  const countryMappings = buildCountryMappings(
+    rawCountryValues,
+    sourceCountries,
+    countryReference,
+    countryIdentityResult.byCanonicalName,
+  );
+  if (countryMappings.some((mapping) => !mapping.targetCanonicalName || !mapping.displayName)) {
+    errors.push("Ülke referansı: hedefi veya görünen adı olmayan oyuncu ülke değeri var.");
+  }
   const report = {
     schemaVersion: 1,
     snapshotVersion: Number(version),
@@ -425,12 +630,15 @@ async function main() {
       errors.length === 0 &&
       clubReference.reviewStatus === "approved" &&
       countryReference.reviewStatus === "approved" &&
+      countryIdentityReference.reviewStatus === "approved" &&
       countryResult.unresolved.length === 0,
     summary: {
       stagingClubs: stagingClubs.length,
       clubMappings: clubReference.clubs.length,
       pendingClubMappings: clubResult.pending?.length ?? 0,
       sourceCountries: sourceCountries.length,
+      canonicalCountries: countryIdentityReference.countries.length,
+      pendingCountryIdentities: countryIdentityResult.pending?.length ?? 0,
       rawCountryValues: rawCountryValues.length,
       exactCountryMappings,
       countryOverrides: countryReference.overrides.length,
@@ -439,7 +647,7 @@ async function main() {
     },
     errors,
     warnings,
-    countryUsage: rawCountryValues,
+    countryMappings,
   };
 
   const reportDirectory = path.join(repositoryRoot, "reports/data-quality");
@@ -448,13 +656,12 @@ async function main() {
   const markdownReportPath = path.join(reportDirectory, `${reportBaseName}.md`);
   await mkdir(reportDirectory, { recursive: true });
   await writeFile(jsonReportPath, `${JSON.stringify(report, null, 2)}\n`);
-  await writeFile(
-    markdownReportPath,
-    buildReviewMarkdown(clubReference, countryReference, countryResult, report),
-  );
+  await writeFile(markdownReportPath, buildReviewMarkdown(clubReference, countryReference, report));
 
   console.log(`Kulüp eşleştirmesi: ${report.summary.clubMappings}/${report.summary.stagingClubs}`);
   console.log(`Onay bekleyen kulüp: ${report.summary.pendingClubMappings}`);
+  console.log(`Canonical ülke: ${report.summary.canonicalCountries}`);
+  console.log(`Onay bekleyen ülke: ${report.summary.pendingCountryIdentities}`);
   console.log(`Ülke metni kapsamı: ${report.summary.rawCountryValues}`);
   console.log(`Birebir ülke eşleşmesi: ${report.summary.exactCountryMappings}`);
   console.log(`Ülke override: ${report.summary.countryOverrides}`);

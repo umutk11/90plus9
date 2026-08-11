@@ -51,6 +51,13 @@ dışlamalar ham snapshot'ı değiştirmez ve `pnpm data:profile` tarafından ot
 - Staging ve production arşivinde aktif snapshot ile bir önceki snapshot saklanır.
 - Production importu açık sürüm numarası ve önceden onaylanmış SHA-256 değeri olmadan başlamaz.
 
+## Ülke adları
+
+Canonical ülke görünen adları Unicode CLDR'nin İngilizce ve Türkçe territory listelerinden
+hazırlanır. Kullanılan CLDR repository commit kimliği `data/reference/country-identities` altındaki
+sürümlü dosyada tutulur. Futbol ülkeleri, kullanıcı tercihli kısa adlar ve tarihsel ülkeler aynı
+dosyada açık kayıtlarla yönetilir; canlı ağ isteği sırasında isim üretilmez.
+
 ## Oyun uygunluğu açısından kullanım
 
 - Oyuncu–kulüp–sezon kanıtı `appearances` ve `game_lineups` kayıtlarının birleşiminden üretilir.

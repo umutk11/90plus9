@@ -1,0 +1,1500 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": 677,
+  "reviewStatus": "pending",
+  "reviewedAt": null,
+  "reviewedBy": null,
+  "namingSource": {
+    "name": "Unicode CLDR",
+    "commit": "a79b499916d486dca4b0f74fe423ea457705fdd9",
+    "englishTerritories": "cldr-json/cldr-localenames-full/main/en/territories.json",
+    "turkishTerritories": "cldr-json/cldr-localenames-full/main/tr/territories.json"
+  },
+  "countries": [
+    {
+      "sourceCountryId": 3,
+      "sourceName": "Albania",
+      "canonicalName": "Albania",
+      "proposedDisplayName": "Arnavutluk",
+      "isoAlpha2": "AL",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 4,
+      "sourceName": "Algeria",
+      "canonicalName": "Algeria",
+      "proposedDisplayName": "Cezayir",
+      "isoAlpha2": "DZ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 5,
+      "sourceName": "Andorra",
+      "canonicalName": "Andorra",
+      "proposedDisplayName": "Andorra",
+      "isoAlpha2": "AD",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Angola",
+      "proposedDisplayName": "Angola",
+      "isoAlpha2": "AO",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 9,
+      "sourceName": "Argentina",
+      "canonicalName": "Argentina",
+      "proposedDisplayName": "Arjantin",
+      "isoAlpha2": "AR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 10,
+      "sourceName": "Armenia",
+      "canonicalName": "Armenia",
+      "proposedDisplayName": "Ermenistan",
+      "isoAlpha2": "AM",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Aruba",
+      "proposedDisplayName": "Aruba",
+      "isoAlpha2": "AW",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 12,
+      "sourceName": "Australia",
+      "canonicalName": "Australia",
+      "proposedDisplayName": "Avustralya",
+      "isoAlpha2": "AU",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 127,
+      "sourceName": "Austria",
+      "canonicalName": "Austria",
+      "proposedDisplayName": "Avusturya",
+      "isoAlpha2": "AT",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 13,
+      "sourceName": "Azerbaijan",
+      "canonicalName": "Azerbaijan",
+      "proposedDisplayName": "Azerbaycan",
+      "isoAlpha2": "AZ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 16,
+      "sourceName": "Bangladesh",
+      "canonicalName": "Bangladesh",
+      "proposedDisplayName": "Bangladeş",
+      "isoAlpha2": "BD",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 18,
+      "sourceName": "Belarus",
+      "canonicalName": "Belarus",
+      "proposedDisplayName": "Belarus",
+      "isoAlpha2": "BY",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 19,
+      "sourceName": "Belgium",
+      "canonicalName": "Belgium",
+      "proposedDisplayName": "Belçika",
+      "isoAlpha2": "BE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 20,
+      "sourceName": "Belize",
+      "canonicalName": "Belize",
+      "proposedDisplayName": "Belize",
+      "isoAlpha2": "BZ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Benin",
+      "proposedDisplayName": "Benin",
+      "isoAlpha2": "BJ",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 22,
+      "sourceName": "Bhutan",
+      "canonicalName": "Bhutan",
+      "proposedDisplayName": "Butan",
+      "isoAlpha2": "BT",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 23,
+      "sourceName": "Bolivia",
+      "canonicalName": "Bolivia",
+      "proposedDisplayName": "Bolivya",
+      "isoAlpha2": "BO",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 24,
+      "sourceName": "Bosnia-Herzegovina",
+      "canonicalName": "Bosnia-Herzegovina",
+      "proposedDisplayName": "Bosna-Hersek",
+      "isoAlpha2": "BA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 26,
+      "sourceName": "Brazil",
+      "canonicalName": "Brazil",
+      "proposedDisplayName": "Brezilya",
+      "isoAlpha2": "BR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 27,
+      "sourceName": "Brunei Darussalam",
+      "canonicalName": "Brunei Darussalam",
+      "proposedDisplayName": "Brunei",
+      "isoAlpha2": "BN",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 28,
+      "sourceName": "Bulgaria",
+      "canonicalName": "Bulgaria",
+      "proposedDisplayName": "Bulgaristan",
+      "isoAlpha2": "BG",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Burkina Faso",
+      "proposedDisplayName": "Burkina Faso",
+      "isoAlpha2": "BF",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Burundi",
+      "proposedDisplayName": "Burundi",
+      "isoAlpha2": "BI",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 79,
+      "sourceName": "Cambodia",
+      "canonicalName": "Cambodia",
+      "proposedDisplayName": "Kamboçya",
+      "isoAlpha2": "KH",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Cameroon",
+      "proposedDisplayName": "Kamerun",
+      "isoAlpha2": "CM",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 80,
+      "sourceName": "Canada",
+      "canonicalName": "Canada",
+      "proposedDisplayName": "Kanada",
+      "isoAlpha2": "CA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Cape Verde",
+      "proposedDisplayName": "Cabo Verde",
+      "isoAlpha2": "CV",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Central African Republic",
+      "proposedDisplayName": "Orta Afrika Cumhuriyeti",
+      "isoAlpha2": "CF",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Chad",
+      "proposedDisplayName": "Çad",
+      "isoAlpha2": "TD",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 33,
+      "sourceName": "Chile",
+      "canonicalName": "Chile",
+      "proposedDisplayName": "Şili",
+      "isoAlpha2": "CL",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 34,
+      "sourceName": "China",
+      "canonicalName": "China",
+      "proposedDisplayName": "Çin",
+      "isoAlpha2": "CN",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 164,
+      "sourceName": "Chinese Taipei",
+      "canonicalName": "Chinese Taipei",
+      "proposedDisplayName": "Tayvan",
+      "isoAlpha2": "TW",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 83,
+      "sourceName": "Colombia",
+      "canonicalName": "Colombia",
+      "proposedDisplayName": "Kolombiya",
+      "isoAlpha2": "CO",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 35,
+      "sourceName": "Comoros",
+      "canonicalName": "Comoros",
+      "proposedDisplayName": "Komorlar",
+      "isoAlpha2": "KM",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Congo",
+      "proposedDisplayName": "Kongo Cumhuriyeti",
+      "isoAlpha2": "CG",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 36,
+      "sourceName": "Costa Rica",
+      "canonicalName": "Costa Rica",
+      "proposedDisplayName": "Kosta Rika",
+      "isoAlpha2": "CR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Cote d'Ivoire",
+      "proposedDisplayName": "Fildişi Sahili",
+      "isoAlpha2": "CI",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 37,
+      "sourceName": "Croatia",
+      "canonicalName": "Croatia",
+      "proposedDisplayName": "Hırvatistan",
+      "isoAlpha2": "HR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Curacao",
+      "proposedDisplayName": "Curaçao",
+      "isoAlpha2": "CW",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 188,
+      "sourceName": "Cyprus",
+      "canonicalName": "Cyprus",
+      "proposedDisplayName": "Kıbrıs",
+      "isoAlpha2": "CY",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 172,
+      "sourceName": "Czech Republic",
+      "canonicalName": "Czech Republic",
+      "proposedDisplayName": "Çekya",
+      "isoAlpha2": "CZ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Czechoslovakia",
+      "proposedDisplayName": "Çekoslovakya",
+      "isoAlpha2": null,
+      "origin": "historical",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 39,
+      "sourceName": "Denmark",
+      "canonicalName": "Denmark",
+      "proposedDisplayName": "Danimarka",
+      "isoAlpha2": "DK",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 43,
+      "sourceName": "Dominican Republic",
+      "canonicalName": "Dominican Republic",
+      "proposedDisplayName": "Dominik Cumhuriyeti",
+      "isoAlpha2": "DO",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "DR Congo",
+      "proposedDisplayName": "Kongo Demokratik Cumhuriyeti",
+      "isoAlpha2": "CD",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 44,
+      "sourceName": "Ecuador",
+      "canonicalName": "Ecuador",
+      "proposedDisplayName": "Ekvador",
+      "isoAlpha2": "EC",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 2,
+      "sourceName": "Egypt",
+      "canonicalName": "Egypt",
+      "proposedDisplayName": "Mısır",
+      "isoAlpha2": "EG",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 45,
+      "sourceName": "El Salvador",
+      "canonicalName": "El Salvador",
+      "proposedDisplayName": "El Salvador",
+      "isoAlpha2": "SV",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 189,
+      "sourceName": "England",
+      "canonicalName": "England",
+      "proposedDisplayName": "İngiltere",
+      "isoAlpha2": null,
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Equatorial Guinea",
+      "proposedDisplayName": "Ekvator Ginesi",
+      "isoAlpha2": "GQ",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 47,
+      "sourceName": "Estonia",
+      "canonicalName": "Estonia",
+      "proposedDisplayName": "Estonya",
+      "isoAlpha2": "EE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 11,
+      "sourceName": "Ethiopia",
+      "canonicalName": "Ethiopia",
+      "proposedDisplayName": "Etiyopya",
+      "isoAlpha2": "ET",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 208,
+      "sourceName": "Faroe Islands",
+      "canonicalName": "Faroe Islands",
+      "proposedDisplayName": "Faroe Adaları",
+      "isoAlpha2": "FO",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 48,
+      "sourceName": "Fiji",
+      "canonicalName": "Fiji",
+      "proposedDisplayName": "Fiji",
+      "isoAlpha2": "FJ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 49,
+      "sourceName": "Finland",
+      "canonicalName": "Finland",
+      "proposedDisplayName": "Finlandiya",
+      "isoAlpha2": "FI",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 50,
+      "sourceName": "France",
+      "canonicalName": "France",
+      "proposedDisplayName": "Fransa",
+      "isoAlpha2": "FR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "French Guiana",
+      "proposedDisplayName": "Fransız Guyanası",
+      "isoAlpha2": "GF",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Gabon",
+      "proposedDisplayName": "Gabon",
+      "isoAlpha2": "GA",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 53,
+      "sourceName": "Georgia",
+      "canonicalName": "Georgia",
+      "proposedDisplayName": "Gürcistan",
+      "isoAlpha2": "GE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 40,
+      "sourceName": "Germany",
+      "canonicalName": "Germany",
+      "proposedDisplayName": "Almanya",
+      "isoAlpha2": "DE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 54,
+      "sourceName": "Ghana",
+      "canonicalName": "Ghana",
+      "proposedDisplayName": "Gana",
+      "isoAlpha2": "GH",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 266,
+      "sourceName": "Gibraltar",
+      "canonicalName": "Gibraltar",
+      "proposedDisplayName": "Cebelitarık",
+      "isoAlpha2": "GI",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 56,
+      "sourceName": "Greece",
+      "canonicalName": "Greece",
+      "proposedDisplayName": "Yunanistan",
+      "isoAlpha2": "GR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Guadeloupe",
+      "proposedDisplayName": "Guadeloupe",
+      "isoAlpha2": "GP",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 58,
+      "sourceName": "Guatemala",
+      "canonicalName": "Guatemala",
+      "proposedDisplayName": "Guatemala",
+      "isoAlpha2": "GT",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Guinea",
+      "proposedDisplayName": "Gine",
+      "isoAlpha2": "GN",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Guinea-Bissau",
+      "proposedDisplayName": "Gine-Bissau",
+      "isoAlpha2": "GW",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Haiti",
+      "proposedDisplayName": "Haiti",
+      "isoAlpha2": "HT",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 66,
+      "sourceName": "Honduras",
+      "canonicalName": "Honduras",
+      "proposedDisplayName": "Honduras",
+      "isoAlpha2": "HN",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 218,
+      "sourceName": "Hongkong",
+      "canonicalName": "Hongkong",
+      "proposedDisplayName": "Hong Kong",
+      "isoAlpha2": "HK",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 178,
+      "sourceName": "Hungary",
+      "canonicalName": "Hungary",
+      "proposedDisplayName": "Macaristan",
+      "isoAlpha2": "HU",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 73,
+      "sourceName": "Iceland",
+      "canonicalName": "Iceland",
+      "proposedDisplayName": "İzlanda",
+      "isoAlpha2": "IS",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 67,
+      "sourceName": "India",
+      "canonicalName": "India",
+      "proposedDisplayName": "Hindistan",
+      "isoAlpha2": "IN",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 68,
+      "sourceName": "Indonesia",
+      "canonicalName": "Indonesia",
+      "proposedDisplayName": "Endonezya",
+      "isoAlpha2": "ID",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 71,
+      "sourceName": "Iran",
+      "canonicalName": "Iran",
+      "proposedDisplayName": "İran",
+      "isoAlpha2": "IR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 70,
+      "sourceName": "Iraq",
+      "canonicalName": "Iraq",
+      "proposedDisplayName": "Irak",
+      "isoAlpha2": "IQ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 72,
+      "sourceName": "Ireland",
+      "canonicalName": "Ireland",
+      "proposedDisplayName": "İrlanda",
+      "isoAlpha2": "IE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 74,
+      "sourceName": "Israel",
+      "canonicalName": "Israel",
+      "proposedDisplayName": "İsrail",
+      "isoAlpha2": "IL",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 75,
+      "sourceName": "Italy",
+      "canonicalName": "Italy",
+      "proposedDisplayName": "İtalya",
+      "isoAlpha2": "IT",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 76,
+      "sourceName": "Jamaica",
+      "canonicalName": "Jamaica",
+      "proposedDisplayName": "Jamaika",
+      "isoAlpha2": "JM",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 77,
+      "sourceName": "Japan",
+      "canonicalName": "Japan",
+      "proposedDisplayName": "Japonya",
+      "isoAlpha2": "JP",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 78,
+      "sourceName": "Jordan",
+      "canonicalName": "Jordan",
+      "proposedDisplayName": "Ürdün",
+      "isoAlpha2": "JO",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 81,
+      "sourceName": "Kazakhstan",
+      "canonicalName": "Kazakhstan",
+      "proposedDisplayName": "Kazakistan",
+      "isoAlpha2": "KZ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Kenya",
+      "proposedDisplayName": "Kenya",
+      "isoAlpha2": "KE",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 87,
+      "sourceName": "Korea, South",
+      "canonicalName": "Korea, South",
+      "proposedDisplayName": "Güney Kore",
+      "isoAlpha2": "KR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 244,
+      "sourceName": "Kosovo",
+      "canonicalName": "Kosovo",
+      "proposedDisplayName": "Kosova",
+      "isoAlpha2": "XK",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 90,
+      "sourceName": "Kyrgyzstan",
+      "canonicalName": "Kyrgyzstan",
+      "proposedDisplayName": "Kırgızistan",
+      "isoAlpha2": "KG",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 91,
+      "sourceName": "Laos",
+      "canonicalName": "Laos",
+      "proposedDisplayName": "Laos",
+      "isoAlpha2": "LA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 92,
+      "sourceName": "Latvia",
+      "canonicalName": "Latvia",
+      "proposedDisplayName": "Letonya",
+      "isoAlpha2": "LV",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 94,
+      "sourceName": "Lebanon",
+      "canonicalName": "Lebanon",
+      "proposedDisplayName": "Lübnan",
+      "isoAlpha2": "LB",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Liberia",
+      "proposedDisplayName": "Liberya",
+      "isoAlpha2": "LR",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 96,
+      "sourceName": "Libya",
+      "canonicalName": "Libya",
+      "proposedDisplayName": "Libya",
+      "isoAlpha2": "LY",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Liechtenstein",
+      "proposedDisplayName": "Lihtenştayn",
+      "isoAlpha2": "LI",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 98,
+      "sourceName": "Lithuania",
+      "canonicalName": "Lithuania",
+      "proposedDisplayName": "Litvanya",
+      "isoAlpha2": "LT",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 99,
+      "sourceName": "Luxembourg",
+      "canonicalName": "Luxembourg",
+      "proposedDisplayName": "Lüksemburg",
+      "isoAlpha2": "LU",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 103,
+      "sourceName": "Malaysia",
+      "canonicalName": "Malaysia",
+      "proposedDisplayName": "Malezya",
+      "isoAlpha2": "MY",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 104,
+      "sourceName": "Maldives",
+      "canonicalName": "Maldives",
+      "proposedDisplayName": "Maldivler",
+      "isoAlpha2": "MV",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Mali",
+      "proposedDisplayName": "Mali",
+      "isoAlpha2": "ML",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 106,
+      "sourceName": "Malta",
+      "canonicalName": "Malta",
+      "proposedDisplayName": "Malta",
+      "isoAlpha2": "MT",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Martinique",
+      "proposedDisplayName": "Martinik",
+      "isoAlpha2": "MQ",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Mauritania",
+      "proposedDisplayName": "Moritanya",
+      "isoAlpha2": "MR",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 110,
+      "sourceName": "Mexico",
+      "canonicalName": "Mexico",
+      "proposedDisplayName": "Meksika",
+      "isoAlpha2": "MX",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 112,
+      "sourceName": "Moldova",
+      "canonicalName": "Moldova",
+      "proposedDisplayName": "Moldova",
+      "isoAlpha2": "MD",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 216,
+      "sourceName": "Montenegro",
+      "canonicalName": "Montenegro",
+      "proposedDisplayName": "Karadağ",
+      "isoAlpha2": "ME",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 107,
+      "sourceName": "Morocco",
+      "canonicalName": "Morocco",
+      "proposedDisplayName": "Fas",
+      "isoAlpha2": "MA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 116,
+      "sourceName": "Myanmar",
+      "canonicalName": "Myanmar",
+      "proposedDisplayName": "Myanmar",
+      "isoAlpha2": "MM",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 122,
+      "sourceName": "Netherlands",
+      "canonicalName": "Netherlands",
+      "proposedDisplayName": "Hollanda",
+      "isoAlpha2": "NL",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 120,
+      "sourceName": "New Zealand",
+      "canonicalName": "New Zealand",
+      "proposedDisplayName": "Yeni Zelanda",
+      "isoAlpha2": "NZ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 121,
+      "sourceName": "Nicaragua",
+      "canonicalName": "Nicaragua",
+      "proposedDisplayName": "Nikaragua",
+      "isoAlpha2": "NI",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 124,
+      "sourceName": "Nigeria",
+      "canonicalName": "Nigeria",
+      "proposedDisplayName": "Nijerya",
+      "isoAlpha2": "NG",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 100,
+      "sourceName": "North Macedonia",
+      "canonicalName": "North Macedonia",
+      "proposedDisplayName": "Kuzey Makedonya",
+      "isoAlpha2": "MK",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 192,
+      "sourceName": "Northern Ireland",
+      "canonicalName": "Northern Ireland",
+      "proposedDisplayName": "Kuzey İrlanda",
+      "isoAlpha2": null,
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 125,
+      "sourceName": "Norway",
+      "canonicalName": "Norway",
+      "proposedDisplayName": "Norveç",
+      "isoAlpha2": "NO",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 126,
+      "sourceName": "Oman",
+      "canonicalName": "Oman",
+      "proposedDisplayName": "Umman",
+      "isoAlpha2": "OM",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 130,
+      "sourceName": "Panama",
+      "canonicalName": "Panama",
+      "proposedDisplayName": "Panama",
+      "isoAlpha2": "PA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 132,
+      "sourceName": "Paraguay",
+      "canonicalName": "Paraguay",
+      "proposedDisplayName": "Paraguay",
+      "isoAlpha2": "PY",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 133,
+      "sourceName": "Peru",
+      "canonicalName": "Peru",
+      "proposedDisplayName": "Peru",
+      "isoAlpha2": "PE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 134,
+      "sourceName": "Philippines",
+      "canonicalName": "Philippines",
+      "proposedDisplayName": "Filipinler",
+      "isoAlpha2": "PH",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 135,
+      "sourceName": "Poland",
+      "canonicalName": "Poland",
+      "proposedDisplayName": "Polonya",
+      "isoAlpha2": "PL",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 136,
+      "sourceName": "Portugal",
+      "canonicalName": "Portugal",
+      "proposedDisplayName": "Portekiz",
+      "isoAlpha2": "PT",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 228,
+      "sourceName": "Puerto Rico",
+      "canonicalName": "Puerto Rico",
+      "proposedDisplayName": "Porto Riko",
+      "isoAlpha2": "PR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 137,
+      "sourceName": "Qatar",
+      "canonicalName": "Qatar",
+      "proposedDisplayName": "Katar",
+      "isoAlpha2": "QA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 140,
+      "sourceName": "Romania",
+      "canonicalName": "Romania",
+      "proposedDisplayName": "Romanya",
+      "isoAlpha2": "RO",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 141,
+      "sourceName": "Russia",
+      "canonicalName": "Russia",
+      "proposedDisplayName": "Rusya",
+      "isoAlpha2": "RU",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Rwanda",
+      "proposedDisplayName": "Ruanda",
+      "isoAlpha2": "RW",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 144,
+      "sourceName": "San Marino",
+      "canonicalName": "San Marino",
+      "proposedDisplayName": "San Marino",
+      "isoAlpha2": "SM",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Sao Tome and Principe",
+      "proposedDisplayName": "São Tomé ve Príncipe",
+      "isoAlpha2": "ST",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 146,
+      "sourceName": "Saudi Arabia",
+      "canonicalName": "Saudi Arabia",
+      "proposedDisplayName": "Suudi Arabistan",
+      "isoAlpha2": "SA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 190,
+      "sourceName": "Scotland",
+      "canonicalName": "Scotland",
+      "proposedDisplayName": "İskoçya",
+      "isoAlpha2": null,
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 149,
+      "sourceName": "Senegal",
+      "canonicalName": "Senegal",
+      "proposedDisplayName": "Senegal",
+      "isoAlpha2": "SN",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 215,
+      "sourceName": "Serbia",
+      "canonicalName": "Serbia",
+      "proposedDisplayName": "Sırbistan",
+      "isoAlpha2": "RS",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Sierra Leone",
+      "proposedDisplayName": "Sierra Leone",
+      "isoAlpha2": "SL",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 153,
+      "sourceName": "Singapore",
+      "canonicalName": "Singapore",
+      "proposedDisplayName": "Singapur",
+      "isoAlpha2": "SG",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 154,
+      "sourceName": "Slovakia",
+      "canonicalName": "Slovakia",
+      "proposedDisplayName": "Slovakya",
+      "isoAlpha2": "SK",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 155,
+      "sourceName": "Slovenia",
+      "canonicalName": "Slovenia",
+      "proposedDisplayName": "Slovenya",
+      "isoAlpha2": "SI",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Somalia",
+      "proposedDisplayName": "Somali",
+      "isoAlpha2": "SO",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 159,
+      "sourceName": "South Africa",
+      "canonicalName": "South Africa",
+      "proposedDisplayName": "Güney Afrika",
+      "isoAlpha2": "ZA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Soviet Union",
+      "proposedDisplayName": "Sovyetler Birliği",
+      "isoAlpha2": null,
+      "origin": "historical",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 157,
+      "sourceName": "Spain",
+      "canonicalName": "Spain",
+      "proposedDisplayName": "İspanya",
+      "isoAlpha2": "ES",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 158,
+      "sourceName": "Sri Lanka",
+      "canonicalName": "Sri Lanka",
+      "proposedDisplayName": "Sri Lanka",
+      "isoAlpha2": "LK",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Suriname",
+      "proposedDisplayName": "Surinam",
+      "isoAlpha2": "SR",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 147,
+      "sourceName": "Sweden",
+      "canonicalName": "Sweden",
+      "proposedDisplayName": "İsveç",
+      "isoAlpha2": "SE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 148,
+      "sourceName": "Switzerland",
+      "canonicalName": "Switzerland",
+      "proposedDisplayName": "İsviçre",
+      "isoAlpha2": "CH",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Syria",
+      "proposedDisplayName": "Suriye",
+      "isoAlpha2": "SY",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 165,
+      "sourceName": "Tajikistan",
+      "canonicalName": "Tajikistan",
+      "proposedDisplayName": "Tacikistan",
+      "isoAlpha2": "TJ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Tanzania",
+      "proposedDisplayName": "Tanzanya",
+      "isoAlpha2": "TZ",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 167,
+      "sourceName": "Thailand",
+      "canonicalName": "Thailand",
+      "proposedDisplayName": "Tayland",
+      "isoAlpha2": "TH",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "The Gambia",
+      "proposedDisplayName": "Gambiya",
+      "isoAlpha2": "GM",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 242,
+      "sourceName": "Timor-Leste",
+      "canonicalName": "Timor-Leste",
+      "proposedDisplayName": "Doğu Timor",
+      "isoAlpha2": "TL",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Togo",
+      "proposedDisplayName": "Togo",
+      "isoAlpha2": "TG",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Trinidad and Tobago",
+      "proposedDisplayName": "Trinidad ve Tobago",
+      "isoAlpha2": "TT",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 173,
+      "sourceName": "Tunisia",
+      "canonicalName": "Tunisia",
+      "proposedDisplayName": "Tunus",
+      "isoAlpha2": "TN",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 174,
+      "sourceName": "Türkiye",
+      "canonicalName": "Türkiye",
+      "proposedDisplayName": "Türkiye",
+      "isoAlpha2": "TR",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 176,
+      "sourceName": "Uganda",
+      "canonicalName": "Uganda",
+      "proposedDisplayName": "Uganda",
+      "isoAlpha2": "UG",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 177,
+      "sourceName": "Ukraine",
+      "canonicalName": "Ukraine",
+      "proposedDisplayName": "Ukrayna",
+      "isoAlpha2": "UA",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 183,
+      "sourceName": "United Arab Emirates",
+      "canonicalName": "United Arab Emirates",
+      "proposedDisplayName": "Birleşik Arap Emirlikleri",
+      "isoAlpha2": "AE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 184,
+      "sourceName": "United States",
+      "canonicalName": "United States",
+      "proposedDisplayName": "Amerika Birleşik Devletleri",
+      "isoAlpha2": "US",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 179,
+      "sourceName": "Uruguay",
+      "canonicalName": "Uruguay",
+      "proposedDisplayName": "Uruguay",
+      "isoAlpha2": "UY",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 180,
+      "sourceName": "Uzbekistan",
+      "canonicalName": "Uzbekistan",
+      "proposedDisplayName": "Özbekistan",
+      "isoAlpha2": "UZ",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 182,
+      "sourceName": "Venezuela",
+      "canonicalName": "Venezuela",
+      "proposedDisplayName": "Venezuela",
+      "isoAlpha2": "VE",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 185,
+      "sourceName": "Vietnam",
+      "canonicalName": "Vietnam",
+      "proposedDisplayName": "Vietnam",
+      "isoAlpha2": "VN",
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": 191,
+      "sourceName": "Wales",
+      "canonicalName": "Wales",
+      "proposedDisplayName": "Galler",
+      "isoAlpha2": null,
+      "origin": "source",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Yugoslavia",
+      "proposedDisplayName": "Yugoslavya",
+      "isoAlpha2": null,
+      "origin": "historical",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Zambia",
+      "proposedDisplayName": "Zambiya",
+      "isoAlpha2": "ZM",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    },
+    {
+      "sourceCountryId": null,
+      "sourceName": null,
+      "canonicalName": "Zimbabwe",
+      "proposedDisplayName": "Zimbabve",
+      "isoAlpha2": "ZW",
+      "origin": "player_value",
+      "reviewStatus": "pending"
+    }
+  ]
+}

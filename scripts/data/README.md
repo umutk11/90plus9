@@ -108,13 +108,16 @@ Staging kapsamındaki 43 kulübün kaynak kimliğiyle önerilen Türkçe adı/ş
 pnpm data:references -- --version 677
 ```
 
-Kulüp adları `data/reference/club-identities`, ülke override kayıtları
-`data/reference/country-mappings` altında sürümlenir. Kaynak ülke adıyla birebir eşleşen değerler
-otomatik kapsanır; kaynak ülke tablosunda bulunmayan modern ülkeler ve alias'lar açık override
-kaydına ihtiyaç duyar. Çekoslovakya, SSCB ve Yugoslavya gibi tek başına halef ülkeyi belirlemeyen
-doğum değerleri oyuncu bazlı incelemeye bırakılır.
+Kulüp adları `data/reference/club-identities`, canonical/Türkçe ülke adları
+`data/reference/country-identities`, ülke override kayıtları `data/reference/country-mappings`
+altında sürümlenir. Kaynak ülke adıyla birebir eşleşen değerler otomatik kapsanır; kaynak ülke
+tablosunda bulunmayan modern ülkeler ve alias'lar açık override kaydına ihtiyaç duyar.
+Çekoslovakya, SSCB ve Yugoslavya gibi değerler günümüzdeki bir vatandaşlığa tahminle çevrilmez;
+tarihsel doğum ülkesi olarak korunur.
 
 Komut eksik/fazla kaynak kimliği, tekrar eden canonical kulüp adı, şehir/İstanbul bayrağı,
-`dört büyük` bayrakları, ülke override kapsamı ve ISO kod biçimini kontrol eder. Yapısal kontrol
-başarılı olsa bile `pending` kayıtlar canonical importa hazır sayılmaz. İnceleme tablosu
+`dört büyük` bayrakları, 165 canonical ülke kimliğini, Türkçe ad çakışmalarını, ülke override
+kapsamını ve ISO kod biçimini kontrol eder. Yapısal kontrol başarılı olsa bile `pending` kayıtlar
+canonical importa hazır sayılmaz. Oyuncularda kullanılan tüm kaynak ülke metinlerini içeren
+inceleme tablosu
 `reports/data-quality/dcaribou-kaggle-v<version>-reference-mappings.md` altında üretilir.
