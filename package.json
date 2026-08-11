@@ -9,6 +9,7 @@
   "packageManager": "pnpm@11.16.0",
   "scripts": {
     "build": "pnpm --recursive --if-present run build",
+    "data:download": "node scripts/data/download-snapshot.mjs",
     "db:check": "bash scripts/database/check-connection.sh",
     "db:down": "bash scripts/database/compose.sh down",
     "db:generate": "pnpm --filter @90plus9/database db:generate",
@@ -19,7 +20,7 @@
     "dev": "pnpm --filter @90plus9/web dev",
     "format": "prettier --check .",
     "format:write": "prettier --write .",
-    "lint": "pnpm --recursive --if-present run lint",
+    "lint": "eslint scripts && pnpm --recursive --if-present run lint",
     "test": "pnpm --recursive --if-present run test",
     "typecheck": "pnpm --recursive --if-present run typecheck"
   },

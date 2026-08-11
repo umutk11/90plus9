@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "name": "dcaribou/transfermarkt-datasets",
+    "repositoryUrl": "https://github.com/dcaribou/transfermarkt-datasets",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://github.com/dcaribou/transfermarkt-datasets/blob/master/LICENSE"
+  },
+  "distribution": {
+    "name": "Kaggle",
+    "dataset": "davidcariboo/player-scores",
+    "version": 677,
+    "sourceUpdatedAt": "2026-08-05T07:19:00.543Z",
+    "downloadedAt": "2026-08-11T07:02:07.080Z",
+    "downloadUrl": "https://www.kaggle.com/api/v1/datasets/download/davidcariboo/player-scores?datasetVersionNumber=677",
+    "archive": "dcaribou-kaggle-v677.zip",
+    "sizeBytes": 229140236,
+    "sha256": "c1e285d8bd2aef071351c2a164785b32e524a5af621895b318dd8835751e88ce"
+  },
+  "repositoryHeadAtInspection": {
+    "commit": "154367dfa6d6eb0b86332e332f9df0a080c7ddce",
+    "committedAt": "2026-08-05T07:01:15Z",
+    "note": "This is the repository head observed near publication time, not a cryptographic claim that the Kaggle archive was built from this commit."
+  },
+  "files": [
+    { "name": "appearances.csv", "dataRows": 1894350 },
+    { "name": "club_games.csv", "dataRows": 177916 },
+    { "name": "clubs.csv", "dataRows": 796 },
+    { "name": "competitions.csv", "dataRows": 65 },
+    { "name": "countries.csv", "dataRows": 124 },
+    { "name": "game_events.csv", "dataRows": 1274469 },
+    { "name": "game_lineups.csv", "dataRows": 3179016 },
+    { "name": "games.csv", "dataRows": 88958 },
+    { "name": "national_teams.csv", "dataRows": 124 },
+    { "name": "player_valuations.csv", "dataRows": 656301 },
+    { "name": "players.csv", "dataRows": 50149 },
+    { "name": "transfers.csv", "dataRows": 175165 }
+  ],
+  "superLigScope": {
+    "competitionId": "TR1",
+    "firstSeason": 2012,
+    "lastSeason": 2025,
+    "games": 4618,
+    "evidenceBackedGames": 4589,
+    "clubs": 43,
+    "players": 3774,
+    "playerClubSeasonRelations": 9347,
+    "coverageBySeason": [
+      { "season": 2012, "games": 306, "appearanceGames": 306, "lineupGames": 0 },
+      { "season": 2013, "games": 306, "appearanceGames": 306, "lineupGames": 306 },
+      { "season": 2014, "games": 306, "appearanceGames": 306, "lineupGames": 306 },
+      { "season": 2015, "games": 306, "appearanceGames": 306, "lineupGames": 306 },
+      { "season": 2016, "games": 306, "appearanceGames": 306, "lineupGames": 306 },
+      { "season": 2017, "games": 306, "appearanceGames": 306, "lineupGames": 306 },
+      { "season": 2018, "games": 306, "appearanceGames": 306, "lineupGames": 305 },
+      { "season": 2019, "games": 306, "appearanceGames": 306, "lineupGames": 306 },
+      { "season": 2020, "games": 420, "appearanceGames": 420, "lineupGames": 420 },
+      { "season": 2021, "games": 380, "appearanceGames": 380, "lineupGames": 380 },
+      { "season": 2022, "games": 342, "appearanceGames": 313, "lineupGames": 313 },
+      { "season": 2023, "games": 380, "appearanceGames": 380, "lineupGames": 380 },
+      { "season": 2024, "games": 342, "appearanceGames": 342, "lineupGames": 342 },
+      { "season": 2025, "games": 306, "appearanceGames": 306, "lineupGames": 305 }
+    ]
+  },
+  "qualityNotes": [
+    "The 2012 season has no game_lineups rows and therefore uses appearances only.",
+    "Twenty-nine 2022 season fixtures have no appearance or lineup evidence; they are awarded fixtures and are excluded from eligibility evidence.",
+    "One 2018 fixture and one 2025 fixture have appearances but no lineup rows.",
+    "CSV imports must explicitly use comma as delimiter and double quote as quote and escape characters."
+  ]
+}

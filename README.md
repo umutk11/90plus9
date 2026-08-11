@@ -13,7 +13,9 @@ Bu depo 90+9'un web uygulamasını, veritabanı katmanını, kural motorunu ve v
 - Hesap gerektirmeyen anonim oyun oturumu
 - Responsive web deneyimi
 
-Ayrıntılı kararlar için [ürün kararları](docs/PRODUCT_DECISIONS.md), uygulanabilir görevler için [geliştirme yol haritası](90PLUS9_YOL_HARITASI.md) belgelerine bakın.
+Ayrıntılı kararlar için [ürün kararları](docs/PRODUCT_DECISIONS.md), [veri kaynağı ve snapshot
+politikası](docs/DATA_SOURCES.md), uygulanabilir görevler için [geliştirme yol
+haritası](90PLUS9_YOL_HARITASI.md) belgelerine bakın.
 
 ## Teknik temel
 
@@ -75,6 +77,7 @@ pnpm typecheck    # TypeScript kontrolleri
 pnpm test         # Birim testleri
 pnpm format       # Biçim kontrolü
 pnpm format:write # Dosyaları biçimlendir
+pnpm data:download -- --version 677 # Sabitlenmiş ham veri snapshot'ını indir
 pnpm db:up        # Local PostgreSQL'i başlat ve bağlantıları doğrula
 pnpm db:check     # Uygulama ve test veritabanı bağlantılarını kontrol et
 pnpm db:status    # PostgreSQL durumunu göster

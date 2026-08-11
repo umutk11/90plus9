@@ -366,29 +366,29 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 2.2. Snapshot indirme
 
-- [ ] Veri indirme komutu oluştur.
-- [ ] Komutun sürüm numarası kabul etmesini sağla.
-- [ ] Sürüm verilmezse “latest” kullanılmasının yalnızca yerel incelemede mümkün olmasını sağla.
-- [ ] Production import için açık sürüm numarasını zorunlu tut.
-- [ ] İndirilen dosyanın adında sürüm numarası bulunsun.
-- [ ] İndirilen dosyanın SHA-256 özetini hesapla.
-- [ ] Dosya boyutunu kaydet.
-- [ ] İndirme zamanını kaydet.
-- [ ] İndirme yarıda kesilirse bozuk dosyayı kullanma.
-- [ ] Aynı sürüm daha önce indirilmişse checksum doğrula.
-- [ ] Ham snapshot’ı Git deposuna ekleme.
-- [ ] Snapshot saklama politikasını belirle.
-- [ ] En az production’daki mevcut ve bir önceki snapshot’ı sakla.
+- [x] Veri indirme komutu oluştur.
+- [x] Komutun sürüm numarası kabul etmesini sağla.
+- [x] Sürüm verilmezse “latest” kullanılmasının yalnızca yerel incelemede mümkün olmasını sağla.
+- [x] Production import için açık sürüm numarasını zorunlu tut.
+- [x] İndirilen dosyanın adında sürüm numarası bulunsun.
+- [x] İndirilen dosyanın SHA-256 özetini hesapla.
+- [x] Dosya boyutunu kaydet.
+- [x] İndirme zamanını kaydet.
+- [x] İndirme yarıda kesilirse bozuk dosyayı kullanma.
+- [x] Aynı sürüm daha önce indirilmişse checksum doğrula.
+- [x] Ham snapshot’ı Git deposuna ekleme.
+- [x] Snapshot saklama politikasını belirle.
+- [x] En az production’daki mevcut ve bir önceki snapshot’ı sakla.
 
 ## 2.3. Kaynak dosya şeması kontrolü
 
-- [ ] Arşivde `games.csv` olduğunu kontrol et.
-- [ ] Arşivde `appearances.csv` olduğunu kontrol et.
-- [ ] Arşivde `game_lineups.csv` olduğunu kontrol et.
-- [ ] Arşivde `players.csv` olduğunu kontrol et.
-- [ ] Arşivde `clubs.csv` olduğunu kontrol et.
-- [ ] Arşivde `countries.csv` olduğunu kontrol et.
-- [ ] Arşivde `transfers.csv` olduğunu kontrol et; oyun kaynağı değil QA kaynağı olarak işaretle.
+- [x] Arşivde `games.csv` olduğunu kontrol et.
+- [x] Arşivde `appearances.csv` olduğunu kontrol et.
+- [x] Arşivde `game_lineups.csv` olduğunu kontrol et.
+- [x] Arşivde `players.csv` olduğunu kontrol et.
+- [x] Arşivde `clubs.csv` olduğunu kontrol et.
+- [x] Arşivde `countries.csv` olduğunu kontrol et.
+- [x] Arşivde `transfers.csv` olduğunu kontrol et; oyun kaynağı değil QA kaynağı olarak işaretle.
 - [ ] Her dosyanın beklenen başlıklarını doğrula.
 - [ ] Beklenen sütun eksikse importu durdur.
 - [ ] Yeni, bilinmeyen sütunlar varsa uyarı üret ama güvenliyse importu durdurma.
@@ -414,8 +414,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## Faz 2 kabul kriterleri
 
-- [ ] Sabitlenmiş bir dcaribou sürümü tekrar indirilebiliyor.
-- [ ] İndirilen dosyanın bütünlüğü doğrulanıyor.
+- [x] Sabitlenmiş bir dcaribou sürümü tekrar indirilebiliyor.
+- [x] İndirilen dosyanın bütünlüğü doğrulanıyor.
 - [ ] Kaynak şeması değiştiğinde pipeline sessizce yanlış veri üretmiyor.
 - [ ] Hangi sürümün production’da olduğu sorgulanabiliyor.
 
@@ -2249,10 +2249,10 @@ Bu sıra ekip tek kişi olsa bile uygulanabilir. Her satır ayrı bir iş kartı
 11. [x] Yerel PostgreSQL geliştirme ortamını kur.
 12. [x] Test veritabanını kur.
 13. [x] Ortam değişkeni örnek dosyasını oluştur.
-14. [ ] dcaribou lisansını ve atıf metnini arşivle.
-15. [ ] 2012/13–2025/26 raw snapshot’ını indir.
-16. [ ] Snapshot checksum ve kaynak commit bilgisini kaydet.
-17. [ ] Kaynak dosya envanterini çıkar.
+14. [x] dcaribou lisansını ve atıf metnini arşivle.
+15. [x] 2012/13–2025/26 raw snapshot’ını indir.
+16. [x] Snapshot checksum ve kaynak commit bilgisini kaydet.
+17. [x] Kaynak dosya envanterini çıkar.
 18. [ ] Her sezonun alan ve doluluk profilini üret.
 19. [ ] PostgreSQL temel tablolarının migration’ını yaz.
 20. [ ] Canonical kulüp ve alias tablolarını oluştur.

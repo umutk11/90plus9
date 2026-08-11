@@ -3,7 +3,9 @@ import prettier from "eslint-config-prettier";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import tseslint from "typescript-eslint";
 
+const javascriptFiles = ["scripts/**/*.{js,mjs,cjs}"];
 const typescriptFiles = ["packages/**/*.{ts,tsx}", "scripts/**/*.{ts,tsx}"];
+const lintedFiles = [...javascriptFiles, ...typescriptFiles];
 
 export default [
   {
@@ -18,11 +20,18 @@ export default [
   },
   {
     ...eslint.configs.recommended,
-    files: typescriptFiles,
+    files: lintedFiles,
+    languageOptions: {
+      globals: {
+        console: "readonly",
+        fetch: "readonly",
+        process: "readonly",
+      },
+    },
   },
   ...tseslint.configs.recommended.map((config) => ({
     ...config,
-    files: typescriptFiles,
+    files: lintedFiles,
   })),
   {
     files: typescriptFiles,
