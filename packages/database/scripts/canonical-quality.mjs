@@ -1,4 +1,5 @@
 import { verifyChampionReferenceInDatabase } from "../../../scripts/data/champion-reference.mjs";
+import { verifyPlayerRegressionReferenceInDatabase } from "../../../scripts/data/player-regression-reference.mjs";
 
 function percentage(part, total) {
   return total === 0 ? 0 : Number(((part / total) * 100).toFixed(2));
@@ -6,7 +7,7 @@ function percentage(part, total) {
 
 export async function collectCanonicalQuality(
   client,
-  { championReference, datasetVersionId, expected },
+  { championReference, datasetVersionId, expected, playerRegressionReference },
 ) {
   const datasetResult = await client.query(
     `SELECT
@@ -242,6 +243,17 @@ export async function collectCanonicalQuality(
     criticalErrors.push(error instanceof Error ? error.message : String(error));
   }
 
+  let playerRegressionRows = [];
+  try {
+    playerRegressionRows = await verifyPlayerRegressionReferenceInDatabase(
+      client,
+      playerRegressionReference,
+      datasetVersionId,
+    );
+  } catch (error) {
+    criticalErrors.push(error instanceof Error ? error.message : String(error));
+  }
+
   if (players.missing_citizenships > 0) {
     warnings.push(`Vatandaşlığı eksik oyuncu: ${players.missing_citizenships}`);
   }
@@ -278,7 +290,11 @@ export async function collectCanonicalQuality(
     checkedAt: new Date().toISOString(),
     status: criticalErrors.length === 0 ? "passed" : "failed",
     dataset: datasetResult.rows[0],
-    counts: { ...counts, champions: championRows.length },
+    counts: {
+      ...counts,
+      champions: championRows.length,
+      known_player_regressions: playerRegressionRows.length,
+    },
     playerQuality: {
       ...players,
       citizenshipFillPercent: percentage(

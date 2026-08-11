@@ -882,16 +882,16 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 5.7. Bilinen oyuncu regresyon listesi
 
-- [ ] Her sezondan en az beş tanınan oyuncu seç.
-- [ ] Büyük kulüplerden örnek oyuncular seç.
-- [ ] Anadolu/İstanbul dışı kulüplerden örnek oyuncular seç.
+- [x] Her sezondan en az beş tanınan oyuncu seç.
+- [x] Büyük kulüplerden örnek oyuncular seç.
+- [x] Anadolu/İstanbul dışı kulüplerden örnek oyuncular seç.
 - [ ] Sezon içinde takım değiştiren oyuncu örnekleri seç.
-- [ ] Kaleci, defans, orta saha ve forvet örnekleri seç.
-- [ ] Yabancı uyruk örnekleri seç.
+- [x] Kaleci, defans, orta saha ve forvet örnekleri seç.
+- [x] Yabancı uyruk örnekleri seç.
 - [ ] Aynı isimli oyuncu örneği seç.
-- [ ] Bu oyuncuların beklenen kulüp–sezon ilişkilerini fixture dosyasına yaz.
-- [ ] Her veri güncellemesinde fixture listesini otomatik test et.
-- [ ] Fixture bozulursa yeni sürümü production’a alma.
+- [x] Bu oyuncuların beklenen kulüp–sezon ilişkilerini fixture dosyasına yaz.
+- [x] Her veri güncellemesinde fixture listesini otomatik test et.
+- [x] Fixture bozulursa yeni sürümü production’a alma.
 
 ## 5.8. Veri kalite raporu
 
@@ -915,7 +915,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] 14 sezonun şampiyonları resmi kaynakla doğrulanmış.
 - [x] Açıklanamayan oyuncusuz maç kalmamış.
 - [x] Kritik veri kalite sorunu açık değil.
-- [ ] Bilinen oyuncu regresyon testleri geçiyor.
+- [x] Bilinen oyuncu regresyon testleri geçiyor.
 
 ---
 
@@ -2275,7 +2275,7 @@ Bu sıra ekip tek kişi olsa bile uygulanabilir. Her satır ayrı bir iş kartı
 35. [ ] Kaynak kanıtlarını tekilleştirerek `player_season_club` üret.
 36. [ ] Kulüp şehir ve grup etiketlerini manuel doğrula.
 37. [x] 14 sezonun şampiyon tablosunu resmi kaynaklarla doldur.
-38. [ ] Bilinen oyuncu regresyon fixture’ını oluştur.
+38. [x] Bilinen oyuncu regresyon fixture’ını oluştur.
 39. [x] İlk tam veri kalite raporunu üret.
 40. [ ] Kritik veri hatalarını düzelt ve dataset v1’i dondur.
 41. [ ] Ortak kural sözleşmesini uygula.

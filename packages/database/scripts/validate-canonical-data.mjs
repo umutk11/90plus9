@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import pg from "pg";
 
 import { loadChampionReference } from "../../../scripts/data/champion-reference.mjs";
+import { loadPlayerRegressionReference } from "../../../scripts/data/player-regression-reference.mjs";
 import { assertCanonicalQuality, collectCanonicalQuality } from "./canonical-quality.mjs";
 
 const { Client } = pg;
@@ -88,6 +89,7 @@ Durum: **${report.status === "passed" ? "başarılı" : "başarısız"}**
 | Kanıt | ${report.counts.evidence} |
 | Oyuncu–kulüp–sezon | ${report.counts.player_club_seasons} |
 | Şampiyon sezon | ${report.counts.champions} |
+| Bilinen oyuncu regresyonu | ${report.counts.known_player_regressions} |
 
 ## Doluluk
 
@@ -145,6 +147,10 @@ async function main() {
     ),
   );
   const { championReference } = await loadChampionReference(repositoryRoot, version);
+  const { playerRegressionReference } = await loadPlayerRegressionReference(
+    repositoryRoot,
+    version,
+  );
   const client = new Client({
     application_name: `90plus9-quality-v${version}`,
     connectionString,
@@ -165,6 +171,7 @@ async function main() {
       championReference,
       datasetVersionId: datasetResult.rows[0].id,
       expected: snapshotMetadata.applicationImportScope,
+      playerRegressionReference,
     });
     const reportDirectory = path.join(repositoryRoot, "reports/data-quality");
     const reportBaseName = `dcaribou-kaggle-v${version}-canonical-quality-${target}`;

@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": 677,
+  "competitionId": "TR1",
+  "competitionName": "Süper Lig",
+  "seasonStartYear": 2012,
+  "seasonEndYear": 2025,
+  "minimumCasesPerSeason": 5,
+  "reviewStatus": "approved",
+  "reviewedAt": "2026-08-11T15:30:00Z",
+  "reviewedBy": "umutk11",
+  "cases": [
+    {
+      "seasonStartYear": 2012,
+      "sourcePlayerId": 58088,
+      "expectedPlayerName": "Fernando Muslera",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "gk",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2012,
+      "sourcePlayerId": 33793,
+      "expectedPlayerName": "Gökhan Gönül",
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "positionGroup": "def",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2012,
+      "sourcePlayerId": 35026,
+      "expectedPlayerName": "Selcuk Inan",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "mid",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2012,
+      "sourcePlayerId": 34987,
+      "expectedPlayerName": "Burak Yilmaz",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "fwd",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2012,
+      "sourcePlayerId": 45671,
+      "expectedPlayerName": "Cenk Tosun",
+      "sourceClubId": 524,
+      "canonicalClubName": "Gaziantepspor",
+      "positionGroup": "fwd",
+      "isForeignCitizen": false
+    },
+
+    {
+      "seasonStartYear": 2013,
+      "sourcePlayerId": 7079,
+      "expectedPlayerName": "Volkan Demirel",
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "positionGroup": "gk",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2013,
+      "sourcePlayerId": 33793,
+      "expectedPlayerName": "Gökhan Gönül",
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "positionGroup": "def",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2013,
+      "sourcePlayerId": 4673,
+      "expectedPlayerName": "Wesley Sneijder",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2013,
+      "sourcePlayerId": 22382,
+      "expectedPlayerName": "Moussa Sow",
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2013,
+      "sourcePlayerId": 73480,
+      "expectedPlayerName": "Aatif Chahechouhe",
+      "sourceClubId": 2381,
+      "canonicalClubName": "Sivasspor",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2014,
+      "sourcePlayerId": 58088,
+      "expectedPlayerName": "Fernando Muslera",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "gk",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2014,
+      "sourcePlayerId": 33793,
+      "expectedPlayerName": "Gökhan Gönül",
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "positionGroup": "def",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2014,
+      "sourcePlayerId": 4673,
+      "expectedPlayerName": "Wesley Sneijder",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2014,
+      "sourcePlayerId": 40205,
+      "expectedPlayerName": "Demba Ba",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2014,
+      "sourcePlayerId": 109217,
+      "expectedPlayerName": "Edin Visca",
+      "sourceClubId": 6890,
+      "canonicalClubName": "Başakşehir",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2015,
+      "sourcePlayerId": 58088,
+      "expectedPlayerName": "Fernando Muslera",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "gk",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2015,
+      "sourcePlayerId": 52920,
+      "expectedPlayerName": "Marcelo",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2015,
+      "sourcePlayerId": 16101,
+      "expectedPlayerName": "Atiba Hutchinson",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2015,
+      "sourcePlayerId": 6288,
+      "expectedPlayerName": "Mario Gómez",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2015,
+      "sourcePlayerId": 4257,
+      "expectedPlayerName": "Samuel Eto'o",
+      "sourceClubId": 589,
+      "canonicalClubName": "Antalyaspor",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2016,
+      "sourcePlayerId": 45882,
+      "expectedPlayerName": "Fabri",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "gk",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2016,
+      "sourcePlayerId": 52920,
+      "expectedPlayerName": "Marcelo",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2016,
+      "sourcePlayerId": 258626,
+      "expectedPlayerName": "Talisca",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2016,
+      "sourcePlayerId": 45671,
+      "expectedPlayerName": "Cenk Tosun",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "fwd",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2016,
+      "sourcePlayerId": 4257,
+      "expectedPlayerName": "Samuel Eto'o",
+      "sourceClubId": 589,
+      "canonicalClubName": "Antalyaspor",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2017,
+      "sourcePlayerId": 58088,
+      "expectedPlayerName": "Fernando Muslera",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "gk",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2017,
+      "sourcePlayerId": 14132,
+      "expectedPlayerName": "Pepe",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2017,
+      "sourcePlayerId": 258626,
+      "expectedPlayerName": "Talisca",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2017,
+      "sourcePlayerId": 22388,
+      "expectedPlayerName": "Bafétimbi Gomis",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2017,
+      "sourcePlayerId": 212229,
+      "expectedPlayerName": "Halil Akbunar",
+      "sourceClubId": 1467,
+      "canonicalClubName": "Göztepe",
+      "positionGroup": "fwd",
+      "isForeignCitizen": false
+    },
+
+    {
+      "seasonStartYear": 2018,
+      "sourcePlayerId": 51894,
+      "expectedPlayerName": "Mert Günok",
+      "sourceClubId": 6890,
+      "canonicalClubName": "Başakşehir",
+      "positionGroup": "gk",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2018,
+      "sourcePlayerId": 54155,
+      "expectedPlayerName": "Mariano",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2018,
+      "sourcePlayerId": 57162,
+      "expectedPlayerName": "Sofiane Feghouli",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2018,
+      "sourcePlayerId": 380415,
+      "expectedPlayerName": "Henry Onyekuru",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2018,
+      "sourcePlayerId": 256267,
+      "expectedPlayerName": "Vedat Muriqi",
+      "sourceClubId": 126,
+      "canonicalClubName": "Çaykur Rizespor",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2019,
+      "sourcePlayerId": 51894,
+      "expectedPlayerName": "Mert Günok",
+      "sourceClubId": 6890,
+      "canonicalClubName": "Başakşehir",
+      "positionGroup": "gk",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2019,
+      "sourcePlayerId": 112062,
+      "expectedPlayerName": "Júnior Caiçara",
+      "sourceClubId": 6890,
+      "canonicalClubName": "Başakşehir",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2019,
+      "sourcePlayerId": 162571,
+      "expectedPlayerName": "Anastasios Bakasetas",
+      "sourceClubId": 11282,
+      "canonicalClubName": "Alanyaspor",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2019,
+      "sourcePlayerId": 109217,
+      "expectedPlayerName": "Edin Visca",
+      "sourceClubId": 6890,
+      "canonicalClubName": "Başakşehir",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2019,
+      "sourcePlayerId": 238407,
+      "expectedPlayerName": "Alexander Sørloth",
+      "sourceClubId": 449,
+      "canonicalClubName": "Trabzonspor",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2020,
+      "sourcePlayerId": 500091,
+      "expectedPlayerName": "Ersin Destanoğlu",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "gk",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2020,
+      "sourcePlayerId": 46083,
+      "expectedPlayerName": "Domagoj Vida",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2020,
+      "sourcePlayerId": 16101,
+      "expectedPlayerName": "Atiba Hutchinson",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2020,
+      "sourcePlayerId": 147487,
+      "expectedPlayerName": "Vincent Aboubakar",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2020,
+      "sourcePlayerId": 212229,
+      "expectedPlayerName": "Halil Akbunar",
+      "sourceClubId": 1467,
+      "canonicalClubName": "Göztepe",
+      "positionGroup": "fwd",
+      "isForeignCitizen": false
+    },
+
+    {
+      "seasonStartYear": 2021,
+      "sourcePlayerId": 292199,
+      "expectedPlayerName": "Uğurcan Çakır",
+      "sourceClubId": 449,
+      "canonicalClubName": "Trabzonspor",
+      "positionGroup": "gk",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2021,
+      "sourcePlayerId": 149752,
+      "expectedPlayerName": "Vitor Hugo",
+      "sourceClubId": 449,
+      "canonicalClubName": "Trabzonspor",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2021,
+      "sourcePlayerId": 38593,
+      "expectedPlayerName": "Marek Hamsik",
+      "sourceClubId": 449,
+      "canonicalClubName": "Trabzonspor",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2021,
+      "sourcePlayerId": 203412,
+      "expectedPlayerName": "Andreas Cornelius",
+      "sourceClubId": 449,
+      "canonicalClubName": "Trabzonspor",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2021,
+      "sourcePlayerId": 382528,
+      "expectedPlayerName": "Kerem Aktürkoğlu",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "fwd",
+      "isForeignCitizen": false
+    },
+
+    {
+      "seasonStartYear": 2022,
+      "sourcePlayerId": 58088,
+      "expectedPlayerName": "Fernando Muslera",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "gk",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2022,
+      "sourcePlayerId": 422951,
+      "expectedPlayerName": "Victor Nelsson",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2022,
+      "sourcePlayerId": 318077,
+      "expectedPlayerName": "Lucas Torreira",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2022,
+      "sourcePlayerId": 68863,
+      "expectedPlayerName": "Mauro Icardi",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2022,
+      "sourcePlayerId": 139503,
+      "expectedPlayerName": "Enner Valencia",
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2023,
+      "sourcePlayerId": 58088,
+      "expectedPlayerName": "Fernando Muslera",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "gk",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2023,
+      "sourcePlayerId": 199316,
+      "expectedPlayerName": "Abdülkerim Bardakcı",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "def",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2023,
+      "sourcePlayerId": 320748,
+      "expectedPlayerName": "Sebastian Szymanski",
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2023,
+      "sourcePlayerId": 68863,
+      "expectedPlayerName": "Mauro Icardi",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2023,
+      "sourcePlayerId": 28396,
+      "expectedPlayerName": "Edin Dzeko",
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2024,
+      "sourcePlayerId": 58088,
+      "expectedPlayerName": "Fernando Muslera",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "gk",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2024,
+      "sourcePlayerId": 341429,
+      "expectedPlayerName": "Davinson Sánchez",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "def",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2024,
+      "sourcePlayerId": 318077,
+      "expectedPlayerName": "Lucas Torreira",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2024,
+      "sourcePlayerId": 401923,
+      "expectedPlayerName": "Victor Osimhen",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2024,
+      "sourcePlayerId": 238055,
+      "expectedPlayerName": "Rafa Silva",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+
+    {
+      "seasonStartYear": 2025,
+      "sourcePlayerId": 500091,
+      "expectedPlayerName": "Ersin Destanoğlu",
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "positionGroup": "gk",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2025,
+      "sourcePlayerId": 199316,
+      "expectedPlayerName": "Abdülkerim Bardakcı",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "def",
+      "isForeignCitizen": false
+    },
+    {
+      "seasonStartYear": 2025,
+      "sourcePlayerId": 318077,
+      "expectedPlayerName": "Lucas Torreira",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "mid",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2025,
+      "sourcePlayerId": 401923,
+      "expectedPlayerName": "Victor Osimhen",
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    },
+    {
+      "seasonStartYear": 2025,
+      "sourcePlayerId": 109217,
+      "expectedPlayerName": "Edin Visca",
+      "sourceClubId": 449,
+      "canonicalClubName": "Trabzonspor",
+      "positionGroup": "fwd",
+      "isForeignCitizen": true
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import {
   applyChampionReference,
   loadChampionReference,
 } from "../../../scripts/data/champion-reference.mjs";
+import { loadPlayerRegressionReference } from "../../../scripts/data/player-regression-reference.mjs";
 import {
   assertCanonicalQuality,
   collectCanonicalQuality,
@@ -650,6 +651,10 @@ async function main() {
   const countryIdentityReference = JSON.parse(await readFile(countryIdentityPath, "utf8"));
   const countryMappingReference = JSON.parse(await readFile(countryMappingPath, "utf8"));
   const { championReference } = await loadChampionReference(repositoryRoot, version);
+  const { playerRegressionReference } = await loadPlayerRegressionReference(
+    repositoryRoot,
+    version,
+  );
   const expected = snapshotMetadata.applicationImportScope;
 
   if (
@@ -807,6 +812,7 @@ async function main() {
         championReference,
         datasetVersionId: existing.id,
         expected,
+        playerRegressionReference,
       });
       qualityReport.issueSummary = await syncCanonicalQualityIssues(client, qualityReport);
       assertCanonicalQuality(qualityReport);
@@ -1263,6 +1269,7 @@ async function main() {
       championReference,
       datasetVersionId,
       expected,
+      playerRegressionReference,
     });
     qualityReport.issueSummary = await syncCanonicalQualityIssues(client, qualityReport);
     assertCanonicalQuality(qualityReport);
