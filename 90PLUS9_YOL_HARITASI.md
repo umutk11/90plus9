@@ -321,14 +321,14 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 1.5. Yerel PostgreSQL
 
-- [ ] Yerel PostgreSQL çalıştırma yöntemini seç.
-- [ ] Geliştirici için tek komutla veritabanı başlatma yolu sağla.
-- [ ] Uygulama veritabanı oluştur.
-- [ ] Test veritabanı oluştur.
-- [ ] Migration kullanıcısını tanımla.
-- [ ] Uygulama kullanıcısına minimum gerekli yetkileri ver.
-- [ ] Bağlantı testi yaz.
-- [ ] Veritabanı sıfırlama komutunu yalnızca yerel/test ortamında çalışacak şekilde koru.
+- [x] Yerel PostgreSQL çalıştırma yöntemini seç.
+- [x] Geliştirici için tek komutla veritabanı başlatma yolu sağla.
+- [x] Uygulama veritabanı oluştur.
+- [x] Test veritabanı oluştur.
+- [x] Migration kullanıcısını tanımla.
+- [x] Uygulama kullanıcısına minimum gerekli yetkileri ver.
+- [x] Bağlantı testi yaz.
+- [x] Veritabanı sıfırlama komutunu yalnızca yerel/test ortamında çalışacak şekilde koru.
 
 ## 1.6. CI temel kurulumu
 
@@ -346,7 +346,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] Yeni bir geliştirici README’yi izleyerek projeyi açabiliyor.
 - [x] Tek komutla geliştirme sunucusu çalışıyor.
 - [x] Tek komutla testler çalışıyor.
-- [ ] Tek komutla yerel PostgreSQL hazır oluyor.
+- [x] Tek komutla yerel PostgreSQL hazır oluyor.
 - [x] Boş projede CI yeşil.
 
 ---
@@ -2246,8 +2246,8 @@ Bu sıra ekip tek kişi olsa bile uygulanabilir. Her satır ayrı bir iş kartı
 8. [x] Rarity’nin launch kapsamını belirle: beta sonrasına bırak.
 9. [ ] Git deposu ve branch kurallarını hazırla.
 10. [x] Uygulama, ETL ve ortak paket klasörlerini oluştur.
-11. [ ] Yerel PostgreSQL geliştirme ortamını kur.
-12. [ ] Test veritabanını kur.
+11. [x] Yerel PostgreSQL geliştirme ortamını kur.
+12. [x] Test veritabanını kur.
 13. [x] Ortam değişkeni örnek dosyasını oluştur.
 14. [ ] dcaribou lisansını ve atıf metnini arşivle.
 15. [ ] 2012/13–2025/26 raw snapshot’ını indir.

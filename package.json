@@ -9,7 +9,12 @@
   "packageManager": "pnpm@11.16.0",
   "scripts": {
     "build": "pnpm --recursive --if-present run build",
+    "db:check": "bash scripts/database/check-connection.sh",
+    "db:down": "bash scripts/database/compose.sh down",
     "db:generate": "pnpm --filter @90plus9/database db:generate",
+    "db:reset": "bash scripts/database/reset.sh",
+    "db:status": "bash scripts/database/compose.sh ps",
+    "db:up": "bash scripts/database/start.sh",
     "db:validate": "pnpm --filter @90plus9/database db:validate",
     "dev": "pnpm --filter @90plus9/web dev",
     "format": "prettier --check .",

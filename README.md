@@ -43,15 +43,27 @@ Gereksinimler:
 
 - Node.js 24 LTS
 - pnpm 11.16
-- PostgreSQL (veritabanı geliştirme adımında eklenecek)
+- Docker Desktop veya Docker uyumlu bir local container ortamı (örneğin Colima)
 
 ```bash
 pnpm install
 cp .env.example .env
+pnpm db:up
 pnpm dev
 ```
 
 Web uygulaması varsayılan olarak `http://localhost:3000` adresinde açılır.
+`pnpm db:up`, local uygulama ve test veritabanlarını oluşturur ve iki bağlantıyı da doğrular.
+Veritabanı yalnızca `127.0.0.1` üzerinden bilgisayarınıza açılır; Docker volume'u sayesinde
+bilgisayar yeniden başlatıldığında veriler korunur.
+
+Local ortamda iki farklı PostgreSQL kullanıcısı vardır:
+
+- `plus9_migrator`: Prisma migration'larını ve şema değişikliklerini çalıştırır.
+- `plus9_app`: Uygulamanın çalışma sırasında kullanacağı sınırlı yetkili hesaptır.
+
+Bu kullanıcıların parolaları yalnızca local geliştirme içindir. Canlı ortamda farklı ve gizli
+değerler kullanılacaktır.
 
 ## Komutlar
 
@@ -63,9 +75,22 @@ pnpm typecheck    # TypeScript kontrolleri
 pnpm test         # Birim testleri
 pnpm format       # Biçim kontrolü
 pnpm format:write # Dosyaları biçimlendir
+pnpm db:up        # Local PostgreSQL'i başlat ve bağlantıları doğrula
+pnpm db:check     # Uygulama ve test veritabanı bağlantılarını kontrol et
+pnpm db:status    # PostgreSQL durumunu göster
+pnpm db:down      # PostgreSQL'i durdur; verileri koru
 pnpm db:generate  # Prisma istemcisini üret
 pnpm db:validate  # Prisma yapılandırmasını doğrula
 ```
+
+Local verileri tamamen sıfırlamak gerektiğinde korumalı komut kullanılır:
+
+```bash
+CONFIRM_DATABASE_RESET=90plus9-local pnpm db:reset
+```
+
+Bu komut yalnızca `local` veya `test` ortamında çalışır ve Docker volume'undaki local verileri
+siler. Normal kullanımda gerekli değildir.
 
 ## Veri kaynağı ve atıf
 
