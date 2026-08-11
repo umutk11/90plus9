@@ -62,9 +62,19 @@
       { "season": 2025, "games": 306, "appearanceGames": 306, "lineupGames": 305 }
     ]
   },
+  "applicationImportScope": {
+    "exclusionFile": "data/reference/exclusions/dcaribou-kaggle-v677.json",
+    "games": 4589,
+    "appearanceRows": 132464,
+    "lineupRows": 170882,
+    "clubs": 43,
+    "players": 3770,
+    "playerClubSeasonRelations": 9343
+  },
   "qualityNotes": [
     "The 2012 season has no game_lineups rows and therefore uses appearances only.",
-    "Twenty-nine 2022 season fixtures have no appearance or lineup evidence; they are awarded fixtures and are excluded from eligibility evidence.",
+    "Twenty-nine 2022 season fixtures have no appearance or lineup evidence and are excluded from the application import by a versioned product decision.",
+    "Four evidence player IDs have no source player profile and are excluded from the application import by the same decision.",
     "One 2018 fixture and one 2025 fixture have appearances but no lineup rows.",
     "CSV imports must explicitly use comma as delimiter and double quote as quote and escape characters."
   ]

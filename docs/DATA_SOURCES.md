@@ -35,6 +35,11 @@ snapshot importtan önce `pnpm data:validate -- --version <sürüm>` ile tam tar
 İlk snapshot'ın sezon bazlı alan dolulukları ve açık kalite sorunları
 [`docs/DATA_QUALITY_BASELINE.md`](DATA_QUALITY_BASELINE.md) belgesinde kayıtlıdır.
 
+Snapshot'a özel ürün kapsamı dışlamaları
+[`data/reference/exclusions`](../data/reference/exclusions) altında sürümlenir. `v677` için oyuncu
+kanıtı olmayan 29 maç ile kaynak profili olmayan dört oyuncu uygulama importuna alınmaz. Bu
+dışlamalar ham snapshot'ı değiştirmez ve `pnpm data:profile` tarafından otomatik uygulanır.
+
 ## Saklama ve değişmezlik
 
 - `data/raw` altındaki snapshot'lar Git'e eklenmez.
@@ -49,5 +54,5 @@ snapshot importtan önce `pnpm data:validate -- --version <sürüm>` ile tam tar
 - Oyuncu–kulüp–sezon kanıtı `appearances` ve `game_lineups` kayıtlarının birleşiminden üretilir.
 - `2012/13` sezonunda lineup verisi olmadığı için yalnızca `appearances` kullanılır.
 - `transfers` oyun uygunluğu kanıtı değildir; yalnızca veri kalite kontrolünde yardımcı kaynaktır.
-- Hükmen veya oynanmamış maçlar, appearance/lineup kanıtı üretmediği için uygunluk hesabına
-  alınmaz.
+- Uygulama importundan dışlanan maç ve oyunculardan uygunluk ilişkisi üretilmez.
+- Dışlama kararı maçın resmî durumunu otomatik olarak `awarded` sınıfına sokmaz.

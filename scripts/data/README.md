@@ -58,8 +58,12 @@ Komut maç, appearance, lineup, oyuncu ve kulüp kayıtlarını birlikte inceler
 yanlış maç-kulüp eşleşmeleri, tekrarlar, oyuncu profil alanlarının doluluk oranları ve oyuncu
 kanıtı olmayan maçlar `reports/data-quality` altında JSON ve Markdown olarak raporlanır.
 
-Local ortamda açık sorunlar raporlanır ve incelemeye bırakılır. Production kontrolü açık kritik
-sorun varsa başarısız olur:
+Profil, snapshot sürümüyle aynı adlı `data/reference/exclusions` dosyasını zorunlu olarak yükler.
+Bu dosyadaki maç ve oyuncular ham CSV'lerden silinmez; yalnızca uygulama importu kapsamından
+çıkarılır. Dışlama dosyası yoksa veya sürümü uyuşmuyorsa komut başarısız olur.
+
+Local ortamda dışlamalar sonrasında kalan açık sorunlar raporlanır. Production kontrolü açık
+kritik sorun varsa başarısız olur:
 
 ```bash
 PLUS9_ENVIRONMENT=production pnpm data:profile -- --version 677

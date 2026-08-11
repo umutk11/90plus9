@@ -1,5 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { access, mkdir, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -67,6 +67,64 @@ function csvRelation(filePath) {
   )`;
 }
 
+function readExclusionIds(entries, key, label) {
+  if (!Array.isArray(entries)) {
+    throw new Error(`Dışlama dosyasında ${label} listesi bulunamadı.`);
+  }
+
+  const ids = entries.map((entry) => entry?.[key]);
+
+  if (ids.some((id) => !Number.isInteger(id) || id <= 0)) {
+    throw new Error(`Dışlama dosyasındaki ${label} kimlikleri pozitif tam sayı olmalıdır.`);
+  }
+
+  if (new Set(ids).size !== ids.length) {
+    throw new Error(`Dışlama dosyasındaki ${label} kimlikleri tekrar ediyor.`);
+  }
+
+  return ids;
+}
+
+async function loadExclusions(filePath, version) {
+  if (!(await fileExists(filePath))) {
+    throw new Error(`Snapshot dışlama dosyası bulunamadı: ${filePath}`);
+  }
+
+  const exclusions = JSON.parse(await readFile(filePath, "utf8"));
+
+  if (exclusions.schemaVersion !== 1) {
+    throw new Error(`Desteklenmeyen dışlama şema sürümü: ${exclusions.schemaVersion}`);
+  }
+
+  if (exclusions.datasetVersion !== Number(version)) {
+    throw new Error(`Dışlama dosyası v${exclusions.datasetVersion}, istenen snapshot v${version}.`);
+  }
+
+  const gameIds = readExclusionIds(exclusions.games, "sourceGameId", "maç");
+  const playerIds = readExclusionIds(exclusions.players, "sourcePlayerId", "oyuncu");
+
+  return {
+    decision: exclusions.decision,
+    gameIds,
+    playerEvidenceRows: exclusions.players.reduce(
+      (total, player) => total + (player.evidenceRows ?? 0),
+      0,
+    ),
+    playerIds,
+  };
+}
+
+function buildExclusionFilters(exclusions) {
+  const gameIds = exclusions.gameIds.join(", ");
+  const playerIds = exclusions.playerIds.join(", ");
+
+  return {
+    games: gameIds ? `\n      AND game_id NOT IN (${gameIds})` : "",
+    appearances: playerIds ? `\n    WHERE a.player_id NOT IN (${playerIds})` : "",
+    lineups: playerIds ? `\n    WHERE l.player_id NOT IN (${playerIds})` : "",
+  };
+}
+
 function runDuckDbJson(query) {
   const result = spawnSync("duckdb", ["-json", ":memory:", "-c", query], {
     encoding: "utf8",
@@ -97,13 +155,13 @@ function percentage(total, missing) {
   return Number((((total - missing) / total) * 100).toFixed(2));
 }
 
-function buildSeasonQuery(sources) {
+function buildSeasonQuery(sources, filters) {
   return `
 WITH
   scoped_games AS (
     SELECT *
     FROM ${sources.games}
-    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025
+    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025${filters.games}
   ),
   scoped_appearances AS (
     SELECT
@@ -112,7 +170,7 @@ WITH
       g.home_club_id AS match_home_club_id,
       g.away_club_id AS match_away_club_id
     FROM ${sources.appearances} a
-    JOIN scoped_games g USING (game_id)
+    JOIN scoped_games g USING (game_id)${filters.appearances}
   ),
   scoped_lineups AS (
     SELECT
@@ -121,7 +179,7 @@ WITH
       g.home_club_id AS match_home_club_id,
       g.away_club_id AS match_away_club_id
     FROM ${sources.lineups} l
-    JOIN scoped_games g USING (game_id)
+    JOIN scoped_games g USING (game_id)${filters.lineups}
   ),
   game_quality AS (
     SELECT
@@ -269,18 +327,18 @@ ORDER BY g.season;
 `;
 }
 
-function buildSummaryQuery(sources) {
+function buildSummaryQuery(sources, filters) {
   return `
 WITH
   scoped_games AS (
     SELECT * FROM ${sources.games}
-    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025
+    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025${filters.games}
   ),
   scoped_appearances AS (
-    SELECT a.*, g.season FROM ${sources.appearances} a JOIN scoped_games g USING (game_id)
+    SELECT a.*, g.season FROM ${sources.appearances} a JOIN scoped_games g USING (game_id)${filters.appearances}
   ),
   scoped_lineups AS (
-    SELECT l.*, g.season FROM ${sources.lineups} l JOIN scoped_games g USING (game_id)
+    SELECT l.*, g.season FROM ${sources.lineups} l JOIN scoped_games g USING (game_id)${filters.lineups}
   ),
   evidence_game_ids AS (
     SELECT game_id FROM scoped_appearances
@@ -336,12 +394,12 @@ SELECT
 `;
 }
 
-function buildMissingPlayerQuery(sources) {
+function buildMissingPlayerQuery(sources, filters) {
   return `
 WITH
   scoped_games AS (
     SELECT game_id, season FROM ${sources.games}
-    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025
+    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025${filters.games}
   ),
   evidence AS (
     SELECT
@@ -351,7 +409,7 @@ WITH
       a.player_club_id AS club_id,
       'appearance' AS evidence_source
     FROM ${sources.appearances} a
-    JOIN scoped_games g USING (game_id)
+    JOIN scoped_games g USING (game_id)${filters.appearances}
     UNION ALL
     SELECT
       g.season,
@@ -360,7 +418,7 @@ WITH
       l.club_id,
       'lineup' AS evidence_source
     FROM ${sources.lineups} l
-    JOIN scoped_games g USING (game_id)
+    JOIN scoped_games g USING (game_id)${filters.lineups}
   ),
   player_profiles AS (SELECT player_id FROM ${sources.players})
 SELECT
@@ -378,17 +436,17 @@ ORDER BY e.player_id;
 `;
 }
 
-function buildMissingPositionQuery(sources) {
+function buildMissingPositionQuery(sources, filters) {
   return `
 WITH
   scoped_games AS (
     SELECT game_id FROM ${sources.games}
-    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025
+    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025${filters.games}
   ),
   evidence_players AS (
-    SELECT a.player_id FROM ${sources.appearances} a JOIN scoped_games g USING (game_id)
+    SELECT a.player_id FROM ${sources.appearances} a JOIN scoped_games g USING (game_id)${filters.appearances}
     UNION
-    SELECT l.player_id FROM ${sources.lineups} l JOIN scoped_games g USING (game_id)
+    SELECT l.player_id FROM ${sources.lineups} l JOIN scoped_games g USING (game_id)${filters.lineups}
   ),
   player_profiles AS (SELECT * FROM ${sources.players})
 SELECT
@@ -404,18 +462,18 @@ ORDER BY p.player_id;
 `;
 }
 
-function buildNoEvidenceGamesQuery(sources) {
+function buildNoEvidenceGamesQuery(sources, filters) {
   return `
 WITH
   scoped_games AS (
     SELECT * FROM ${sources.games}
-    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025
+    WHERE competition_id = 'TR1' AND season BETWEEN 2012 AND 2025${filters.games}
   ),
   appearance_games AS (
-    SELECT DISTINCT a.game_id FROM ${sources.appearances} a JOIN scoped_games g USING (game_id)
+    SELECT DISTINCT a.game_id FROM ${sources.appearances} a JOIN scoped_games g USING (game_id)${filters.appearances}
   ),
   lineup_games AS (
-    SELECT DISTINCT l.game_id FROM ${sources.lineups} l JOIN scoped_games g USING (game_id)
+    SELECT DISTINCT l.game_id FROM ${sources.lineups} l JOIN scoped_games g USING (game_id)${filters.lineups}
   )
 SELECT
   g.game_id AS "gameId",
@@ -467,6 +525,8 @@ function buildMarkdown(report) {
   return `# dcaribou Kaggle v${report.snapshotVersion} veri doluluk profili
 
 - Durum: **${report.status}**
+- Uygulama importundan dışlanan maç: ${report.exclusions.games}
+- Uygulama importundan dışlanan oyuncu: ${report.exclusions.players}
 - Sezon: ${report.summary.seasons}
 - Maç: ${report.summary.games}
 - Kulüp: ${report.summary.clubs}
@@ -478,13 +538,16 @@ function buildMarkdown(report) {
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 ${rows}
 
-## Çözümlenmesi gereken eksik oyuncu profilleri
+## Açık kritik oyuncu profili sorunları
 
 ${missingPlayers || "- Yok"}
 
 ## Bilinen kapsam farkı
 
 2012/13 sezonunda lineup verisi yoktur; bu sezonda yalnızca appearance kanıtı kullanılır.
+
+Ham snapshot değiştirilmez. Sürümlü dışlama kararı yalnızca türetilmiş ve canonical uygulama
+verisine uygulanır.
 `;
 }
 
@@ -499,6 +562,13 @@ async function main() {
     throw new Error(`Snapshot klasörü bulunamadı: ${snapshotDirectory}`);
   }
 
+  const exclusionPath = path.join(
+    repositoryRoot,
+    `data/reference/exclusions/dcaribou-kaggle-v${version}.json`,
+  );
+  const exclusions = await loadExclusions(exclusionPath, version);
+  const filters = buildExclusionFilters(exclusions);
+
   const sources = {
     appearances: csvRelation(path.join(snapshotDirectory, "appearances.csv")),
     clubs: csvRelation(path.join(snapshotDirectory, "clubs.csv")),
@@ -506,11 +576,11 @@ async function main() {
     lineups: csvRelation(path.join(snapshotDirectory, "game_lineups.csv")),
     players: csvRelation(path.join(snapshotDirectory, "players.csv")),
   };
-  const seasonProfiles = runDuckDbJson(buildSeasonQuery(sources)).map(addFillRates);
-  const [summary] = runDuckDbJson(buildSummaryQuery(sources));
-  const missingPlayerProfiles = runDuckDbJson(buildMissingPlayerQuery(sources));
-  const missingPositionPlayers = runDuckDbJson(buildMissingPositionQuery(sources));
-  const noEvidenceGames = runDuckDbJson(buildNoEvidenceGamesQuery(sources));
+  const seasonProfiles = runDuckDbJson(buildSeasonQuery(sources, filters)).map(addFillRates);
+  const [summary] = runDuckDbJson(buildSummaryQuery(sources, filters));
+  const missingPlayerProfiles = runDuckDbJson(buildMissingPlayerQuery(sources, filters));
+  const missingPositionPlayers = runDuckDbJson(buildMissingPositionQuery(sources, filters));
+  const noEvidenceGames = runDuckDbJson(buildNoEvidenceGamesQuery(sources, filters));
   const evidenceIntegrityIssues = seasonProfiles.reduce(
     (total, profile) =>
       total +
@@ -538,6 +608,13 @@ async function main() {
       firstSeason: 2012,
       lastSeason: 2025,
     },
+    exclusions: {
+      decision: exclusions.decision,
+      file: path.relative(repositoryRoot, exclusionPath).replaceAll(path.sep, "/"),
+      games: exclusions.gameIds.length,
+      players: exclusions.playerIds.length,
+      playerEvidenceRows: exclusions.playerEvidenceRows,
+    },
     status: criticalIssueCount > 0 ? "requires_resolution" : "passed",
     summary: {
       ...summary,
@@ -562,7 +639,6 @@ async function main() {
     },
     knownLimitations: [
       "2012/13 sezonunda game_lineups verisi yoktur; yalnızca appearance kanıtı kullanılır.",
-      "Oyuncu kanıtı olmayan maçlar resmi referansla doğrulanmadan otomatik olarak awarded sayılmaz.",
     ],
   };
   const reportDirectory = path.join(repositoryRoot, "reports/data-quality");
@@ -584,6 +660,8 @@ async function main() {
   console.log(`Kulüp: ${summary.clubs}`);
   console.log(`Oyuncu: ${summary.players}`);
   console.log(`Oyuncu–kulüp–sezon ilişkisi: ${summary.playerClubSeasonRelations}`);
+  console.log(`Dışlanan maç: ${exclusions.gameIds.length}`);
+  console.log(`Dışlanan oyuncu: ${exclusions.playerIds.length}`);
   console.log(`Eksik oyuncu profili: ${missingPlayerProfiles.length}`);
   console.log(`Kanıt bütünlüğü sorunu: ${evidenceIntegrityIssues}`);
   console.log(`Oyuncu kanıtı olmayan maç: ${noEvidenceGames.length}`);

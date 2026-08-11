@@ -608,7 +608,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] Kupalar ve Avrupa maçlarının içeri alınmadığını test et.
 - [ ] Millî takım maçlarının içeri alınmadığını test et.
 - [ ] Filtre sonrası maç sayısını raporla.
-- [ ] Referans snapshot için 4.618 maç/karşılaşma kaydını regresyon başlangıç değeri olarak kaydet.
+- [ ] Referans snapshot için ham 4.618 ve dışlama sonrası 4.589 maç/karşılaşma kaydını regresyon başlangıç değeri olarak kaydet.
 - [ ] Filtre sonrası sezon sayısını raporla.
 - [ ] Tam 14 sezon olmasını doğrula.
 - [ ] Filtre sonrası kulüp sayısını raporla.
@@ -653,6 +653,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 ## 4.6. Oyuncuları içeri aktarma
 
 - [ ] TR1 appearance ve lineup kayıtlarındaki kaynak player ID’leri çıkar.
+- [ ] Snapshot sürümündeki oyuncu dışlama listesini kanıt ve oyuncu seçiminden önce uygula.
+- [ ] `v677` için belirlenen dört kaynak player ID'sini ve 22 lineup satırını uygulama importundan çıkar.
 - [ ] Sadece bu oyuncuları `players.csv` içinden seç.
 - [ ] Oyuncu source ID’sini primary eşleştirme anahtarı olarak kullan.
 - [ ] Oyuncu adını aktar.
@@ -667,8 +669,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] Boy bilgisini aktar.
 - [ ] Görsel URL’yi production şemasına almak zorunlu değil; alınırsa kullanılmadığını işaretle.
 - [ ] Kaynak profil URL’sini aktar.
-- [ ] Kaynakta olmayan oyuncu ID’si bulunursa importu durdur.
-- [ ] Referans snapshot için 3.774 kullanılabilir oyuncuyu regresyon başlangıç değeri olarak kaydet.
+- [ ] Kaynakta olmayan oyuncu ID’si sürümlü dışlama listesinde değilse importu durdur.
+- [ ] Referans snapshot için dışlama sonrası 3.770 kullanılabilir oyuncuyu regresyon başlangıç değeri olarak kaydet.
 
 ## 4.7. İsim normalizasyonu
 
@@ -699,14 +701,14 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 4.9. Maç durumlarını belirleme
 
-- [ ] Her TR1 game kaydını `matches` staging tablosuna al.
+- [ ] Sürümlü dışlama listesinde olmayan her TR1 game kaydını `matches` staging tablosuna al.
 - [ ] Aynı source game ID’nin tekrar etmediğini doğrula.
 - [ ] Appearance veya lineup kanıtı olan maçı `played` adayı yap.
 - [ ] Hiç oyuncu kanıtı olmayan maçı otomatik olarak kesin `awarded` sayma.
-- [ ] Oyuncu kanıtı olmayan maçları QA listesine çıkar.
-- [ ] 2022/23 hükmen maçlarını doğrulanmış referans listesiyle işaretle.
-- [ ] Bu maçlarda `is_player_evidence_allowed = false` yap.
-- [ ] Gelecekte oluşabilecek diğer hükmen maçlar için manuel override desteği kullan.
+- [ ] Oyuncu kanıtı olmayan ve dışlama listesinde bulunmayan maçları QA listesine çıkar.
+- [ ] `v677` için kararlaştırılan 29 maçı uygulama importundan çıkar.
+- [ ] Dışlanan maçlardan staging, canonical maç veya oyuncu ilişkisi üretme.
+- [ ] Gelecekteki snapshot'lar için sürüme bağlı manuel dışlama desteği kullan.
 - [ ] Oynanmamış maçtan oyuncu ilişkisi üretilmediğini test et.
 
 ## 4.10. Appearance kanıtlarını oluşturma
@@ -734,7 +736,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] `substitutes` için `has_bench` kanıtı üret.
 - [ ] Aynı oyuncu–maç–type tekrarını tekilleştir.
 - [ ] 2012/13 lineup satırının sıfır olmasını bilinen kaynak sınırı olarak kabul et.
-- [ ] Referans snapshot için 170.904 lineup satırını regresyon başlangıç değeri olarak kaydet.
+- [ ] Referans snapshot için ham 170.904 ve dışlama sonrası 170.882 lineup satırını regresyon başlangıç değeri olarak kaydet.
 
 ## 4.12. Oyuncu–kulüp–sezon ilişkisini toplama
 
@@ -750,7 +752,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] Toplam kanıt sayısını hesapla.
 - [ ] Kanıtı olmayan ilişki üretme.
 - [ ] Transfer tablosundan gelen ilişkiyi bu tabloya otomatik ekleme.
-- [ ] Referans snapshot için 9.347 ilişkiyi regresyon başlangıç değeri olarak kaydet.
+- [ ] Referans snapshot için dışlama sonrası 9.343 ilişkiyi regresyon başlangıç değeri olarak kaydet.
 - [ ] Aynı player–club–season ilişkisinin tek satır olduğunu doğrula.
 - [ ] İlişkideki kulübün o sezon Süper Lig’de olduğunu doğrula.
 
@@ -839,16 +841,16 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] Her sezonda tam bir şampiyon olduğunu test et.
 - [ ] Şampiyon kulübün ilgili sezon `club_seasons` kaydına sahip olduğunu test et.
 
-## 5.4. Hükmen/oynanmamış maç referansları
+## 5.4. Maç kapsamı dışlamaları
 
 - [ ] Oyuncu kanıtı olmayan bütün game kayıtlarını raporla.
-- [ ] 2022/23 deprem sonrası hükmen maçlarını resmi kararla eşleştir.
-- [ ] Hatayspor kayıtlarını doğrula.
-- [ ] Gaziantep FK kayıtlarını doğrula.
-- [ ] Hükmen sonuç tarihini veya karar kaynağını sakla.
+- [ ] Snapshot sürümüne bağlı maç dışlama referansını importtan önce yükle.
+- [ ] `v677` için belirlenen 29 kaynak game ID'sinin tamamını uygulama importundan çıkar.
+- [ ] Dışlama listesindeki kimlik tekrarlarını ve snapshot sürümü uyumunu doğrula.
+- [ ] Dışlama kararının resmî maç durumu sınıflandırması olmadığını metadata içinde koru.
 - [ ] Oynanmış ama lineup eksik maçları awarded olarak yanlış işaretleme.
 - [ ] Appearance varsa maçı played kabul et.
-- [ ] Ne appearance ne lineup olan açıklanamayan maçı `unknown` yap ve importu production için engelle.
+- [ ] Ne appearance ne lineup olan ve dışlama listesinde bulunmayan maçı `unknown` yap ve importu production için engelle.
 
 ## 5.5. Oyuncu alanı kalite kontrolleri
 

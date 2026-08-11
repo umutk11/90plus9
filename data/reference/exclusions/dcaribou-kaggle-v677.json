@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": 677,
+  "decidedAt": "2026-08-11",
+  "decision": "exclude_from_application_import",
+  "rawSnapshotPolicy": "The raw snapshot remains immutable; exclusions apply only to derived and canonical application data.",
+  "games": [
+    {
+      "sourceGameId": 3860372,
+      "season": 2022,
+      "date": "2023-03-04",
+      "homeClubName": "Gaziantep FK",
+      "awayClubName": "Galatasaray",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860378,
+      "season": 2022,
+      "date": "2023-03-04",
+      "homeClubName": "Adana Demirspor",
+      "awayClubName": "Hatayspor",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860505,
+      "season": 2022,
+      "date": "2023-03-11",
+      "homeClubName": "Ümraniyespor",
+      "awayClubName": "Gaziantep FK",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860508,
+      "season": 2022,
+      "date": "2023-03-11",
+      "homeClubName": "Hatayspor",
+      "awayClubName": "Konyaspor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860400,
+      "season": 2022,
+      "date": "2023-03-18",
+      "homeClubName": "Gaziantep FK",
+      "awayClubName": "Trabzonspor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860405,
+      "season": 2022,
+      "date": "2023-03-18",
+      "homeClubName": "Kayserispor",
+      "awayClubName": "Hatayspor",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860499,
+      "season": 2022,
+      "date": "2023-04-01",
+      "homeClubName": "Hatayspor",
+      "awayClubName": "Sivasspor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860502,
+      "season": 2022,
+      "date": "2023-04-01",
+      "homeClubName": "Gaziantep FK",
+      "awayClubName": "Kasimpasa",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860391,
+      "season": 2022,
+      "date": "2023-04-08",
+      "homeClubName": "Adana Demirspor",
+      "awayClubName": "Gaziantep FK",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860396,
+      "season": 2022,
+      "date": "2023-04-08",
+      "homeClubName": "Alanyaspor",
+      "awayClubName": "Hatayspor",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860461,
+      "season": 2022,
+      "date": "2023-04-15",
+      "homeClubName": "Hatayspor",
+      "awayClubName": "Fatih Karagümrük",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860467,
+      "season": 2022,
+      "date": "2023-04-15",
+      "homeClubName": "Gaziantep FK",
+      "awayClubName": "Konyaspor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860477,
+      "season": 2022,
+      "date": "2023-04-18",
+      "homeClubName": "Beşiktaş Jimnastik Kulübü",
+      "awayClubName": "Hatayspor",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860442,
+      "season": 2022,
+      "date": "2023-04-22",
+      "homeClubName": "Gaziantep FK",
+      "awayClubName": "Alanyaspor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860446,
+      "season": 2022,
+      "date": "2023-04-22",
+      "homeClubName": "Hatayspor",
+      "awayClubName": "MKE Ankaragücü",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860491,
+      "season": 2022,
+      "date": "2023-04-29",
+      "homeClubName": "Kayserispor",
+      "awayClubName": "Gaziantep FK",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860495,
+      "season": 2022,
+      "date": "2023-04-29",
+      "homeClubName": "Basaksehir FK",
+      "awayClubName": "Hatayspor",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860479,
+      "season": 2022,
+      "date": "2023-05-06",
+      "homeClubName": "Gaziantep FK",
+      "awayClubName": "Fatih Karagümrük",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 3860484,
+      "season": 2022,
+      "date": "2023-05-06",
+      "homeClubName": "Hatayspor",
+      "awayClubName": "Istanbulspor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072486,
+      "season": 2022,
+      "date": "2023-05-16",
+      "homeClubName": "Beşiktaş Jimnastik Kulübü",
+      "awayClubName": "Gaziantep FK",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072487,
+      "season": 2022,
+      "date": "2023-05-16",
+      "homeClubName": "Giresunspor",
+      "awayClubName": "Hatayspor",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072488,
+      "season": 2022,
+      "date": "2023-05-20",
+      "homeClubName": "Hatayspor",
+      "awayClubName": "Fenerbahce",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072489,
+      "season": 2022,
+      "date": "2023-05-20",
+      "homeClubName": "Gaziantep FK",
+      "awayClubName": "Giresunspor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072490,
+      "season": 2022,
+      "date": "2023-05-29",
+      "homeClubName": "Hatayspor",
+      "awayClubName": "Ümraniyespor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072491,
+      "season": 2022,
+      "date": "2023-05-29",
+      "homeClubName": "Basaksehir FK",
+      "awayClubName": "Gaziantep FK",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072492,
+      "season": 2022,
+      "date": "2023-06-02",
+      "homeClubName": "Gaziantep FK",
+      "awayClubName": "Istanbulspor",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072493,
+      "season": 2022,
+      "date": "2023-06-02",
+      "homeClubName": "Antalyaspor",
+      "awayClubName": "Hatayspor",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072496,
+      "season": 2022,
+      "date": "2023-06-05",
+      "homeClubName": "Hatayspor",
+      "awayClubName": "Galatasaray",
+      "sourceScore": "0-3",
+      "reason": "no_player_evidence"
+    },
+    {
+      "sourceGameId": 4072497,
+      "season": 2022,
+      "date": "2023-06-05",
+      "homeClubName": "Fenerbahce",
+      "awayClubName": "Gaziantep FK",
+      "sourceScore": "3-0",
+      "reason": "no_player_evidence"
+    }
+  ],
+  "players": [
+    {
+      "sourcePlayerId": 163380,
+      "sourceName": "Aldin Cajic",
+      "seasons": [2022],
+      "clubIds": [924],
+      "evidenceSources": ["lineup"],
+      "evidenceRows": 18,
+      "reason": "missing_source_player_profile"
+    },
+    {
+      "sourcePlayerId": 258811,
+      "sourceName": "Oguzhan Acar",
+      "seasons": [2014],
+      "clubIds": [449],
+      "evidenceSources": ["lineup"],
+      "evidenceRows": 2,
+      "reason": "missing_source_player_profile"
+    },
+    {
+      "sourcePlayerId": 1076665,
+      "sourceName": "Enes Seven",
+      "seasons": [2025],
+      "clubIds": [2293],
+      "evidenceSources": ["lineup"],
+      "evidenceRows": 1,
+      "reason": "missing_source_player_profile"
+    },
+    {
+      "sourcePlayerId": 1395711,
+      "sourceName": "Arda Var",
+      "seasons": [2025],
+      "clubIds": [2293],
+      "evidenceSources": ["lineup"],
+      "evidenceRows": 1,
+      "reason": "missing_source_player_profile"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # 90+9 — MVP Ürün Kararları
 
 > Durum: Onaylandı
-> Son güncelleme: 7 Ağustos 2026
+> Son güncelleme: 11 Ağustos 2026
 
 ## Ürün tanımı
 
@@ -39,6 +39,20 @@ Kullanıcıya görünen marka adı `90+9`, teknik proje ve depo adı `90plus9` o
 - Hükmen sonuçlanan ve oynanmayan maçlardan oyuncu ilişkisi üretilmez.
 - 2012/13 sezonunda kadro listesi bulunmadığı için yalnızca sahaya çıkan oyuncular kapsanır.
 - Bir oyuncu aynı sezonda iki Süper Lig kulübü için yeterli kanıta sahipse iki kulüp için de geçerlidir.
+
+## Snapshot dışlamaları
+
+- Ham snapshot arşivi ve CSV dosyaları değiştirilemez; silme kararları yalnızca türetilmiş ve
+  canonical uygulama verisine uygulanır.
+- `v677` snapshot'ındaki oyuncu kanıtı olmayan 29 maç uygulama importundan çıkarılır; bu karar
+  maçların resmî durumunu sınıflandırmaz.
+- Kaynak oyuncu profili olmayan dört oyuncu ve bu oyuncuların 22 lineup kanıt satırı uygulama
+  importundan çıkarılır.
+- Dışlamalar snapshot sürümüne bağlı kaynak kimlikleriyle
+  [`data/reference/exclusions`](../data/reference/exclusions) altında tutulur ve importtan önce
+  uygulanır.
+- `v677` için kabul edilen regresyon taban çizgisi 4.589 maç, 3.770 oyuncu, 170.882 lineup satırı
+  ve 9.343 oyuncu–kulüp–sezon ilişkisidir.
 
 ## Takım arkadaşlığı
 
