@@ -68,3 +68,33 @@ kritik sorun varsa başarısız olur:
 ```bash
 PLUS9_ENVIRONMENT=production pnpm data:profile -- --version 677
 ```
+
+## ETL staging veritabanı
+
+Doğrulanmış snapshot, PostgreSQL'e yüklenmeden önce tekrar üretilebilir bir DuckDB staging
+veritabanına dönüştürülür:
+
+```bash
+pnpm data:stage -- --version 677
+```
+
+Komut önce 12 kaynak CSV'nin şema ve tam satır taramasını çalıştırır, ardından sürüme bağlı maç ve
+oyuncu dışlamalarını otomatik uygular; ham CSV dosyalarını değiştirmez. Çıktı
+`data/staging/dcaribou-kaggle-v<version>/staging.duckdb` altında oluşturulur ve Git'e eklenmez.
+Aynı komut tekrar çalıştırıldığında staging çıktısını atomik biçimde yeniler.
+
+Üretilen tablolar:
+
+- `stg_seasons`: normalize edilmiş sezon başlangıç/bitiş yılları ve etiketleri.
+- `stg_countries`: kaynak ülke kayıtları; Türkçe görünen adlar sonraki referans aşamasında eklenir.
+- `stg_clubs`: Süper Lig kapsamındaki kaynak kulüpler ve arama anahtarları.
+- `stg_players`: kanıtı bulunan oyuncular, normalize adları ve profil alanları.
+- `stg_matches`: dışlamalar sonrası oynanmış kabul edilen Süper Lig maçları.
+- `stg_player_match_evidence`: appearance, ilk 11 ve yedek kanıtlarının tek sözleşmede birleşimi.
+- `stg_player_club_seasons`: kanıtlardan toplanan oyun uygunluğu ilişkileri.
+- `stg_club_seasons`: maçlardan türetilen kulüp–sezon katılımları.
+
+Komut beklenen regresyon sayılarını, source ID tekrarlarını, foreign-key adaylarını, maç-kulüp ve
+tarih eşleşmelerini, enum dönüşümlerini, ilişki toplamlarını ve dışlanan kayıtların yokluğunu
+kontrol eder. Tek bir hata bile bulunursa geçerli staging çıktısı yayımlanmaz. Sonuç özeti aynı
+klasördeki `manifest.json` dosyasına yazılır.

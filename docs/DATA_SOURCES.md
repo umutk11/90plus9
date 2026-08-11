@@ -45,6 +45,8 @@ dışlamalar ham snapshot'ı değiştirmez ve `pnpm data:profile` tarafından ot
 - `data/raw` altındaki snapshot'lar Git'e eklenmez.
 - İndirilen ZIP ve açılmış CSV dosyaları değiştirilmez; temizlik ve dönüşüm `data/staging` altında
   yapılır.
+- Staging çıktısı `pnpm data:stage -- --version <sürüm>` ile DuckDB biçiminde yeniden üretilir;
+  Git'e veya ham snapshot arşivine yazılmaz.
 - Local geliştirmede üzerinde çalışılan snapshot tutulur.
 - Staging ve production arşivinde aktif snapshot ile bir önceki snapshot saklanır.
 - Production importu açık sürüm numarası ve önceden onaylanmış SHA-256 değeri olmadan başlamaz.

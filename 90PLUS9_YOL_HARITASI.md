@@ -585,176 +585,176 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 ## 4.1. Extract aşaması
 
 - [ ] Snapshot arşivini açmadan dosya listesini doğrula.
-- [ ] Sadece gereken CSV’leri işlemeyi planla.
-- [ ] `games.csv` okuyucusunu yaz.
-- [ ] `appearances.csv` okuyucusunu yaz.
-- [ ] `game_lineups.csv` okuyucusunu yaz.
-- [ ] `players.csv` okuyucusunu yaz.
-- [ ] `clubs.csv` okuyucusunu yaz.
-- [ ] `countries.csv` okuyucusunu yaz.
+- [x] Sadece gereken CSV’leri işlemeyi planla.
+- [x] `games.csv` okuyucusunu yaz.
+- [x] `appearances.csv` okuyucusunu yaz.
+- [x] `game_lineups.csv` okuyucusunu yaz.
+- [x] `players.csv` okuyucusunu yaz.
+- [x] `clubs.csv` okuyucusunu yaz.
+- [x] `countries.csv` okuyucusunu yaz.
 - [ ] `transfers.csv` okuyucusunu yalnızca QA/adayı desteklemek için yaz.
-- [ ] Büyük CSV’leri chunk/stream yöntemiyle oku.
-- [ ] Her dosyada okunan toplam satırı raporla.
-- [ ] Bozuk satır bulunduğunda satırı sessizce atlama.
-- [ ] Bozuk satırı hata raporuna yaz.
-- [ ] Kritik dosyada bozuk satır varsa importu başarısız yap.
+- [x] Büyük CSV’leri chunk/stream yöntemiyle oku.
+- [x] Her dosyada okunan toplam satırı raporla.
+- [x] Bozuk satır bulunduğunda satırı sessizce atlama.
+- [x] Bozuk satırı hata raporuna yaz.
+- [x] Kritik dosyada bozuk satır varsa importu başarısız yap.
 
 ## 4.2. Süper Lig filtresi
 
-- [ ] `competition_id = 'TR1'` filtresini uygula.
-- [ ] `season >= 2012` filtresini uygula.
-- [ ] `season <= 2025` filtresini uygula.
-- [ ] Sezon dışı maçların içeri alınmadığını test et.
-- [ ] Kupalar ve Avrupa maçlarının içeri alınmadığını test et.
-- [ ] Millî takım maçlarının içeri alınmadığını test et.
-- [ ] Filtre sonrası maç sayısını raporla.
-- [ ] Referans snapshot için ham 4.618 ve dışlama sonrası 4.589 maç/karşılaşma kaydını regresyon başlangıç değeri olarak kaydet.
-- [ ] Filtre sonrası sezon sayısını raporla.
-- [ ] Tam 14 sezon olmasını doğrula.
-- [ ] Filtre sonrası kulüp sayısını raporla.
-- [ ] Referans snapshot için 43 kulübü regresyon başlangıç değeri olarak kaydet.
-- [ ] Filtre sonrası kulüp–sezon sayısını raporla.
-- [ ] Referans snapshot için 261 kulüp–sezonu regresyon başlangıç değeri olarak kaydet.
+- [x] `competition_id = 'TR1'` filtresini uygula.
+- [x] `season >= 2012` filtresini uygula.
+- [x] `season <= 2025` filtresini uygula.
+- [x] Sezon dışı maçların içeri alınmadığını test et.
+- [x] Kupalar ve Avrupa maçlarının içeri alınmadığını test et.
+- [x] Millî takım maçlarının içeri alınmadığını test et.
+- [x] Filtre sonrası maç sayısını raporla.
+- [x] Referans snapshot için ham 4.618 ve dışlama sonrası 4.589 maç/karşılaşma kaydını regresyon başlangıç değeri olarak kaydet.
+- [x] Filtre sonrası sezon sayısını raporla.
+- [x] Tam 14 sezon olmasını doğrula.
+- [x] Filtre sonrası kulüp sayısını raporla.
+- [x] Referans snapshot için 43 kulübü regresyon başlangıç değeri olarak kaydet.
+- [x] Filtre sonrası kulüp–sezon sayısını raporla.
+- [x] Referans snapshot için 261 kulüp–sezonu regresyon başlangıç değeri olarak kaydet.
 
 ## 4.3. Sezon normalizasyonu
 
-- [ ] `season = 2012` için başlangıç yılını 2012 yap.
-- [ ] Bitiş yılını 2013 yap.
-- [ ] Görünen etiketi `2012/13` üret.
-- [ ] 1999/2000 benzeri sınırları destekleyecek genel yardımcı fonksiyon yaz.
-- [ ] 2025 için `2025/26` üretildiğini test et.
-- [ ] Tarih ile sezon etiketi uyuşmuyorsa QA uyarısı üret.
+- [x] `season = 2012` için başlangıç yılını 2012 yap.
+- [x] Bitiş yılını 2013 yap.
+- [x] Görünen etiketi `2012/13` üret.
+- [x] 1999/2000 benzeri sınırları destekleyecek genel yardımcı fonksiyon yaz.
+- [x] 2025 için `2025/26` üretildiğini test et.
+- [x] Tarih ile sezon etiketi uyuşmuyorsa QA uyarısı üret.
 
 ## 4.4. Kulüpleri içeri aktarma
 
-- [ ] TR1 maçlarından kullanılan kaynak kulüp kimliklerini çıkar.
-- [ ] Sadece bu kulüpleri `clubs.csv` içinden seç.
-- [ ] Kaynak kulüp adını sakla.
+- [x] TR1 maçlarından kullanılan kaynak kulüp kimliklerini çıkar.
+- [x] Sadece bu kulüpleri `clubs.csv` içinden seç.
+- [x] Kaynak kulüp adını sakla.
 - [ ] Canonical görünen adı referans dosyasından uygula.
 - [ ] Türkçe karakter düzeltmelerini manuel referans dosyasında tut.
 - [ ] Sponsor adını canonical ad yapma.
 - [ ] Kulüp alias’larını seed et.
-- [ ] 43 kulübün tamamının canonical eşleşmesi olduğunu doğrula.
-- [ ] Eşleşmeyen kulüp varsa importu durdur.
+- [x] 43 kulübün tamamının kaynak profili olduğunu doğrula.
+- [x] Eşleşmeyen kulüp varsa importu durdur.
 - [ ] Birden fazla kaynak kulüp yanlışlıkla aynı canonical kulübe gidiyorsa manuel inceleme aç.
 
 ## 4.5. Ülkeleri normalleştirme
 
-- [ ] `countries.csv` ülke adlarını içeri al.
+- [x] `countries.csv` ülke adlarını staging alanına al.
 - [ ] Kaynak vatandaşlık metniyle ülke tablosunu eşleştir.
 - [ ] Büyük/küçük harf farklarını normalize et.
 - [ ] Noktalama farklarını normalize et.
 - [ ] Tarihsel veya alternatif ülke adları için alias tablosu oluştur.
 - [ ] Eşleşmeyen vatandaşlıkları `unknown` yapmadan önce QA listesine çıkar.
 - [ ] Uyruk bilinmiyorsa null bırak.
-- [ ] Doğum ülkesini uyruk yerine otomatik kullanma.
+- [x] Doğum ülkesini uyruk yerine otomatik kullanma.
 - [ ] Kıta/konfederasyon bilgisini country ilişkisinden getir.
 
 ## 4.6. Oyuncuları içeri aktarma
 
-- [ ] TR1 appearance ve lineup kayıtlarındaki kaynak player ID’leri çıkar.
-- [ ] Snapshot sürümündeki oyuncu dışlama listesini kanıt ve oyuncu seçiminden önce uygula.
-- [ ] `v677` için belirlenen dört kaynak player ID'sini ve 22 lineup satırını uygulama importundan çıkar.
-- [ ] Sadece bu oyuncuları `players.csv` içinden seç.
-- [ ] Oyuncu source ID’sini primary eşleştirme anahtarı olarak kullan.
-- [ ] Oyuncu adını aktar.
-- [ ] Ad ve soyadı aktar.
-- [ ] Doğum tarihini parse et.
-- [ ] Geçersiz doğum tarihini QA sorunu yap.
+- [x] TR1 appearance ve lineup kayıtlarındaki kaynak player ID’leri çıkar.
+- [x] Snapshot sürümündeki oyuncu dışlama listesini kanıt ve oyuncu seçiminden önce uygula.
+- [x] `v677` için belirlenen dört kaynak player ID'sini ve 22 lineup satırını uygulama importundan çıkar.
+- [x] Sadece bu oyuncuları `players.csv` içinden seç.
+- [x] Oyuncu source ID’sini primary eşleştirme anahtarı olarak kullan.
+- [x] Oyuncu adını aktar.
+- [x] Ad ve soyadı aktar.
+- [x] Doğum tarihini parse et.
+- [x] Geçersiz doğum tarihini QA sorunu yap.
 - [ ] Uyruk eşleşmesini uygula.
 - [ ] Doğum ülkesi eşleşmesini uygula.
-- [ ] Genel mevkiyi aktar.
-- [ ] Ayrıntılı mevkiyi aktar.
-- [ ] Ayak bilgisini aktar.
-- [ ] Boy bilgisini aktar.
-- [ ] Görsel URL’yi production şemasına almak zorunlu değil; alınırsa kullanılmadığını işaretle.
-- [ ] Kaynak profil URL’sini aktar.
-- [ ] Kaynakta olmayan oyuncu ID’si sürümlü dışlama listesinde değilse importu durdur.
-- [ ] Referans snapshot için dışlama sonrası 3.770 kullanılabilir oyuncuyu regresyon başlangıç değeri olarak kaydet.
+- [x] Genel mevkiyi aktar.
+- [x] Ayrıntılı mevkiyi aktar.
+- [x] Ayak bilgisini aktar.
+- [x] Boy bilgisini aktar.
+- [x] Görsel URL’yi production şemasına alma.
+- [x] Kaynak profil URL’sini aktar.
+- [x] Kaynakta olmayan oyuncu ID’si sürümlü dışlama listesinde değilse importu durdur.
+- [x] Referans snapshot için dışlama sonrası 3.770 kullanılabilir oyuncuyu regresyon başlangıç değeri olarak kaydet.
 
 ## 4.7. İsim normalizasyonu
 
-- [ ] Unicode metni normalize et.
-- [ ] Baş ve sondaki boşlukları kaldır.
-- [ ] Birden fazla boşluğu teke indir.
-- [ ] Arama için küçük harfe çevir.
-- [ ] Türkçe `İ/I/ı/i` dönüşümlerini ayrı testlerle ele al.
-- [ ] Türkçe karakter içermeyen yardımcı arama anahtarı üret.
-- [ ] Tire ve apostrof farklarını arama için normalize et.
-- [ ] Görünen adı değiştirme; sadece arama anahtarı üret.
+- [x] Unicode metni normalize et.
+- [x] Baş ve sondaki boşlukları kaldır.
+- [x] Birden fazla boşluğu teke indir.
+- [x] Arama için küçük harfe çevir.
+- [x] Türkçe `İ/I/ı/i` dönüşümlerini ayrı testlerle ele al.
+- [x] Türkçe karakter içermeyen yardımcı arama anahtarı üret.
+- [x] Tire ve apostrof farklarını arama için normalize et.
+- [x] Görünen adı değiştirme; sadece arama anahtarı üret.
 - [ ] Fuzzy eşleşmeyi doğru cevap doğrulamasında kullanma.
 - [ ] Kullanıcının arama sonucundan player ID seçmesini zorunlu yap.
 
 ## 4.8. Mevki normalizasyonu
 
-- [ ] `Goalkeeper → GK` eşlemesini yaz.
-- [ ] `Defender → DEF` eşlemesini yaz.
-- [ ] `Midfield → MID` eşlemesini yaz.
-- [ ] `Attack → FWD` eşlemesini yaz.
-- [ ] `Missing` değerini null/unknown yap.
-- [ ] Bilinmeyen yeni genel mevki gelirse importu uyarmakla kalmayıp durdur.
-- [ ] Genel mevki doluluğunu raporla.
-- [ ] Referans snapshot’ta sadece 5 belirsiz oyuncu olduğunu başlangıç değeri olarak kaydet.
-- [ ] Ayrıntılı mevkileri aynen sakla.
+- [x] `Goalkeeper → GK` eşlemesini yaz.
+- [x] `Defender → DEF` eşlemesini yaz.
+- [x] `Midfield → MID` eşlemesini yaz.
+- [x] `Attack → FWD` eşlemesini yaz.
+- [x] `Missing` değerini null/unknown yap.
+- [x] Bilinmeyen yeni genel mevki gelirse importu uyarmakla kalmayıp durdur.
+- [x] Genel mevki doluluğunu raporla.
+- [x] Referans snapshot’ta sadece 5 belirsiz oyuncu olduğunu başlangıç değeri olarak kaydet.
+- [x] Ayrıntılı mevkileri aynen sakla.
 - [ ] 2013/14 sonrası sezonluk modal ayrıntılı mevki üretimini isteğe bağlı yardımcı alan olarak planla.
 - [ ] 2012/13 için oyuncu profil mevkisine geri dön.
 
 ## 4.9. Maç durumlarını belirleme
 
-- [ ] Sürümlü dışlama listesinde olmayan her TR1 game kaydını `matches` staging tablosuna al.
-- [ ] Aynı source game ID’nin tekrar etmediğini doğrula.
-- [ ] Appearance veya lineup kanıtı olan maçı `played` adayı yap.
-- [ ] Hiç oyuncu kanıtı olmayan maçı otomatik olarak kesin `awarded` sayma.
-- [ ] Oyuncu kanıtı olmayan ve dışlama listesinde bulunmayan maçları QA listesine çıkar.
-- [ ] `v677` için kararlaştırılan 29 maçı uygulama importundan çıkar.
-- [ ] Dışlanan maçlardan staging, canonical maç veya oyuncu ilişkisi üretme.
-- [ ] Gelecekteki snapshot'lar için sürüme bağlı manuel dışlama desteği kullan.
-- [ ] Oynanmamış maçtan oyuncu ilişkisi üretilmediğini test et.
+- [x] Sürümlü dışlama listesinde olmayan her TR1 game kaydını `matches` staging tablosuna al.
+- [x] Aynı source game ID’nin tekrar etmediğini doğrula.
+- [x] Appearance veya lineup kanıtı olan maçı `played` adayı yap.
+- [x] Hiç oyuncu kanıtı olmayan maçı otomatik olarak kesin `awarded` sayma.
+- [x] Oyuncu kanıtı olmayan ve dışlama listesinde bulunmayan maçları QA listesine çıkar.
+- [x] `v677` için kararlaştırılan 29 maçı uygulama importundan çıkar.
+- [x] Dışlanan maçlardan staging, canonical maç veya oyuncu ilişkisi üretme.
+- [x] Gelecekteki snapshot'lar için sürüme bağlı manuel dışlama desteği kullan.
+- [x] Oynanmamış maçtan oyuncu ilişkisi üretilmediğini test et.
 
 ## 4.10. Appearance kanıtlarını oluşturma
 
-- [ ] Appearance satırlarını TR1 game ID’leriyle sınırla.
-- [ ] Her appearance satırını doğru sezona bağla.
+- [x] Appearance satırlarını TR1 game ID’leriyle sınırla.
+- [x] Her appearance satırını doğru sezona bağla.
 - [ ] `player_club_id` değerini canonical kulübe bağla.
 - [ ] Oyuncuyu canonical player kaydına bağla.
-- [ ] Maçın ev sahibi veya deplasman kulüplerinden biriyle player club’ın uyuştuğunu doğrula.
-- [ ] Uyuşmayan satırı QA sorunu yap.
-- [ ] `evidence_type = appearance` kaydı oluştur.
-- [ ] Aynı oyuncu–maç appearance tekrarını tekilleştir.
-- [ ] Referans snapshot için 132.464 appearance satırını regresyon başlangıç değeri olarak kaydet.
+- [x] Maçın ev sahibi veya deplasman kulüplerinden biriyle player club’ın uyuştuğunu doğrula.
+- [x] Uyuşmayan satırı QA sorunu yap.
+- [x] `evidence_type = appearance` kaydı oluştur.
+- [x] Aynı oyuncu–maç appearance tekrarını tekilleştir.
+- [x] Referans snapshot için 132.464 appearance satırını regresyon başlangıç değeri olarak kaydet.
 
 ## 4.11. Lineup kanıtlarını oluşturma
 
-- [ ] Lineup satırlarını TR1 game ID’leriyle sınırla.
-- [ ] `starting_lineup` değerini tanı.
-- [ ] `substitutes` değerini tanı.
-- [ ] Bilinmeyen lineup type gelirse QA hatası oluştur.
+- [x] Lineup satırlarını TR1 game ID’leriyle sınırla.
+- [x] `starting_lineup` değerini tanı.
+- [x] `substitutes` değerini tanı.
+- [x] Bilinmeyen lineup type gelirse QA hatası oluştur.
 - [ ] Player ID’yi canonical oyuncuya bağla.
 - [ ] Club ID’yi canonical kulübe bağla.
-- [ ] Maçın ev/deplasman kulübüyle lineup club’ın uyuştuğunu doğrula.
-- [ ] `starting_lineup` için `has_start` kanıtı üret.
-- [ ] `substitutes` için `has_bench` kanıtı üret.
-- [ ] Aynı oyuncu–maç–type tekrarını tekilleştir.
-- [ ] 2012/13 lineup satırının sıfır olmasını bilinen kaynak sınırı olarak kabul et.
-- [ ] Referans snapshot için ham 170.904 ve dışlama sonrası 170.882 lineup satırını regresyon başlangıç değeri olarak kaydet.
+- [x] Maçın ev/deplasman kulübüyle lineup club’ın uyuştuğunu doğrula.
+- [x] `starting_lineup` için `has_start` kanıtı üret.
+- [x] `substitutes` için `has_bench` kanıtı üret.
+- [x] Aynı oyuncu–maç–type tekrarını tekilleştir.
+- [x] 2012/13 lineup satırının sıfır olmasını bilinen kaynak sınırı olarak kabul et.
+- [x] Referans snapshot için ham 170.904 ve dışlama sonrası 170.882 lineup satırını regresyon başlangıç değeri olarak kaydet.
 
 ## 4.12. Oyuncu–kulüp–sezon ilişkisini toplama
 
-- [ ] Appearance ve lineup kanıtlarını aynı staging görünümünde birleştir.
-- [ ] Player, club ve season’a göre grupla.
-- [ ] En az bir appearance varsa `has_appearance = true` yap.
-- [ ] En az bir başlangıç varsa `has_start = true` yap.
-- [ ] En az bir yedek kaydı varsa `has_bench = true` yap.
-- [ ] İlk kanıt tarihini `first_seen_date` yap.
-- [ ] Son kanıt tarihini `last_seen_date` yap.
-- [ ] Appearance sayısını hesapla.
-- [ ] Lineup sayısını hesapla.
-- [ ] Toplam kanıt sayısını hesapla.
-- [ ] Kanıtı olmayan ilişki üretme.
-- [ ] Transfer tablosundan gelen ilişkiyi bu tabloya otomatik ekleme.
-- [ ] Referans snapshot için dışlama sonrası 9.343 ilişkiyi regresyon başlangıç değeri olarak kaydet.
-- [ ] Aynı player–club–season ilişkisinin tek satır olduğunu doğrula.
-- [ ] İlişkideki kulübün o sezon Süper Lig’de olduğunu doğrula.
+- [x] Appearance ve lineup kanıtlarını aynı staging görünümünde birleştir.
+- [x] Player, club ve season’a göre grupla.
+- [x] En az bir appearance varsa `has_appearance = true` yap.
+- [x] En az bir başlangıç varsa `has_start = true` yap.
+- [x] En az bir yedek kaydı varsa `has_bench = true` yap.
+- [x] İlk kanıt tarihini `first_seen_date` yap.
+- [x] Son kanıt tarihini `last_seen_date` yap.
+- [x] Appearance sayısını hesapla.
+- [x] Lineup sayısını hesapla.
+- [x] Toplam kanıt sayısını hesapla.
+- [x] Kanıtı olmayan ilişki üretme.
+- [x] Transfer tablosundan gelen ilişkiyi bu tabloya otomatik ekleme.
+- [x] Referans snapshot için dışlama sonrası 9.343 ilişkiyi regresyon başlangıç değeri olarak kaydet.
+- [x] Aynı player–club–season ilişkisinin tek satır olduğunu doğrula.
+- [x] İlişkideki kulübün o sezon Süper Lig’de olduğunu doğrula.
 
 ## 4.13. Transferleri QA adayı olarak kullanma
 
@@ -771,8 +771,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 ## 4.14. Staging’den canonical tablolara yükleme
 
 - [ ] Importu transaction veya sürümlü staging yaklaşımıyla çalıştır.
-- [ ] Önce staging tablolarını doldur.
-- [ ] Staging kalite testlerini çalıştır.
+- [x] Önce staging tablolarını doldur.
+- [x] Staging kalite testlerini çalıştır.
 - [ ] Test başarısızsa canonical tabloları değiştirme.
 - [ ] Test başarılıysa yeni dataset version’a bağlı canonical kayıtları yaz.
 - [ ] Aynı kaynak sürümün iki kez mükerrer yazılmasını engelle.

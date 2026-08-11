@@ -11,6 +11,7 @@
     "build": "pnpm --recursive --if-present run build",
     "data:download": "node scripts/data/download-snapshot.mjs",
     "data:profile": "node scripts/data/profile-snapshot.mjs",
+    "data:stage": "node scripts/data/build-staging.mjs",
     "data:validate": "node scripts/data/validate-snapshot.mjs",
     "db:check": "bash scripts/database/check-connection.sh",
     "db:down": "bash scripts/database/compose.sh down",

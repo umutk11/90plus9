@@ -64,11 +64,16 @@
   },
   "applicationImportScope": {
     "exclusionFile": "data/reference/exclusions/dcaribou-kaggle-v677.json",
+    "seasons": 14,
     "games": 4589,
     "appearanceRows": 132464,
     "lineupRows": 170882,
+    "playerMatchEvidenceRows": 303346,
+    "countries": 124,
     "clubs": 43,
+    "clubSeasons": 261,
     "players": 3770,
+    "playersMissingPositionGroup": 5,
     "playerClubSeasonRelations": 9343
   },
   "qualityNotes": [
