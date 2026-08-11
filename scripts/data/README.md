@@ -122,6 +122,19 @@ canonical importa hazır sayılmaz. Oyuncularda kullanılan tüm kaynak ülke me
 inceleme tablosu
 `reports/data-quality/dcaribou-kaggle-v<version>-reference-mappings.md` altında üretilir.
 
+## Şampiyonluk referansı
+
+2012/13–2025/26 Süper Lig şampiyonluk referansı şu komutla doğrulanır:
+
+```bash
+pnpm data:champions -- --version 677
+```
+
+Komut 14 sezonun eksiksiz ve tekil olmasını, canonical kulüp kimliklerini, onay durumunu ve her
+satırdaki HTTPS TFF sezon arşivi bağlantısını kontrol eder. Sonuç `reports/data-quality` altında
+JSON ve Markdown raporlarına yazılır. GitHub CI da depoya alınmış referansı aynı kalite kapısıyla
+doğrular.
+
 ## PostgreSQL canonical importu
 
 Onaylanmış referanslar ve kalite kontrolünden geçmiş staging verisi tek transaction içinde
@@ -137,9 +150,10 @@ arşivler. Test veritabanı için `--target test` kullanılabilir.
 
 Import; snapshot checksum bilgisini `dataset_versions` tablosunda saklar, canonical kulüp/ülke
 adlarını ve kaynak alias'larını uygular, oyuncu vatandaşlığı ile doğum ülkesini ayrı ilişkiler
-olarak bağlar. Maç, oyuncu kanıtı ve oyuncu-kulüp-sezon kayıtları aynı dataset sürümüne yazılır.
-Herhangi bir kontrol başarısız olursa transaction geri alınır ve canonical tablolar değişmez.
-Aynı snapshot sürümünü yeniden çalıştırmak mükerrer kayıt üretmez; mevcut yükü tekrar doğrular.
+olarak bağlar. Maç, oyuncu kanıtı ve oyuncu-kulüp-sezon kayıtları aynı dataset sürümüne yazılır;
+onaylı şampiyonluk referansı ilgili `club_seasons` kayıtlarına uygulanır. Herhangi bir kontrol
+başarısız olursa transaction geri alınır ve canonical tablolar değişmez. Aynı snapshot sürümünü
+yeniden çalıştırmak mükerrer kayıt üretmez; mevcut yükü ve 14 şampiyonluk kaydını tekrar doğrular.
 
 Local/test dışındaki ortamlarda yanlışlıkla importu önlemek için ayrıca açık onay gerekir:
 
@@ -148,3 +162,22 @@ CONFIRM_DATASET_IMPORT=dcaribou-v677 pnpm data:import -- --version 677
 ```
 
 Sonuç özeti `reports/data-quality` altında Git'e eklenmeyen bir JSON raporuna yazılır.
+
+## Canonical veri kalite kapısı
+
+Aktif veya `ready` durumundaki canonical sürümün tam kalite raporu şu komutla üretilir:
+
+```bash
+pnpm data:quality -- --version 677
+```
+
+Test veritabanı için `--target test` eklenir. Kontrol; regresyon sayılarını, oyuncu kimliği/adı,
+vatandaşlık ve mevki doluluğunu, doğum tarihlerini, kanıt–ilişki sayısı/bayrak/tarih eşitliğini,
+maç-kulüp ve sezon tarihi uyumunu, sıra dışı çoklu kulüpleri, aynı maçta iki kulüp çakışmasını,
+şampiyonlukları ve açık kritik kalite sorunlarını ölçer. 2019/20 sezonunun COVID nedeniyle Temmuz
+2020'ye uzaması geçerli sezon aralığında ele alınır.
+
+Kritik kontrol başarısızsa komut hata koduyla kapanır. Aynı kalite kapısı canonical import içinde
+de aktivasyondan önce çalışır. Kaynakta gerçekten boş olan vatandaşlık ve mevki alanları tahminle
+doldurulmaz; kaynak oyuncu ID'leriyle `data_quality_issues` inceleme kuyruğuna yazılır. JSON ve
+Markdown raporları `reports/data-quality` altında tutulur.

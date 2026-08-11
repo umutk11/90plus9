@@ -6,6 +6,16 @@ import { fileURLToPath } from "node:url";
 
 import pg from "pg";
 
+import {
+  applyChampionReference,
+  loadChampionReference,
+} from "../../../scripts/data/champion-reference.mjs";
+import {
+  assertCanonicalQuality,
+  collectCanonicalQuality,
+  syncCanonicalQualityIssues,
+} from "./canonical-quality.mjs";
+
 const { Client } = pg;
 const IMPORT_BATCH_SIZE = 1_000;
 const EVIDENCE_BATCH_SIZE = 2_500;
@@ -543,6 +553,30 @@ async function activateDataset(client, datasetVersionId) {
   );
 }
 
+async function writeImportReport(
+  repositoryRoot,
+  { activate, datasetVersionId, target, verification, version },
+) {
+  const report = {
+    schemaVersion: 1,
+    snapshotVersion: Number(version),
+    importedAt: new Date().toISOString(),
+    target,
+    status: activate ? "active" : "ready",
+    datasetVersionId,
+    summary: verification,
+  };
+  const reportDirectory = path.join(repositoryRoot, "reports/data-quality");
+  const reportPath = path.join(
+    reportDirectory,
+    `dcaribou-kaggle-v${version}-canonical-import-${target}.json`,
+  );
+  await mkdir(reportDirectory, { recursive: true });
+  await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+
+  return { report, reportPath };
+}
+
 async function main() {
   const {
     activate,
@@ -615,6 +649,7 @@ async function main() {
   const clubReference = JSON.parse(await readFile(clubReferencePath, "utf8"));
   const countryIdentityReference = JSON.parse(await readFile(countryIdentityPath, "utf8"));
   const countryMappingReference = JSON.parse(await readFile(countryMappingPath, "utf8"));
+  const { championReference } = await loadChampionReference(repositoryRoot, version);
   const expected = snapshotMetadata.applicationImportScope;
 
   if (
@@ -763,20 +798,37 @@ async function main() {
         );
       }
 
-      const verification = await verifyImportedDataset(
-        client,
-        existing.id,
+      const championRows = await applyChampionReference(client, championReference);
+      const verification = {
+        ...(await verifyImportedDataset(client, existing.id, expected, importedSourceIds)),
+        champions: championRows.length,
+      };
+      const qualityReport = await collectCanonicalQuality(client, {
+        championReference,
+        datasetVersionId: existing.id,
         expected,
-        importedSourceIds,
-      );
+      });
+      qualityReport.issueSummary = await syncCanonicalQualityIssues(client, qualityReport);
+      assertCanonicalQuality(qualityReport);
+      verification.quality_status = qualityReport.status;
+      verification.quality_warnings = qualityReport.warnings.length;
       if (activate && existing.status !== "active") {
         await activateDataset(client, existing.id);
       }
       await client.query("COMMIT");
       transactionStarted = false;
+      const { reportPath } = await writeImportReport(repositoryRoot, {
+        activate: activate || existing.status === "active",
+        datasetVersionId: existing.id,
+        target,
+        verification,
+        version,
+      });
       console.log(`v${version} zaten yüklü; mükerrer kayıt oluşturulmadı.`);
       console.log(`Durum: ${activate ? "active" : existing.status}`);
       console.log(`Maç: ${verification.matches}`);
+      console.log(`Şampiyon: ${verification.champions}`);
+      console.log(`Rapor: ${reportPath}`);
       return;
     }
 
@@ -1202,12 +1254,20 @@ async function main() {
       },
     );
 
-    const verification = await verifyImportedDataset(
-      client,
+    const championRows = await applyChampionReference(client, championReference);
+    const verification = {
+      ...(await verifyImportedDataset(client, datasetVersionId, expected, importedSourceIds)),
+      champions: championRows.length,
+    };
+    const qualityReport = await collectCanonicalQuality(client, {
+      championReference,
       datasetVersionId,
       expected,
-      importedSourceIds,
-    );
+    });
+    qualityReport.issueSummary = await syncCanonicalQualityIssues(client, qualityReport);
+    assertCanonicalQuality(qualityReport);
+    verification.quality_status = qualityReport.status;
+    verification.quality_warnings = qualityReport.warnings.length;
 
     await client.query(
       `UPDATE dataset_versions SET
@@ -1235,22 +1295,13 @@ async function main() {
     await client.query("COMMIT");
     transactionStarted = false;
 
-    const report = {
-      schemaVersion: 1,
-      snapshotVersion: Number(version),
-      importedAt: new Date().toISOString(),
-      target,
-      status: activate ? "active" : "ready",
+    const { report, reportPath } = await writeImportReport(repositoryRoot, {
+      activate,
       datasetVersionId,
-      summary: verification,
-    };
-    const reportDirectory = path.join(repositoryRoot, "reports/data-quality");
-    const reportPath = path.join(
-      reportDirectory,
-      `dcaribou-kaggle-v${version}-canonical-import-${target}.json`,
-    );
-    await mkdir(reportDirectory, { recursive: true });
-    await writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+      target,
+      verification,
+      version,
+    });
 
     console.log(`Canonical import tamamlandı: v${version}`);
     console.log(`Durum: ${report.status}`);
@@ -1260,6 +1311,7 @@ async function main() {
     console.log(`Maç: ${verification.matches}`);
     console.log(`Kanıt: ${verification.evidence}`);
     console.log(`Oyuncu–kulüp–sezon: ${verification.player_club_seasons}`);
+    console.log(`Şampiyon: ${verification.champions}`);
     console.log(`Rapor: ${reportPath}`);
   } catch (error) {
     if (transactionStarted) {

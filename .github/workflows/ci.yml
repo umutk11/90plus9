@@ -41,6 +41,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Validate checked-in references
+        run: pnpm data:champions -- --version 677
+
       - name: Check formatting
         run: pnpm format
 

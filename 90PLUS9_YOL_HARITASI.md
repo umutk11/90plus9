@@ -538,7 +538,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [x] `championship_source_url` alanını ekle.
 - [x] `championship_verified_at` alanını ekle.
 - [x] `championship_verified_by` alanını ekle.
-- [ ] Her sezonda tam bir şampiyon olmasını constraint veya QA testiyle doğrula.
+- [x] Her sezonda tam bir şampiyon olmasını constraint veya QA testiyle doğrula.
 
 ## 3.7. Manuel düzeltme ve veri kalite tabloları
 
@@ -823,23 +823,23 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 5.3. Sezon şampiyonları
 
-- [ ] 2012/13 şampiyonunu doğrula ve ekle.
-- [ ] 2013/14 şampiyonunu doğrula ve ekle.
-- [ ] 2014/15 şampiyonunu doğrula ve ekle.
-- [ ] 2015/16 şampiyonunu doğrula ve ekle.
-- [ ] 2016/17 şampiyonunu doğrula ve ekle.
-- [ ] 2017/18 şampiyonunu doğrula ve ekle.
-- [ ] 2018/19 şampiyonunu doğrula ve ekle.
-- [ ] 2019/20 şampiyonunu doğrula ve ekle.
-- [ ] 2020/21 şampiyonunu doğrula ve ekle.
-- [ ] 2021/22 şampiyonunu doğrula ve ekle.
-- [ ] 2022/23 şampiyonunu doğrula ve ekle.
-- [ ] 2023/24 şampiyonunu doğrula ve ekle.
-- [ ] 2024/25 şampiyonunu doğrula ve ekle.
-- [ ] 2025/26 şampiyonunu doğrula ve ekle.
-- [ ] Her satıra resmi kaynak URL’si ekle.
-- [ ] Her sezonda tam bir şampiyon olduğunu test et.
-- [ ] Şampiyon kulübün ilgili sezon `club_seasons` kaydına sahip olduğunu test et.
+- [x] 2012/13 şampiyonunu doğrula ve ekle.
+- [x] 2013/14 şampiyonunu doğrula ve ekle.
+- [x] 2014/15 şampiyonunu doğrula ve ekle.
+- [x] 2015/16 şampiyonunu doğrula ve ekle.
+- [x] 2016/17 şampiyonunu doğrula ve ekle.
+- [x] 2017/18 şampiyonunu doğrula ve ekle.
+- [x] 2018/19 şampiyonunu doğrula ve ekle.
+- [x] 2019/20 şampiyonunu doğrula ve ekle.
+- [x] 2020/21 şampiyonunu doğrula ve ekle.
+- [x] 2021/22 şampiyonunu doğrula ve ekle.
+- [x] 2022/23 şampiyonunu doğrula ve ekle.
+- [x] 2023/24 şampiyonunu doğrula ve ekle.
+- [x] 2024/25 şampiyonunu doğrula ve ekle.
+- [x] 2025/26 şampiyonunu doğrula ve ekle.
+- [x] Her satıra resmi kaynak URL’si ekle.
+- [x] Her sezonda tam bir şampiyon olduğunu test et.
+- [x] Şampiyon kulübün ilgili sezon `club_seasons` kaydına sahip olduğunu test et.
 
 ## 5.4. Maç kapsamı dışlamaları
 
@@ -854,30 +854,30 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 5.5. Oyuncu alanı kalite kontrolleri
 
-- [ ] Player source ID null sayısını kontrol et; sıfır olmalı.
-- [ ] Oyuncu adı null sayısını kontrol et; sıfır olmalı.
-- [ ] Aynı source player ID’nin birden fazla oyuncuya gitmediğini doğrula.
-- [ ] Uyruk doluluk oranını raporla.
-- [ ] Uyruk eksik oyuncuları manuel inceleme kuyruğuna al.
-- [ ] Genel mevki doluluk oranını raporla.
-- [ ] Belirsiz beş civarı oyuncuyu manuel inceleme kuyruğuna al.
-- [ ] Doğum tarihi gelecekte olan oyuncu olmadığını doğrula.
-- [ ] Mantıksız yaş değerlerini raporla.
-- [ ] Boy alanını oyun kriterine bağlamadığımızı doğrula.
-- [ ] Aynı isimli farklı oyuncular için ayrı ID’lerin korunduğunu doğrula.
+- [x] Player source ID null sayısını kontrol et; sıfır olmalı.
+- [x] Oyuncu adı null sayısını kontrol et; sıfır olmalı.
+- [x] Aynı source player ID’nin birden fazla oyuncuya gitmediğini doğrula.
+- [x] Uyruk doluluk oranını raporla.
+- [x] Uyruk eksik oyuncuları manuel inceleme kuyruğuna al.
+- [x] Genel mevki doluluk oranını raporla.
+- [x] Belirsiz beş civarı oyuncuyu manuel inceleme kuyruğuna al.
+- [x] Doğum tarihi gelecekte olan oyuncu olmadığını doğrula.
+- [x] Mantıksız yaş değerlerini raporla.
+- [x] Boy alanını oyun kriterine bağlamadığımızı doğrula.
+- [x] Aynı isimli farklı oyuncular için ayrı ID’lerin korunduğunu doğrula.
 
 ## 5.6. İlişki kalite kontrolleri
 
-- [ ] Her player–club–season ilişkisinin en az bir kanıtı olduğunu doğrula.
-- [ ] `has_appearance = true` ilişkilerin appearance kanıtı olduğunu doğrula.
-- [ ] `has_start = true` ilişkilerin starting lineup kanıtı olduğunu doğrula.
-- [ ] `has_bench = true` ilişkilerin substitutes kanıtı olduğunu doğrula.
-- [ ] `first_seen_date <= last_seen_date` olduğunu doğrula.
-- [ ] Kanıt tarihinin ilgili sezon aralığında olduğunu doğrula.
-- [ ] Oyuncu kulübünün maçtaki iki kulüpten biri olduğunu doğrula.
-- [ ] Bir sezonda olağan dışı sayıda kulübe bağlı oyuncuları raporla.
-- [ ] Aynı maçta iki kulüp adına görünen oyuncuları raporla.
-- [ ] Tek kanıtlı ilişkileri ayrı kalite grubunda raporla.
+- [x] Her player–club–season ilişkisinin en az bir kanıtı olduğunu doğrula.
+- [x] `has_appearance = true` ilişkilerin appearance kanıtı olduğunu doğrula.
+- [x] `has_start = true` ilişkilerin starting lineup kanıtı olduğunu doğrula.
+- [x] `has_bench = true` ilişkilerin substitutes kanıtı olduğunu doğrula.
+- [x] `first_seen_date <= last_seen_date` olduğunu doğrula.
+- [x] Kanıt tarihinin ilgili sezon aralığında olduğunu doğrula.
+- [x] Oyuncu kulübünün maçtaki iki kulüpten biri olduğunu doğrula.
+- [x] Bir sezonda olağan dışı sayıda kulübe bağlı oyuncuları raporla.
+- [x] Aynı maçta iki kulüp adına görünen oyuncuları raporla.
+- [x] Tek kanıtlı ilişkileri ayrı kalite grubunda raporla.
 - [ ] Manuel pasife alınan ilişkinin kural sonuçlarına girmediğini test et.
 
 ## 5.7. Bilinen oyuncu regresyon listesi
@@ -895,26 +895,26 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 5.8. Veri kalite raporu
 
-- [ ] Raporun başına dataset version yaz.
-- [ ] Sezon sayısını yaz.
-- [ ] Maç sayısını yaz.
-- [ ] Kulüp sayısını yaz.
-- [ ] Oyuncu sayısını yaz.
-- [ ] Oyuncu–kulüp–sezon ilişki sayısını yaz.
-- [ ] Uyruk doluluk oranını yaz.
-- [ ] Mevki doluluk oranını yaz.
-- [ ] Açık kalite sorunlarının sayısını yaz.
-- [ ] Kritik sorunları ayrı bölümde göster.
-- [ ] Önceki sürüme göre eklenen/silinen kayıtları göster.
-- [ ] Rapor başarısızsa production aktivasyonunu engelle.
+- [x] Raporun başına dataset version yaz.
+- [x] Sezon sayısını yaz.
+- [x] Maç sayısını yaz.
+- [x] Kulüp sayısını yaz.
+- [x] Oyuncu sayısını yaz.
+- [x] Oyuncu–kulüp–sezon ilişki sayısını yaz.
+- [x] Uyruk doluluk oranını yaz.
+- [x] Mevki doluluk oranını yaz.
+- [x] Açık kalite sorunlarının sayısını yaz.
+- [x] Kritik sorunları ayrı bölümde göster.
+- [x] Önceki sürüme göre eklenen/silinen kayıtları göster.
+- [x] Rapor başarısızsa production aktivasyonunu engelle.
 
 ## Faz 5 kabul kriterleri
 
-- [ ] Bütün kulüpler canonical isim ve şehir bilgisine sahip.
+- [x] Bütün kulüpler canonical isim ve şehir bilgisine sahip.
 - [ ] İstanbul/İstanbul dışı ve Dört Büyük etiketleri doğrulanmış.
-- [ ] 14 sezonun şampiyonları resmi kaynakla doğrulanmış.
-- [ ] Açıklanamayan oyuncusuz maç kalmamış.
-- [ ] Kritik veri kalite sorunu açık değil.
+- [x] 14 sezonun şampiyonları resmi kaynakla doğrulanmış.
+- [x] Açıklanamayan oyuncusuz maç kalmamış.
+- [x] Kritik veri kalite sorunu açık değil.
 - [ ] Bilinen oyuncu regresyon testleri geçiyor.
 
 ---
@@ -2274,9 +2274,9 @@ Bu sıra ekip tek kişi olsa bile uygulanabilir. Her satır ayrı bir iş kartı
 34. [ ] Ödüllendirilmiş maçları işaretle ve oyuncu ilişkisi üretme.
 35. [ ] Kaynak kanıtlarını tekilleştirerek `player_season_club` üret.
 36. [ ] Kulüp şehir ve grup etiketlerini manuel doğrula.
-37. [ ] 14 sezonun şampiyon tablosunu resmi kaynaklarla doldur.
+37. [x] 14 sezonun şampiyon tablosunu resmi kaynaklarla doldur.
 38. [ ] Bilinen oyuncu regresyon fixture’ını oluştur.
-39. [ ] İlk tam veri kalite raporunu üret.
+39. [x] İlk tam veri kalite raporunu üret.
 40. [ ] Kritik veri hatalarını düzelt ve dataset v1’i dondur.
 41. [ ] Ortak kural sözleşmesini uygula.
 42. [ ] Kulüp, uyruk, kıta ve mevki kurallarını uygula.

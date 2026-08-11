@@ -58,6 +58,17 @@ hazırlanır. Kullanılan CLDR repository commit kimliği `data/reference/countr
 sürümlü dosyada tutulur. Futbol ülkeleri, kullanıcı tercihli kısa adlar ve tarihsel ülkeler aynı
 dosyada açık kayıtlarla yönetilir; canlı ağ isteği sırasında isim üretilmez.
 
+## Süper Lig şampiyonları
+
+2012/13–2025/26 sezonlarının şampiyonları
+[TFF Süper Lig şampiyonluk arşivinden](https://www.tff.org/default.aspx?pageID=545) doğrulanır.
+Her sezonun ayrı resmî TFF arşiv bağlantısı, canonical kaynak kulüp kimliği ve son doğrulama
+bilgisi
+[`data/reference/champions/super-lig-dcaribou-v677.json`](../data/reference/champions/super-lig-dcaribou-v677.json)
+dosyasında sürümlenir. Canonical import; her sezonda tam bir şampiyon bulunmasını, şampiyon
+kulübün ilgili sezon Süper Lig katılım kaydına sahip olmasını ve kaynak/denetim alanlarının dolu
+olmasını zorunlu tutar.
+
 ## Oyun uygunluğu açısından kullanım
 
 - Oyuncu–kulüp–sezon kanıtı `appearances` ve `game_lineups` kayıtlarının birleşiminden üretilir.

@@ -18,6 +18,7 @@
     "db:verify": "prisma db execute --file ../../scripts/database/verify-schema.sql",
     "db:validate": "prisma validate",
     "lint": "eslint src prisma.config.ts scripts",
+    "test": "vitest run scripts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -79,8 +79,10 @@ pnpm typecheck    # TypeScript kontrolleri
 pnpm test         # Birim testleri
 pnpm format       # Biçim kontrolü
 pnpm format:write # Dosyaları biçimlendir
+pnpm data:champions -- --version 677 # Resmî Süper Lig şampiyonluk referansını doğrula
 pnpm data:download -- --version 677 # Sabitlenmiş ham veri snapshot'ını indir
 pnpm data:profile -- --version 677 # Sezon bazlı veri doluluk raporu
+pnpm data:quality -- --version 677 # Canonical verinin tam kalite kapısını çalıştır
 pnpm data:references -- --version 677 # Kulüp ve ülke referans taslaklarını doğrula
 pnpm data:stage -- --version 677 # Doğrulanmış ETL staging veritabanını üret
 pnpm data:import -- --version 677 --activate # Canonical veriyi PostgreSQL'e yükle ve etkinleştir

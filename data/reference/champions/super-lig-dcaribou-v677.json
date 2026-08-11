@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "datasetVersion": 677,
+  "competitionId": "TR1",
+  "competitionName": "Süper Lig",
+  "seasonStartYear": 2012,
+  "seasonEndYear": 2025,
+  "reviewStatus": "approved",
+  "reviewedAt": "2026-08-11T13:33:36Z",
+  "reviewedBy": "codex",
+  "officialArchiveUrl": "https://www.tff.org/default.aspx?pageID=545",
+  "sourceCheckedAt": "2026-08-11T13:33:36Z",
+  "champions": [
+    {
+      "seasonStartYear": 2012,
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1236"
+    },
+    {
+      "seasonStartYear": 2013,
+      "sourceClubId": 36,
+      "canonicalClubName": "Fenerbahçe",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1274"
+    },
+    {
+      "seasonStartYear": 2014,
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1318"
+    },
+    {
+      "seasonStartYear": 2015,
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1382"
+    },
+    {
+      "seasonStartYear": 2016,
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1413"
+    },
+    {
+      "seasonStartYear": 2017,
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1440"
+    },
+    {
+      "seasonStartYear": 2018,
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1467"
+    },
+    {
+      "seasonStartYear": 2019,
+      "sourceClubId": 6890,
+      "canonicalClubName": "Başakşehir",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1501"
+    },
+    {
+      "seasonStartYear": 2020,
+      "sourceClubId": 114,
+      "canonicalClubName": "Beşiktaş",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1529"
+    },
+    {
+      "seasonStartYear": 2021,
+      "sourceClubId": 449,
+      "canonicalClubName": "Trabzonspor",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1576"
+    },
+    {
+      "seasonStartYear": 2022,
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1628"
+    },
+    {
+      "seasonStartYear": 2023,
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1648"
+    },
+    {
+      "seasonStartYear": 2024,
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1730"
+    },
+    {
+      "seasonStartYear": 2025,
+      "sourceClubId": 141,
+      "canonicalClubName": "Galatasaray",
+      "sourceUrl": "https://www.tff.org/default.aspx?pageID=1768"
+    }
+  ]
+}

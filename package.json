@@ -9,9 +9,11 @@
   "packageManager": "pnpm@11.16.0",
   "scripts": {
     "build": "pnpm --recursive --if-present run build",
+    "data:champions": "node scripts/data/validate-champions.mjs",
     "data:download": "node scripts/data/download-snapshot.mjs",
     "data:import": "node packages/database/scripts/import-canonical.mjs",
     "data:profile": "node scripts/data/profile-snapshot.mjs",
+    "data:quality": "node packages/database/scripts/validate-canonical-data.mjs",
     "data:references": "node scripts/data/validate-reference-mappings.mjs",
     "data:stage": "node scripts/data/build-staging.mjs",
     "data:validate": "node scripts/data/validate-snapshot.mjs",

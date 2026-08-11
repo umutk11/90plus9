@@ -16,3 +16,7 @@ sabitlenmiş Unicode CLDR verisinden hazırlanır; kullanıcı tercihi gereken k
 kaydında açıkça sürümlenir. `country-mappings` klasörü oyuncu vatandaşlık/doğum metinlerini
 canonical ülke, alias veya tarihsel ülke olarak sınıflandırır. `pending` kayıtlar kullanıcı onayı
 olmadan canonical importa alınmaz.
+
+`champions` klasörü 2012/13–2025/26 Süper Lig şampiyonlarını canonical kaynak kulüp kimliğiyle
+eşleştirir. Her sezon kaydı ayrı bir resmî TFF sezon arşivi URL'si taşır; kaynakların son erişim
+kontrolü ve inceleme bilgisi dosya metadata'sında sürümlenir.

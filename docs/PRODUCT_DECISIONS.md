@@ -69,6 +69,8 @@ Kullanıcıya görünen marka adı `90+9`, teknik proje ve depo adı `90plus9` o
 - MVP kriteri `champion_squad_member` kullanır.
 - Kullanıcıya görünen kriter: “Şampiyon takım kadrosunda yer aldı.”
 - Sezon içinde şampiyon kulüpten ayrılan oyuncu, ayrılmadan önce yeterli kadro kanıtı varsa bu kriteri karşılar.
+- 2012/13–2025/26 şampiyonları sezon bazında resmî TFF arşiv URL'leriyle doğrulanır ve canonical
+  kulüp kimliklerine bağlanır.
 
 ## Kulüp grupları
 

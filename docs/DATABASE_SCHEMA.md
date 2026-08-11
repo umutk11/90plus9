@@ -22,7 +22,8 @@ sırayla uygulanır.
   aktif sürümü değiştirmeden önce hazırlanıp doğrulanabilir.
 - Aynı anda en fazla bir `active` dataset sürümü bulunabilir.
 - Bir sezonda en fazla bir şampiyon işaretlenebilir. Her sezonda tam bir şampiyon bulunması import
-  kalite kapısında ayrıca doğrulanır.
+  kalite kapısında ayrıca doğrulanır; şampiyon kulübün sezon katılımı ile resmî kaynak/denetim
+  alanları da zorunludur.
 - Ev sahibi ve deplasman kulübü aynı olamaz; skorlar, kanıt sayıları, tarih aralıkları ve kritik
   override kaynakları veritabanı constraint'leriyle korunur.
 - `2012/13`–`2025/26` arasındaki 14 sezon ilk migration ile seed edilir.
@@ -47,7 +48,7 @@ Yerel test veritabanında migration ve şema kabul kontrolü şu komutla çalı�
 pnpm db:test:schema
 ```
 
-Bu kontrol migration'ları idempotent biçimde uygular; 13 uygulama tablosunu, 14 sezon seedini, 19
+Bu kontrol migration'ları idempotent biçimde uygular; 14 uygulama tablosunu, 14 sezon seedini, 19
 domain constraint'ini ve kritik partial unique indexleri doğrular. GitHub CI aynı kontrolü her
 push ve pull request için temiz bir PostgreSQL servisi üzerinde çalıştırır.
 

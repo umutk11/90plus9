@@ -90,3 +90,33 @@ Kesin kaynak kimlikleri ve karar kaydı
 [`data/reference/exclusions/dcaribou-kaggle-v677.json`](../data/reference/exclusions/dcaribou-kaggle-v677.json)
 dosyasındadır. Profil komutu bu dosyayı otomatik uygular; dışlama sonrasında bilinmeyen eksik profil
 veya oyuncu kanıtı olmayan maç kalırsa production kontrolü yine başarısız olur.
+
+## Canonical PostgreSQL kalite sonucu
+
+Canonical importtan sonra tam kalite kapısı şu komutla yeniden çalıştırılır:
+
+```bash
+pnpm data:quality -- --version 677
+```
+
+`v677` uygulama veritabanı sonucu **geçti**:
+
+| Kontrol                                   | Sonuç |
+| ----------------------------------------- | ----: |
+| Resmî kaynakla doğrulanmış şampiyon sezon |    14 |
+| Kanıtsız oyuncu–kulüp–sezon ilişkisi      |     0 |
+| Kanıt sayısı/bayrak/tarih uyuşmazlığı     |     0 |
+| Maç kulübü uyuşmazlığı                    |     0 |
+| Sezon tarihi dışında kanıt                |     0 |
+| Aynı maçta iki kulüp adına görünen oyuncu |     0 |
+| Açık kritik kalite sorunu                 |     0 |
+| Açık manuel inceleme kuyruğu              |     2 |
+
+İki açık `warning` kuyruğu, kaynakta vatandaşlığı boş 43 oyuncu ile genel mevkisi boş beş
+oyuncunun kaynak kimliklerini tutar. Değerler tahminle doldurulmaz; ilgili alanı kullanan oyun
+kurallarında bu oyuncular aday olmaz. Ayrıca 26 aynı-normalize-ad grubu, 521 tek kanıtlı ilişki ve
+bir sezonda ikiden fazla kulüpte görünen bir oyuncu raporda uyarı olarak izlenir. Bunlar canonical
+kimlik veya kanıt bütünlüğünü bozmadığı için aktivasyonu engelleyen kritik hata değildir.
+
+2019/20 sezonunun COVID nedeniyle 26 Temmuz 2020'ye kadar uzadığı, sezon tarihi kontrolünde bilinen
+geçerli istisna olarak kapsanır.
