@@ -11,8 +11,8 @@ BEGIN
   WHERE schemaname = 'public'
     AND tablename <> '_prisma_migrations';
 
-  IF application_table_count <> 14 THEN
-    RAISE EXCEPTION 'Beklenen 14 uygulama tablosu yerine % tablo bulundu.', application_table_count;
+  IF application_table_count <> 21 THEN
+    RAISE EXCEPTION 'Beklenen 21 uygulama tablosu yerine % tablo bulundu.', application_table_count;
   END IF;
 
   SELECT COUNT(*)
@@ -57,11 +57,14 @@ BEGIN
     'player_club_seasons_level_check',
     'club_seasons_champion_verification_check',
     'data_overrides_critical_source_check',
-    'data_overrides_revert_check'
+    'data_overrides_revert_check',
+    'grid_cells_answer_count_check',
+    'grid_cells_answer_hash_check',
+    'game_jokers_six_players_check'
   ]);
 
-  IF domain_constraint_count <> 19 THEN
-    RAISE EXCEPTION 'Beklenen 19 domain constraint yerine % constraint bulundu.', domain_constraint_count;
+  IF domain_constraint_count <> 22 THEN
+    RAISE EXCEPTION 'Beklenen 22 domain constraint yerine % constraint bulundu.', domain_constraint_count;
   END IF;
 
   IF to_regclass('public.dataset_versions_single_active_idx') IS NULL THEN

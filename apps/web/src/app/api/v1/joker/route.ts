@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 
-import { GameError, getSessionCookieName, submitGuess } from "@/lib/game-service";
+import { claimDailyJoker, GameError, getSessionCookieName } from "@/lib/game-service";
 
 export const runtime = "nodejs";
 
@@ -12,18 +12,12 @@ export async function POST(request: Request) {
     return Response.json({ code: "INVALID_REQUEST" }, { status: 400 });
   }
 
-  const { cellKey, playerId, requestId } = (body ?? {}) as {
-    cellKey?: unknown;
-    playerId?: unknown;
-    requestId?: unknown;
-  };
+  const { cellKey } = (body ?? {}) as { cellKey?: unknown };
 
   try {
     const cookieStore = await cookies();
-    const result = await submitGuess({
+    const result = await claimDailyJoker({
       cellKey,
-      playerId,
-      requestId,
       sessionId: cookieStore.get(getSessionCookieName())?.value ?? null,
     });
     return Response.json(result, { headers: { "Cache-Control": "private, no-store" } });
@@ -31,9 +25,9 @@ export async function POST(request: Request) {
     if (error instanceof GameError) {
       return Response.json({ code: error.code }, { status: error.status });
     }
-    console.error("Tahmin kontrolü başarısız.", error);
+    console.error("Joker kullanılamadı.", error);
     return Response.json(
-      { code: "GUESS_UNAVAILABLE", message: "Tahmin şu anda kontrol edilemiyor." },
+      { code: "JOKER_UNAVAILABLE", message: "Joker şu anda kullanılamıyor." },
       { status: 503 },
     );
   }

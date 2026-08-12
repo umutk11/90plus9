@@ -97,6 +97,24 @@ enum DataQualityStatus {
   @@map("data_quality_status")
 }
 
+enum GridStatus {
+  DRAFT     @map("draft")
+  APPROVED  @map("approved")
+  SCHEDULED @map("scheduled")
+  PUBLISHED @map("published")
+  ARCHIVED  @map("archived")
+
+  @@map("grid_status")
+}
+
+enum GameSessionStatus {
+  ACTIVE    @map("active")
+  COMPLETED @map("completed")
+  EXPIRED   @map("expired")
+
+  @@map("game_session_status")
+}
+
 model DatasetVersion {
   id                    Int                   @id @default(autoincrement())
   sourceName            String                @map("source_name")
@@ -117,6 +135,7 @@ model DatasetVersion {
   matches               Match[]
   playerMatchEvidence   PlayerMatchEvidence[]
   playerClubSeasons     PlayerClubSeason[]
+  grids                 Grid[]
 
   @@unique([sourceName, sourceVersion])
   @@index([status])
@@ -239,6 +258,9 @@ model Player {
   aliases              PlayerAlias[]
   playerMatchEvidence  PlayerMatchEvidence[]
   playerClubSeasons    PlayerClubSeason[]
+  gridCellAnswers      GridCellAnswer[]
+  gameSessionCells     GameSessionCell[]
+  gameGuesses          GameGuess[]
 
   @@index([normalizedName])
   @@index([citizenshipCountryId])
@@ -391,4 +413,128 @@ model DataQualityIssue {
   @@index([status, severity])
   @@index([issueType])
   @@map("data_quality_issues")
+}
+
+model Grid {
+  id                       Int            @id @default(autoincrement())
+  playDate                 DateTime       @unique @map("play_date") @db.Date
+  slug                     String         @unique
+  datasetVersionId         Int            @map("dataset_version_id")
+  ruleEngineVersion        String         @map("rule_engine_version")
+  difficultyFormulaVersion String         @map("difficulty_formula_version")
+  seed                     String
+  status                   GridStatus     @default(DRAFT)
+  rowRules                 Json           @map("row_rules")
+  columnRules              Json           @map("column_rules")
+  createdBy                String?        @map("created_by")
+  approvedBy               String?        @map("approved_by")
+  approvedAt               DateTime?      @map("approved_at") @db.Timestamptz(3)
+  publishedAt              DateTime?      @map("published_at") @db.Timestamptz(3)
+  createdAt                DateTime       @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt                DateTime       @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(3)
+  datasetVersion           DatasetVersion @relation(fields: [datasetVersionId], references: [id], onDelete: Restrict)
+  cells                    GridCell[]
+  sessions                 GameSession[]
+
+  @@index([status, playDate])
+  @@index([datasetVersionId])
+  @@map("grids")
+}
+
+model GridCell {
+  id           Int               @id @default(autoincrement())
+  gridId       Int               @map("grid_id")
+  cellKey      String            @map("cell_key")
+  rowId        String            @map("row_id")
+  columnId     String            @map("column_id")
+  answerCount  Int               @map("answer_count")
+  answerHash   String            @map("answer_hash") @db.VarChar(64)
+  createdAt    DateTime          @default(now()) @map("created_at") @db.Timestamptz(3)
+  grid         Grid              @relation(fields: [gridId], references: [id], onDelete: Cascade)
+  answers      GridCellAnswer[]
+  sessionCells GameSessionCell[]
+  guesses      GameGuess[]
+  jokers       GameJoker[]
+
+  @@unique([gridId, cellKey])
+  @@index([gridId, rowId, columnId])
+  @@map("grid_cells")
+}
+
+model GridCellAnswer {
+  gridCellId Int      @map("grid_cell_id")
+  playerId   Int      @map("player_id")
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  gridCell   GridCell @relation(fields: [gridCellId], references: [id], onDelete: Cascade)
+  player     Player   @relation(fields: [playerId], references: [id], onDelete: Restrict)
+
+  @@id([gridCellId, playerId])
+  @@index([playerId])
+  @@map("grid_cell_answers")
+}
+
+model GameSession {
+  id          String            @id @db.Uuid
+  deviceId    String            @map("device_id") @db.Uuid
+  gridId      Int               @map("grid_id")
+  status      GameSessionStatus @default(ACTIVE)
+  startedAt   DateTime          @default(now()) @map("started_at") @db.Timestamptz(3)
+  lastSeenAt  DateTime          @default(now()) @map("last_seen_at") @db.Timestamptz(3)
+  completedAt DateTime?         @map("completed_at") @db.Timestamptz(3)
+  grid        Grid              @relation(fields: [gridId], references: [id], onDelete: Restrict)
+  cells       GameSessionCell[]
+  guesses     GameGuess[]
+  joker       GameJoker?
+
+  @@unique([deviceId, gridId])
+  @@index([gridId, status])
+  @@index([deviceId, status])
+  @@index([lastSeenAt])
+  @@map("game_sessions")
+}
+
+model GameSessionCell {
+  sessionId  String      @map("session_id") @db.Uuid
+  gridCellId Int         @map("grid_cell_id")
+  playerId   Int         @map("player_id")
+  filledAt   DateTime    @default(now()) @map("filled_at") @db.Timestamptz(3)
+  updatedAt  DateTime    @default(now()) @updatedAt @map("updated_at") @db.Timestamptz(3)
+  session    GameSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  gridCell   GridCell    @relation(fields: [gridCellId], references: [id], onDelete: Restrict)
+  player     Player      @relation(fields: [playerId], references: [id], onDelete: Restrict)
+
+  @@id([sessionId, gridCellId])
+  @@unique([sessionId, playerId])
+  @@index([gridCellId])
+  @@map("game_session_cells")
+}
+
+model GameGuess {
+  id         Int         @id @default(autoincrement())
+  requestId  String      @map("request_id") @db.Uuid
+  sessionId  String      @map("session_id") @db.Uuid
+  gridCellId Int         @map("grid_cell_id")
+  playerId   Int         @map("player_id")
+  isCorrect  Boolean     @map("is_correct")
+  guessedAt  DateTime    @default(now()) @map("guessed_at") @db.Timestamptz(3)
+  session    GameSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  gridCell   GridCell    @relation(fields: [gridCellId], references: [id], onDelete: Restrict)
+  player     Player      @relation(fields: [playerId], references: [id], onDelete: Restrict)
+
+  @@unique([sessionId, requestId])
+  @@index([sessionId, guessedAt])
+  @@index([gridCellId, playerId])
+  @@map("game_guesses")
+}
+
+model GameJoker {
+  sessionId  String      @id @map("session_id") @db.Uuid
+  gridCellId Int         @map("grid_cell_id")
+  playerIds  Int[]       @map("player_ids")
+  usedAt     DateTime    @default(now()) @map("used_at") @db.Timestamptz(3)
+  session    GameSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  gridCell   GridCell    @relation(fields: [gridCellId], references: [id], onDelete: Restrict)
+
+  @@index([gridCellId])
+  @@map("game_jokers")
 }

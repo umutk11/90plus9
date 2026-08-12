@@ -6,14 +6,16 @@ sırayla uygulanır.
 
 ## Tablo grupları
 
-| Grup             | Tablolar                                             | Amaç                                                                            |
-| ---------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------- |
-| Veri sürümü      | `dataset_versions`                                   | Snapshot kaynağını, checksum'ı, import durumunu ve regresyon sayılarını saklar. |
-| Referans         | `seasons`, `countries`, `country_aliases`            | Sezon etiketleri ile ülke, alias ve konfederasyon eşleşmelerini tutar.          |
-| Canonical kimlik | `clubs`, `club_aliases`, `players`, `player_aliases` | Kaynak kimliklerini tekil canonical kayıtlara ve aranabilir alias'lara bağlar.  |
-| Maç kanıtı       | `matches`, `player_match_evidence`                   | Sürüme bağlı maçları ve appearance/ilk 11/yedek kanıtlarını saklar.             |
-| Oyun ilişkisi    | `player_club_seasons`, `club_seasons`                | Oyuncu–kulüp–sezon uygunluğunu, katılımı ve doğrulanmış şampiyonluğu saklar.    |
-| Kalite yönetimi  | `data_overrides`, `data_quality_issues`              | Manuel düzeltmelerin denetim izini ve veri sorunlarının yaşam döngüsünü tutar.  |
+| Grup             | Tablolar                                                             | Amaç                                                                                          |
+| ---------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Veri sürümü      | `dataset_versions`                                                   | Snapshot kaynağını, checksum'ı, import durumunu ve regresyon sayılarını saklar.               |
+| Referans         | `seasons`, `countries`, `country_aliases`                            | Sezon etiketleri ile ülke, alias ve konfederasyon eşleşmelerini tutar.                        |
+| Canonical kimlik | `clubs`, `club_aliases`, `players`, `player_aliases`                 | Kaynak kimliklerini tekil canonical kayıtlara ve aranabilir alias'lara bağlar.                |
+| Maç kanıtı       | `matches`, `player_match_evidence`                                   | Sürüme bağlı maçları ve appearance/ilk 11/yedek kanıtlarını saklar.                           |
+| Oyun ilişkisi    | `player_club_seasons`, `club_seasons`                                | Oyuncu–kulüp–sezon uygunluğunu, katılımı ve doğrulanmış şampiyonluğu saklar.                  |
+| Günlük oyun      | `grids`, `grid_cells`, `grid_cell_answers`                           | Günlük soruları ve değişmez cevap anlık görüntülerini saklar.                                 |
+| Oyun oturumu     | `game_sessions`, `game_session_cells`, `game_guesses`, `game_jokers` | Anonim cihaz geçmişini, ilerlemeyi, doldurulan hücreleri, tahminleri ve günlük jokeri saklar. |
+| Kalite yönetimi  | `data_overrides`, `data_quality_issues`                              | Manuel düzeltmelerin denetim izini ve veri sorunlarının yaşam döngüsünü tutar.                |
 
 ## Temel güvenceler
 
@@ -29,6 +31,10 @@ sırayla uygulanır.
 - `2012/13`–`2025/26` arasındaki 14 sezon ilk migration ile seed edilir.
 - Foreign key'ler canonical kanıt kayıtlarının kazara silinmesini engeller. Alias kayıtları kendi
   sahibi silindiğinde birlikte temizlenir.
+- Anonim cihaz kimliği gridler arasında korunur; aynı cihaz için aynı günlük gridde yalnızca bir
+  oturum bulunabilir. İstatistikler tamamlanan oturumların tarihlerinden hesaplanır.
+- Her oturumda en fazla bir `game_jokers` kaydı bulunur ve kayıt bir doğru ile beş yanlış oyuncudan
+  oluşan tam altı kimlik taşır.
 
 ## Migration akışı
 
@@ -48,7 +54,7 @@ Yerel test veritabanında migration ve şema kabul kontrolü şu komutla çalı�
 pnpm db:test:schema
 ```
 
-Bu kontrol migration'ları idempotent biçimde uygular; 14 uygulama tablosunu, 14 sezon seedini, 19
+Bu kontrol migration'ları idempotent biçimde uygular; 21 uygulama tablosunu, 14 sezon seedini, 22
 domain constraint'ini ve kritik partial unique indexleri doğrular. GitHub CI aynı kontrolü her
 push ve pull request için temiz bir PostgreSQL servisi üzerinde çalıştırır.
 

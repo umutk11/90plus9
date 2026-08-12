@@ -2,15 +2,19 @@
 
 **90+9, Türkiye Süper Lig oyuncularını tahmin ederek her gün tamamladığın 3×3 günlük grid oyunudur.**
 
-Bu depo 90+9'un web uygulamasını, veritabanı katmanını, kural motorunu ve veri hazırlama araçlarını birlikte barındırır. Proje şu anda geliştirme altyapısı aşamasındadır.
+Bu depo 90+9'un web uygulamasını, veritabanı katmanını, kural motorunu ve veri hazırlama araçlarını birlikte barındırır. Projenin yerelde oynanabilir MVP’si geliştirilmektedir.
 
 ## MVP kapsamı
 
 - 2012/13–2025/26 Türkiye erkekler Süper Lig sezonları
 - Her gün herkes için aynı 3×3 grid
+- Navbar'dan güncel ve yayınlanmış geçmiş gridler arasında geçiş
+- Sezon ve fiziksel özellik içermeyen 100 farklı takım, mevki, uyruk, kariyer ve takım arkadaşlığı kriteri
 - Sunucu tarafında cevap doğrulama
 - Sınırsız yanlış tahmin hakkı; kaybetme durumu yok
+- Her günlük gridde bir kez kullanılabilen, bir doğru ve beş yanlış oyunculu joker
 - Hesap gerektirmeyen anonim oyun oturumu
+- Cihaz bazlı tamamlanma ve günlük seri istatistikleri
 - Responsive web deneyimi
 
 Ayrıntılı kararlar için [ürün kararları](docs/PRODUCT_DECISIONS.md), [veri kaynağı ve snapshot

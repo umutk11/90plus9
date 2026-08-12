@@ -1,6 +1,6 @@
 # 90+9 — Ayrıntılı Ürün ve Geliştirme Yol Haritası
 
-> Son güncelleme: 7 Ağustos 2026
+> Son güncelleme: 12 Ağustos 2026
 > Kullanıcıya görünen ürün adı: **90+9**
 > Teknik proje, depo ve klasör adı: `90plus9`
 > MVP veri kapsamı: 2012/13–2025/26
@@ -58,7 +58,9 @@ Bu bölümdeki kararlar yol haritasının varsayımlarıdır. Değiştirilecekle
 - [x] Hücre cevapları backend tarafından doğrulanacak.
 - [x] Geçerli cevapların tamamı frontend’e gönderilmeyecek.
 - [x] Yanlış tahmin hakkı sınırsız olacak.
+- [x] Her günlük grid için tek kullanımlık, bir doğru ve beş yanlış oyuncu gösteren joker olacak.
 - [x] Yanlış tahmin hücreyi kilitlemeyecek veya oyunu bitirmeyecek.
+- [x] Doğru doldurulan hücre oyun tamamlanana kadar başka bir geçerli oyuncuyla değiştirilebilecek; tamamlanınca kilitlenecek.
 - [x] Oyun yalnızca dokuz hücre doğru doldurulduğunda tamamlanacak; kaybetme durumu olmayacak.
 - [x] Kullanıcı hesabı MVP’de zorunlu olmayacak; oyun durumu anonim sunucu oturumunda tutulacak.
 - [x] MVP’de temel ilerleme ölçüsü doğru doldurulan hücre sayısı olacak; rarity beta sonrasına bırakılacak.
@@ -67,19 +69,19 @@ Bu bölümdeki kararlar yol haritasının varsayımlarıdır. Değiştirilecekle
 
 MVP aşağıdaki şartların tümü sağlandığında tamamlanmış sayılacak:
 
-- [ ] Kullanıcı günün 3×3 gridini açabiliyor.
-- [ ] Gridde üç satır ve üç sütun kriteri doğru biçimde gösteriliyor.
-- [ ] Her hücre en az bir değil, belirlenen güvenli alt sınır kadar geçerli cevaba sahip.
-- [ ] Kullanıcı oyuncu adına göre arama yapabiliyor.
-- [ ] Kullanıcı arama sonucundan tek bir oyuncu seçebiliyor.
-- [ ] Seçilen oyuncu backend’de hücreye karşı doğrulanıyor.
-- [ ] Doğru cevap hücreyi kilitliyor.
-- [ ] Yanlış cevap hak tüketmeden hücreyi açık ve oyun oturumunu aktif bırakıyor.
-- [ ] Kullanıcı boş hücrede sınırsız tahmin yapabiliyor; dolu hücreye tekrar cevap veremiyor.
-- [ ] Oyun tamamlanınca sonuç ekranı gösteriliyor.
-- [ ] Aynı takvim gününde bütün kullanıcılar aynı gridi görüyor.
-- [ ] Gün değişince yeni grid aktif oluyor.
-- [ ] Hiçbir grid hücresinin geçerli cevap sayısı sıfır değil.
+- [x] Kullanıcı günün 3×3 gridini açabiliyor.
+- [x] Gridde üç satır ve üç sütun kriteri doğru biçimde gösteriliyor.
+- [x] Her hücre en az bir değil, belirlenen güvenli alt sınır kadar geçerli cevaba sahip.
+- [x] Kullanıcı oyuncu adına göre arama yapabiliyor.
+- [x] Kullanıcı arama sonucundan tek bir oyuncu seçebiliyor.
+- [x] Seçilen oyuncu backend’de hücreye karşı doğrulanıyor.
+- [x] Doğru cevap hücreyi dolduruyor ve başka bir geçerli cevapla değiştirilebiliyor.
+- [x] Yanlış cevap hak tüketmeden hücreyi açık ve oyun oturumunu aktif bırakıyor.
+- [x] Kullanıcı boş veya dolu hücrede sınırsız tahmin yapabiliyor.
+- [x] Oyun tamamlanınca sonuç ekranı gösteriliyor.
+- [x] Aynı takvim gününde bütün kullanıcılar aynı gridi görüyor.
+- [x] Gün değişince yeni grid aktif oluyor.
+- [x] Hiçbir grid hücresinin geçerli cevap sayısı sıfır değil.
 - [ ] Hiçbir grid satırı veya sütunu tamamen aşırı zor hücrelerden oluşmuyor.
 - [ ] Veritabanında kullanılan dcaribou sürümü görüntülenebiliyor.
 - [ ] Veri kaynağı ve lisans bilgisi sitede açıklanıyor.
@@ -1124,13 +1126,15 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] Kulüp kuralı ile o kulübün grup kuralı arasındaki gereksiz tekrarları işaretle.
 - [ ] Aynı hedef oyuncuya bağlı iki takım arkadaşlığı kuralını sınırla.
 - [ ] Aynı ülke ve onun kıtasını aynı gridde kullanmayı sınırla.
-- [ ] Aynı kulübü satır ve sütunda tekrar kullanmayı yasakla.
+- [x] Aynı kriteri satır ve sütunda tekrar kullanmayı yasakla.
 - [ ] Aday kurala son kullanım tarihi ekle.
 - [ ] Yakın günlerde tekrar edilen kurallara ceza puanı ver.
 
 ## 7.4. 3×3 grid kompozisyon kuralları
 
-- [ ] Her grid için üç satır ve üç sütun kuralı seç.
+- [x] Her grid için ortak kriter havuzundan üç satır ve üç sütun kuralı seç.
+- [x] Takım ve özellik kriterlerinin iki eksene de serbestçe yerleşmesine izin ver.
+- [x] Sezon ve fiziksel özellikleri dışarıda bırakan 100 kriterlik üretim havuzu oluştur.
 - [ ] Altı kuralın benzersiz olmasını sağla.
 - [ ] Dokuz hücrenin tamamında en az sekiz geçerli cevap olmasını sağla.
 - [ ] İlk hedef olarak gridde 2–3 kolay hücre bulundur.
@@ -1160,7 +1164,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 7.6. Otomatik grid üretim algoritması
 
-- [ ] Üretim için deterministik bir seed kabul et.
+- [x] Üretim için İstanbul tarihinden deterministik bir seed üret.
 - [ ] Aynı dataset, ayar ve seed ile aynı gridi üret.
 - [ ] Önce altı kural adayı seç.
 - [ ] Dokuz kesişimi önbellekten getir.
@@ -1204,7 +1208,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 ## Faz 7 kabul kriterleri
 
 - [ ] Üretici imkânsız kesişim içeren grid yayınlamıyor.
-- [ ] Dokuz hücrenin tamamı minimum cevap eşiğini karşılıyor.
+- [x] Dokuz hücrenin tamamı minimum cevap eşiğini karşılıyor.
+- [x] Dokuz hücrenin dokuz farklı oyuncuyla birlikte çözülebildiğini doğrula.
 - [ ] Hiçbir satır veya sütun tamamen zor değil.
 - [ ] Aynı dataset ve seed aynı gridi üretiyor.
 - [ ] Editör cevap sayısı, zorluk ve örnek cevapları görebiliyor.
@@ -1216,31 +1221,31 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 8.1. Grid veri modeli
 
-- [ ] `grids` tablosunu oluştur.
-- [ ] Grid tarihini `Europe/Istanbul` gününe göre sakla.
-- [ ] Her grid için benzersiz slug üret.
-- [ ] Gridin dataset version bilgisini sakla.
-- [ ] Gridin kural motoru sürümünü sakla.
-- [ ] Gridin zorluk formülü sürümünü sakla.
-- [ ] Gridin seed bilgisini sakla.
-- [ ] Grid durumunu `draft`, `approved`, `scheduled`, `published`, `archived` olarak tanımla.
-- [ ] Altı eksenin konumunu saklayan tablo oluştur.
-- [ ] Dokuz hücrenin satır/sütun konumunu sakla.
-- [ ] Hücre başına cevap sayısını sakla.
+- [x] `grids` tablosunu oluştur.
+- [x] Grid tarihini `Europe/Istanbul` gününe göre sakla.
+- [x] Her grid için benzersiz slug üret.
+- [x] Gridin dataset version bilgisini sakla.
+- [x] Gridin kural motoru sürümünü sakla.
+- [x] Gridin zorluk formülü sürümünü sakla.
+- [x] Gridin seed bilgisini sakla.
+- [x] Grid durumunu `draft`, `approved`, `scheduled`, `published`, `archived` olarak tanımla.
+- [x] Altı eksenin konumunu grid snapshot’ında sakla.
+- [x] Dokuz hücrenin satır/sütun konumunu sakla.
+- [x] Hücre başına cevap sayısını sakla.
 - [ ] Hücre başına zorluk etiketini sakla.
-- [ ] Grid oluşturma ve onaylayan yönetici bilgilerini sakla.
-- [ ] Gridin oluşturulma, onaylanma ve yayınlanma zamanlarını sakla.
+- [x] Grid oluşturma ve onaylayan aktör bilgilerini sakla.
+- [x] Gridin oluşturulma, onaylanma ve yayınlanma zamanlarını sakla.
 
 ## 8.2. Geçerli cevap anlık görüntüsü
 
-- [ ] Her hücrenin geçerli oyuncu ID listesini yayın öncesi dondur.
-- [ ] Cevap listesini gridin dataset version’ıyla ilişkilendir.
-- [ ] Sonraki veri güncellemesinin geçmiş gridi değiştirmesini engelle.
-- [ ] Aynı oyuncunun bir hücrede bir kez bulunmasını sağla.
+- [x] Her hücrenin geçerli oyuncu ID listesini yayın öncesi dondur.
+- [x] Cevap listesini gridin dataset version’ıyla ilişkilendir.
+- [x] Sonraki veri güncellemesinin geçmiş gridi değiştirmesini engelle.
+- [x] Aynı oyuncunun bir hücrede bir kez bulunmasını sağla.
 - [ ] Her cevabın iki kurala uyma kanıtını denetlenebilir tut.
-- [ ] Cevap anlık görüntüsünü istemci API’sine hiçbir zaman gönderme.
-- [ ] Cevap listesinin hash değerini bütünlük kontrolü için sakla.
-- [ ] Yayınlanmış gridin cevap listesini doğrudan değiştirmeyi engelle.
+- [x] Cevap anlık görüntüsünü istemci API’sine hiçbir zaman gönderme.
+- [x] Cevap listesinin hash değerini bütünlük kontrolü için sakla.
+- [x] Yayınlanmış gridin cevap listesini doğrudan değiştirmeyi engelle.
 - [ ] Acil düzeltmede yeni revision oluştur ve audit log tut.
 
 ## 8.3. Oluşturma, onay ve planlama
@@ -1257,16 +1262,16 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 8.4. Gün değişimi ve yayınlama
 
-- [ ] Gün sınırını `Europe/Istanbul` saat dilimine göre hesapla.
+- [x] Gün sınırını `Europe/Istanbul` saat dilimine göre hesapla.
 - [ ] Yaz/kış saati kütüphane davranışını test et.
 - [ ] 00.00’da planlanan gridi atomik olarak `published` yap.
 - [ ] Aynı anda iki yayın işinin aynı gridi iki kez yayınlamasını engelle.
-- [ ] Yayın işi kaçırılırsa uygulama isteği sırasında güvenli telafi mekanizması kur.
+- [x] Yayın işi kaçırılırsa uygulama isteği sırasında güvenli telafi mekanizması kur.
 - [ ] Bugünün gridi yoksa kullanıcıya açıklayıcı bakım ekranı göster.
-- [ ] Dünün gridini arşivle ancak erişilebilir tutma politikasını ürün kararına bağla.
+- [x] Yayınlanmış geçmiş gridleri erişilebilir tutma politikasını ürün kararına bağla.
 - [ ] Gün değişiminde aktif oyun oturumlarının davranışını belirle.
-- [ ] Başlanmış oyunun kendi grid sürümüyle tamamlanmasına izin ver.
-- [ ] Yeni kullanıcıya yalnızca yeni günün gridini göster.
+- [x] Başlanmış oyunun kendi grid sürümüyle tamamlanmasına izin ver.
+- [x] Yeni kullanıcıya yalnızca yeni günün gridini göster.
 
 ## Faz 8 kabul kriterleri
 
@@ -1296,26 +1301,26 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 9.2. Günlük grid endpoint’i
 
-- [ ] Bugünün yayınlanmış gridini döndüren endpoint oluştur.
-- [ ] Yalnızca kullanıcıya gereken kural başlıklarını ve konumları döndür.
+- [x] Bugünün yayınlanmış gridini döndüren endpoint oluştur.
+- [x] Yalnızca kullanıcıya gereken kural başlıklarını ve konumları döndür.
 - [ ] Hücre cevap sayılarını oyun başlamadan döndürmeme kararını uygula.
-- [ ] Geçerli cevap listesini veya tahmin edilebilir hash’ini döndürme.
-- [ ] Dataset iç detaylarını istemciye sızdırma.
-- [ ] Cache header politikasını belirle.
+- [x] Geçerli cevap listesini veya tahmin edilebilir hash’ini döndürme.
+- [x] Dataset iç detaylarını istemciye sızdırma.
+- [x] Cache header politikasını belirle.
 - [ ] Gün değişiminde eski cache’in servis edilmesini engelle.
-- [ ] Grid yoksa tanımlı hata kodu döndür.
+- [x] Grid yoksa tanımlı hata kodu döndür.
 
 ## 9.3. Oyun oturumu
 
-- [ ] Anonim kullanıcı için güvenli oyun session ID üret.
-- [ ] Session ID’yi tahmin edilemez yap.
-- [ ] Session’ı belirli grid ID’sine bağla.
-- [ ] Oturum başlangıç zamanını sakla.
-- [ ] Doldurulan hücreleri sakla.
-- [ ] Kullanılmış oyuncuları sakla.
-- [ ] Oturum durumunu `active`, `completed`, `expired` olarak tut; kaybetme durumu oluşturma.
-- [ ] Aynı tarayıcı yenilemesinde oyunu geri yükle.
-- [ ] Aynı grid için tekrar oturum açma politikasını belirle.
+- [x] Anonim kullanıcı için güvenli oyun session ID üret.
+- [x] Session ID’yi tahmin edilemez yap.
+- [x] Session’ı belirli grid ID’sine bağla.
+- [x] Oturum başlangıç zamanını sakla.
+- [x] Doldurulan hücreleri sakla.
+- [x] Kullanılmış oyuncuları sakla.
+- [x] Oturum durumunu `active`, `completed`, `expired` olarak tut; kaybetme durumu oluşturma.
+- [x] Aynı tarayıcı yenilemesinde oyunu geri yükle.
+- [x] Aynı grid için aynı anonim oturumu sürdür.
 - [ ] MVP’de hesap olmadan mutlak hile engelinin mümkün olmadığını açıkça kabul et.
 
 ## 9.4. Oyuncu arama endpoint’i
@@ -1335,30 +1340,30 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 9.5. Tahmin endpoint’i
 
-- [ ] İstekten session ID, grid ID, hücre konumu ve oyuncu ID al.
-- [ ] Gridin session ile aynı olduğunu doğrula.
-- [ ] Hücre konumunun geçerli olduğunu doğrula.
-- [ ] Session’ın aktif olduğunu doğrula.
-- [ ] Hücrenin daha önce doldurulmadığını doğrula.
-- [ ] Oyuncunun aynı oyunda daha önce kullanılmadığını doğrula.
-- [ ] Oyuncunun cevap snapshot’ında olup olmadığını sunucuda kontrol et.
-- [ ] Doğru cevapta hücreyi oyuncuyla kilitle.
-- [ ] Yanlış cevapta hücreyi ve session’ı aktif bırak; herhangi bir hak sayacı değiştirme.
-- [ ] Yanlış cevaplanan oyuncuyu kullanılmış oyuncular listesine ekleme.
-- [ ] Dokuz hücre dolduğunda session’ı `completed` yap.
-- [ ] Aynı isteğin ağ nedeniyle tekrarlanmasına karşı idempotency uygula.
-- [ ] Tahmin işlemini tek veritabanı transaction’ında tamamla.
-- [ ] Eşzamanlı iki tahminin session durumunu bozmasını engelle.
-- [ ] Cevapta yalnızca doğru/yanlış sonucunu ve güncel oyun durumunu döndür.
-- [ ] Yanlış cevapta geçerli oyuncu listesini döndürme.
+- [x] Güvenli cookie’den session ID’yi; istekten hücre konumu, oyuncu ID ve request ID’yi al.
+- [x] Gridin session ile aynı olduğunu doğrula.
+- [x] Hücre konumunun geçerli olduğunu doğrula.
+- [x] Session’ın aktif olduğunu doğrula; tamamlanmış session’da yalnızca idempotent tekrar isteğine izin ver.
+- [x] Dolu hücredeki cevabın oyun tamamlanana kadar başka bir geçerli oyuncuyla değiştirilmesini destekle.
+- [x] Oyuncunun aynı oyunda daha önce kullanılmadığını doğrula.
+- [x] Oyuncunun cevap snapshot’ında olup olmadığını sunucuda kontrol et.
+- [x] Doğru cevapta hücreyi oyuncuyla doldur veya güncelle.
+- [x] Yanlış cevapta hücreyi ve session’ı aktif bırak; herhangi bir hak sayacı değiştirme.
+- [x] Yanlış cevaplanan oyuncuyu kullanılmış oyuncular listesine ekleme.
+- [x] Dokuz hücre dolduğunda session’ı `completed` yap.
+- [x] Aynı isteğin ağ nedeniyle tekrarlanmasına karşı idempotency uygula.
+- [x] Tahmin işlemini tek veritabanı transaction’ında tamamla.
+- [x] Eşzamanlı iki tahminin session durumunu bozmasını engelle.
+- [x] Cevapta yalnızca doğru/yanlış sonucunu ve güncel oyun durumunu döndür.
+- [x] Yanlış cevapta geçerli oyuncu listesini döndürme.
 
 ## 9.6. Oyun durumu ve sonuç endpoint’leri
 
-- [ ] Aktif session durumunu döndüren endpoint oluştur.
-- [ ] Yalnızca o session’da açılmış oyuncuları döndür.
-- [ ] Oyun bitmeden diğer geçerli cevapları döndürme.
+- [x] Aktif session durumunu döndüren endpoint oluştur.
+- [x] Yalnızca o session’da açılmış oyuncuları döndür.
+- [x] Oyun bitmeden diğer geçerli cevapları döndürme.
 - [ ] Oyun bittikten sonra cevap örnekleri gösterilecekse kapsamını belirle.
-- [ ] Sonuç ekranı için doğru hücre sayısını döndür.
+- [x] Sonuç ekranı için doğru hücre sayısını döndür.
 - [ ] Kullanılan tahmin sayısını döndür.
 - [ ] Tamamlama süresini göstermeye karar verilirse sunucuda hesapla.
 - [ ] Rarity özelliği açıksa hücre puanlarını döndür.
@@ -1376,11 +1381,11 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## Faz 9 kabul kriterleri
 
-- [ ] Geçerli cevap kontrolü tamamen sunucu tarafında yapılıyor.
-- [ ] API hiçbir endpoint’te tüm hücre cevaplarını sızdırmıyor.
-- [ ] Yenileme sonrası oyun durumu geri yüklenebiliyor.
-- [ ] Aynı oyuncu tek oyunda ikinci kez kullanılamıyor.
-- [ ] Eşzamanlı ve tekrarlanan tahmin istekleri doğru ele alınıyor.
+- [x] Geçerli cevap kontrolü tamamen sunucu tarafında yapılıyor.
+- [x] API hiçbir endpoint’te tüm hücre cevaplarını sızdırmıyor.
+- [x] Yenileme sonrası oyun durumu geri yüklenebiliyor.
+- [x] Aynı oyuncu tek oyunda ikinci kez kullanılamıyor.
+- [x] Eşzamanlı ve tekrarlanan tahmin istekleri doğru ele alınıyor.
 - [ ] Arama aynı isimli oyuncuları ayırt edebiliyor.
 
 ---
@@ -1448,9 +1453,9 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] Arayüzde yanlış tahmin hakkının sınırsız olduğunu açıkça belirt.
 - [ ] Hak sayacı gösterme.
 - [ ] Yanlış tahminde hücreyi açık tutan kısa ve erişilebilir geri bildirim göster.
-- [ ] Doğru tahminde hücreyi kilitle ve ilerleme sayısını güncelle.
+- [x] Doğru tahminde hücreyi doldur ve ilerleme sayısını güncelle; dolu hücreyi değiştirilebilir tut.
 - [ ] Dokuz hücre tamamlanmadan session’ı kaybedilmiş veya bitmiş duruma getirme.
-- [ ] Oyun bitince yeni tahmin girişini kapat.
+- [x] Oyun bitince yeni tahmin girişini kapat.
 - [ ] Sayfa yenilemesinde sunucudan gerçek durumu al.
 - [ ] Tarayıcı yerel durumuyla sunucu çelişirse sunucuyu kaynak kabul et.
 - [ ] Gün değişiminde açık sekmenin davranışını kullanıcıya açıkla.
@@ -1470,15 +1475,15 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 10.7. Sonuç ve paylaşım ekranı
 
-- [ ] Doğru doldurulan hücre sayısını göster.
-- [ ] Tamamlandı durumunu açıkça göster; kaybetme durumu gösterme.
-- [ ] Gridin tarih/numarasını göster.
-- [ ] Emoji veya renk karelerinden paylaşım matrisi oluştur.
-- [ ] Paylaşım metninde oyuncu adlarını ifşa etme.
-- [ ] Panoya kopyalama butonu ekle.
-- [ ] Kopyalama başarısını kullanıcıya bildir.
-- [ ] Web Share API destekleniyorsa mobil paylaşım sun.
-- [ ] API desteklenmiyorsa kopyalama seçeneğine geri dön.
+- [x] Doğru doldurulan hücre sayısını göster.
+- [x] Tamamlandı durumunu açıkça göster; kaybetme durumu gösterme.
+- [x] Gridin tarih/numarasını göster.
+- [x] Emoji veya renk karelerinden paylaşım matrisi oluştur.
+- [x] Paylaşım metninde oyuncu adlarını ifşa etme.
+- [x] Panoya kopyalama butonu ekle.
+- [x] Kopyalama başarısını kullanıcıya bildir.
+- [x] Web Share API destekleniyorsa mobil paylaşım sun.
+- [x] API desteklenmiyorsa kopyalama seçeneğine geri dön.
 - [ ] Sonuç ekranından veri sorunu bildirmeye erişim ver.
 
 ## 10.8. Erişilebilirlik ve dil
@@ -1542,14 +1547,14 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 ## 11.4. Kullanıcı istatistikleri
 
-- [ ] Hesapsız MVP’de cihaz bazlı istatistik tutulup tutulmayacağını belirle.
+- [x] Hesapsız MVP’de cihaz bazlı istatistik tutulacağını belirle.
 - [ ] Yerel istatistiğin silinebilir olduğunu kullanıcıya açıkla.
 - [ ] Oynanan oyun sayısını hesapla.
-- [ ] Kazanma sayısını hesapla.
+- [x] Tamamlanan günlük grid sayısını hesapla.
 - [ ] Kazanma oranını hesapla.
-- [ ] Mevcut ve en uzun seriyi hesaplamayı sonraki sürüme ayırmayı değerlendir.
+- [x] Mevcut ve en uzun günlük seriyi hesapla.
 - [ ] Çerez/yerel depolama kullanımını gizlilik metninde belirt.
-- [ ] Kullanıcı hesabı olmadan cihazlar arası senkronizasyon vaat etme.
+- [x] Kullanıcı hesabı olmadan cihazlar arası senkronizasyon vaat etme.
 
 ## Faz 11 kabul kriterleri
 
@@ -1707,8 +1712,8 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 
 - [ ] Session durumunu yalnızca sunucuda yetkili kaynak olarak tut.
 - [ ] İstemciden gelen dolu hücre bilgisine güvenme.
-- [ ] Grid ID ve tarih manipülasyonunu doğrula.
-- [ ] Eski gridde yeni session açma politikasını uygula.
+- [x] Grid ID ve tarih manipülasyonunu yayınlanmış gridlerle sınırla.
+- [x] Yayınlanmış eski gridde cihaz bazlı ayrı session açma politikasını uygula.
 - [ ] Aynı tahmin isteğinin tekrarlanmasının session durumunu veya istatistikleri bozmasını engelle.
 - [ ] Tarayıcı saatine güvenme.
 - [ ] Gün ve yayın durumunu sunucu saatinden belirle.
@@ -1820,7 +1825,7 @@ Bu yol haritası aşağıdaki varsayılan mimariye göre yazılmıştır. Eşde�
 - [ ] Kullanıcının günlük gridi açmasını test et.
 - [ ] Hücre seçmesini test et.
 - [ ] Oyuncu aramasını test et.
-- [ ] Doğru cevapla hücrenin kilitlenmesini test et.
+- [x] Doğru cevapla hücrenin dolmasını ve başka bir geçerli cevapla değiştirilebilmesini test et.
 - [ ] Arka arkaya yanlış cevapların oyunu bitirmediğini test et.
 - [ ] Sayfa yenilemesinde durumun korunmasını test et.
 - [ ] Dokuz hücre tamamlanınca kazanma ekranını test et.
@@ -2288,10 +2293,10 @@ Bu sıra ekip tek kişi olsa bile uygulanabilir. Her satır ayrı bir iş kartı
 48. [ ] Minimum cevap eşiği ve ilk zorluk sınıflarını uygula.
 49. [ ] Deterministik grid üreticisini yaz.
 50. [ ] Grid kompozisyon doğrulamalarını yaz.
-51. [ ] Grid ve cevap snapshot tablolarını oluştur.
+51. [x] Grid ve cevap snapshot tablolarını oluştur.
 52. [ ] Yönetici grid önizlemesinin ilk sürümünü hazırla.
 53. [ ] Günlük grid/session/arama/tahmin API’lerini tamamla.
-54. [ ] 3×3 web arayüzü ve arama akışını tamamla.
+54. [x] 3×3 web arayüzü ve arama akışını tamamla.
 55. [ ] Sonuç/paylaşım ve yardım ekranlarını tamamla.
 56. [ ] Kritik unit, integration ve E2E testlerini tamamla.
 57. [ ] Hosting ve yönetilen PostgreSQL sağlayıcısını seç.
@@ -2321,7 +2326,7 @@ MVP ancak aşağıdaki maddelerin tamamı işaretlendiğinde tamamlanmış sayı
 - [ ] Cevap listeleri istemciye veya public depolamaya gönderilmiyor.
 - [ ] Oyun mobil ve masaüstünde tamamlanabiliyor.
 - [ ] Yenileme sonrası oyun durumu korunuyor.
-- [ ] Yanlış tahminlerin sınırsız olması, dolu hücre kilidi ve oyuncu tekrar kuralları doğru çalışıyor.
+- [ ] Yanlış tahminlerin sınırsız olması, dolu hücreyi değiştirme ve oyuncu tekrar kuralları doğru çalışıyor.
 - [ ] Veri hatası bildirme akışı çalışıyor.
 - [ ] Kritik veri, güvenlik, API ve E2E testleri geçiyor.
 - [ ] Production PostgreSQL yedeklemesi ve test restore’u tamamlanmış.
