@@ -25,8 +25,16 @@ Kullanıcıya görünen marka adı `90+9`, teknik proje ve depo adı `90plus9` o
 - Günlük üretici kriterleri İstanbul tarihinden türetilen deterministik bir tohumla karıştırır.
   Dokuz hücrenin tamamı minimum cevap eşiğini karşılamayan yerleşimler elenir; bunun dışında
   takım/özellik dağılımına ilişkin zorunlu bir kompozisyon şablonu uygulanmaz.
-- Kriter havuzu tam 100 öğeden oluşur: 35 takım, 13 mevki, 25 uyruk, 6 bölgesel uyruk grubu,
-  6 kulüp/başarı grubu, 6 kariyer eşiği ve 9 yıldız oyuncuyla takım arkadaşlığı kriteri.
+- Kriter havuzu 92 öğeden oluşur: 32 takım, 13 mevki, 17 uyruk, 6 bölgesel uyruk grubu,
+  6 kulüp/başarı grubu, 9 kariyer eşiği ve 9 yıldız oyuncuyla takım arkadaşlığı kriteri.
+- Uyruk kriterleri kullanıcıya ülke vatandaşlığı kalıbıyla değil “Türk”, “Fransız”, “Brezilyalı”
+  gibi doğrudan uyruk adıyla gösterilir. Afrika ülkeleri ayrı uyruk kriterleri olarak kullanılmaz;
+  kıta düzeyindeki tek “Afrikalı” kriterinde birleştirilir.
+- Takım seçim ağırlıkları üç seviyedir. Tier 1 Fenerbahçe, Galatasaray, Beşiktaş ve Trabzonspor'dur
+  ve en sık seçilir. Tier 3 Yeni Malatyaspor, Ümraniyespor, Pendikspor, Kardemir Karabükspor,
+  Giresunspor, Eskişehirspor ve Akhisarspor'dur ve seyrek seçilir. Diğer takımlar Tier 2'dir.
+- Adanaspor, Altay, Ankaraspor, Balıkesirspor, Bodrum FK, Denizlispor, Elazığspor, Erzurumspor,
+  Kayseri Erciyesspor, Mersin İdman Yurdu ve Orduspor doğrudan takım kriteri olarak kullanılmaz.
 - Belirli sezon, yaş, boy ve ayak tercihi kriterleri bu havuzda bulunmaz.
 - Bir grid yalnızca her hücresinde en az sekiz cevap varsa ve dokuz hücre dokuz farklı oyuncuyla
   tamamlanabiliyorsa yayınlanır.
@@ -46,6 +54,9 @@ Kullanıcıya görünen marka adı `90+9`, teknik proje ve depo adı `90plus9` o
 - Oyun yalnızca dokuz hücrenin tamamı doğru cevaplarla doldurulduğunda tamamlanır; kaybetme durumu yoktur.
 - Dolu hücre, dokuzuncu doğru cevap girilene kadar yeniden açılabilir ve başka bir geçerli oyuncuyla değiştirilebilir.
 - Dokuz hücre tamamlandığında oyun kesinleşir; hücreler kilitlenir ve artık değiştirilemez.
+- İlerleme sayacı gridin sol üst hücresindeki animasyonlu dairesel halkada gösterilir. Sonuç paneli
+  yalnızca dokuzuncu doğru cevap girildiğinde otomatik açılır; tamamlanmış gridler daha sonra
+  açıldığında panel kendiliğinden görünmez ve grid altındaki paylaş düğmesiyle yeniden açılır.
 - Sonuç ekranı oyuncu adlarını gösteren bir PNG kartı, kopyalanabilir günlük grid bağlantısı ve sosyal paylaşım seçenekleri sunar. X paylaşım metni cevapları açıklamayan 3×3 turuncu kare biçimini korur.
 - Yalnızca doğru yerleştirilmiş oyuncu kullanılmış sayılır ve aynı gridde ikinci bir hücrede kullanılamaz. Yanlış tahmin edilen oyuncu başka bir hücrede denenebilir.
 - Kullanıcı hesabı zorunlu değildir. Oyun durumu, tahmin edilemeyen bir kimlikle anonim sunucu oturumunda tutulur.

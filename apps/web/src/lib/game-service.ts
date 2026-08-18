@@ -17,7 +17,7 @@ import {
 const SESSION_COOKIE_NAME = "plus9_session";
 const DEVICE_COOKIE_NAME = "plus9_device";
 const MINIMUM_ANSWERS_PER_CELL = 8;
-const RULE_ENGINE_VERSION = "mvp-3-100-criteria";
+const RULE_ENGINE_VERSION = "mvp-6-african-nationality-group";
 const DIFFICULTY_FORMULA_VERSION = "count-1";
 const ARCHIVE_GRID_DATES = [
   "2026-08-01",
@@ -31,6 +31,9 @@ const ARCHIVE_GRID_DATES = [
   "2026-08-09",
   "2026-08-10",
   "2026-08-11",
+  "2026-08-14",
+  "2026-08-15",
+  "2026-08-16",
 ] as const;
 
 type GridRecord = {
@@ -396,16 +399,26 @@ async function selectDailyGrid(client: PoolClient, playDate: string) {
     );
   }
 
+  function selectionWeight(criterion: GridCriterion) {
+    if (criterion.kind !== "club") return 1;
+    if (criterion.clubTier === 1) return 3.5;
+    if (criterion.clubTier === 3) return 0.18;
+    return 1;
+  }
+
+  function deterministicSelectionScore(criterion: GridCriterion, attempt: number) {
+    const hash = createHash("sha256")
+      .update(`${playDate}:${attempt}:${criterion.id}`)
+      .digest("hex");
+    const unitInterval = (Number.parseInt(hash.slice(0, 13), 16) + 1) / 0x10000000000000;
+    return -Math.log(unitInterval) / selectionWeight(criterion);
+  }
+
   for (let attempt = 0; attempt < 2_048; attempt += 1) {
-    const shuffled = [...gridCriterionCatalog].sort((left, right) => {
-      const leftHash = createHash("sha256")
-        .update(`${playDate}:${attempt}:${left.id}`)
-        .digest("hex");
-      const rightHash = createHash("sha256")
-        .update(`${playDate}:${attempt}:${right.id}`)
-        .digest("hex");
-      return leftHash.localeCompare(rightHash);
-    });
+    const shuffled = [...gridCriterionCatalog].sort(
+      (left, right) =>
+        deterministicSelectionScore(left, attempt) - deterministicSelectionScore(right, attempt),
+    );
     const columns = shuffled.slice(0, 3);
     const rows = shuffled
       .slice(3)
@@ -424,10 +437,9 @@ async function selectDailyGrid(client: PoolClient, playDate: string) {
 
     if (!hasDistinctPlayerSolution(answers)) continue;
 
-    const usageScore = [...columns, ...rows].reduce(
-      (total, criterion) => total + (recentUsage.get(criterion.id) ?? 0),
-      0,
-    );
+    const usageScore = [...columns, ...rows].reduce((total, criterion) => {
+      return total + (recentUsage.get(criterion.id) ?? 0) / selectionWeight(criterion);
+    }, 0);
     if (usageScore < bestUsageScore) {
       bestGrid = { answers, columns, rows };
       bestUsageScore = usageScore;

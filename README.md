@@ -9,7 +9,8 @@ Bu depo 90+9'un web uygulamasını, veritabanı katmanını, kural motorunu ve v
 - 2012/13–2025/26 Türkiye erkekler Süper Lig sezonları
 - Her gün herkes için aynı 3×3 grid
 - Navbar'dan güncel ve yayınlanmış geçmiş gridler arasında geçiş
-- Sezon ve fiziksel özellik içermeyen 100 farklı takım, mevki, uyruk, kariyer ve takım arkadaşlığı kriteri
+- Sezon ve fiziksel özellik içermeyen 92 farklı takım, mevki, uyruk, kariyer ve takım arkadaşlığı kriteri
+- Takım kriterlerinde Dört Büyükler için Tier 1, ana havuz için Tier 2 ve seyrek kullanılan Tier 3 ağırlıkları
 - Sunucu tarafında cevap doğrulama
 - Sınırsız yanlış tahmin hakkı; kaybetme durumu yok
 - Her günlük gridde bir kez kullanılabilen, bir doğru ve beş yanlış oyunculu joker

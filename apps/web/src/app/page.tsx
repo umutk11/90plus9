@@ -65,6 +65,7 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Player[]>([]);
   const [searchStatus, setSearchStatus] = useState<SearchStatus>("idle");
+  const [isSearchMenuOpen, setIsSearchMenuOpen] = useState(false);
   const [answerCounts, setAnswerCounts] = useState<AnswerCounts>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState<{ tone: "error" | "success"; text: string } | null>(
@@ -95,6 +96,7 @@ export default function Home() {
   const [isUsingJoker, setIsUsingJoker] = useState(false);
   const dateMenuRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const progress = Object.keys(filledCells).length;
   const isComplete = progress === 9;
@@ -138,7 +140,6 @@ export default function Home() {
     setRows(game.rows);
     setStatistics(game.statistics);
     setSharePageUrl(buildSharePageUrl(game.grid.slug));
-    setShowResults(game.sessionStatus === "completed");
   }, []);
 
   useEffect(() => {
@@ -231,6 +232,11 @@ export default function Home() {
   }, [selectedCell]);
 
   useEffect(() => {
+    const activeResult = resultsRef.current?.querySelector<HTMLElement>('[aria-selected="true"]');
+    activeResult?.scrollIntoView({ block: "nearest" });
+  }, [activeResultIndex, results]);
+
+  useEffect(() => {
     if (!isComplete || !gridMeta || columns.length !== 3 || rows.length !== 3) return;
 
     let active = true;
@@ -271,6 +277,7 @@ export default function Home() {
     setActiveResultIndex(0);
     setResults([]);
     setSearchStatus("idle");
+    setIsSearchMenuOpen(false);
   }
 
   async function selectGrid(grid: AvailableGrid) {
@@ -315,6 +322,7 @@ export default function Home() {
 
   async function choosePlayer(player: Player) {
     if (!selectedCell) return;
+    setIsSearchMenuOpen(false);
     const currentPlayer = filledCells[selectedCell];
     if (usedPlayerIds.has(player.id) && currentPlayer?.id !== player.id) {
       setFeedback({ tone: "error", text: "Bu oyuncuyu gridde zaten kullandın." });
@@ -345,7 +353,6 @@ export default function Home() {
         }
         if (result.code === "GAME_COMPLETED") {
           closePlayerSearch();
-          setShowResults(true);
           return;
         }
         throw new Error("Tahmin kontrol edilemedi.");
@@ -360,7 +367,9 @@ export default function Home() {
       }
 
       if (result.game) {
+        const completedNow = !isComplete && result.game.sessionStatus === "completed";
         applyGame(result.game);
+        if (completedNow) setShowResults(true);
       }
       setFeedback({ tone: "success", text: `${result.player.name} doğru cevap!` });
       window.setTimeout(() => closePlayerSearch(), 450);
@@ -388,7 +397,6 @@ export default function Home() {
       if (!response.ok || !result.game) {
         if (result.code === "GAME_COMPLETED") {
           closePlayerSearch();
-          setShowResults(true);
           return;
         }
         if (result.code === "JOKER_ALREADY_USED") {
@@ -509,6 +517,8 @@ export default function Home() {
     <main className="site-shell">
       <div className="ambient-mark ambient-mark-one" aria-hidden="true" />
       <div className="ambient-mark ambient-mark-two" aria-hidden="true" />
+      <div className="ambient-pitch-corner" aria-hidden="true" />
+      <div className="ambient-football" aria-hidden="true" />
 
       <header className="topbar">
         <a className="brand" href="#oyun" aria-label="90+9 ana sayfa">
@@ -577,15 +587,6 @@ export default function Home() {
                 </p>
                 <h2>Günün Gridi</h2>
               </div>
-              <div className="progress-block" aria-label={`${progress} hücre tamamlandı, toplam 9`}>
-                <span>
-                  {progress}
-                  <small>/9</small>
-                </span>
-                <div className="progress-track" aria-hidden="true">
-                  <i style={{ width: `${(progress / 9) * 100}%` }} />
-                </div>
-              </div>
             </div>
 
             <div className="grid-wrap">
@@ -599,8 +600,26 @@ export default function Home() {
                 </div>
               ) : (
                 <div className="football-grid">
-                  <div className="grid-corner" aria-hidden="true">
-                    <span>90+9</span>
+                  <div
+                    className="grid-corner"
+                    aria-label={`${progress} hücre tamamlandı, toplam 9`}
+                    role="img"
+                  >
+                    <svg className="corner-progress" viewBox="0 0 84 84" aria-hidden="true">
+                      <circle className="corner-progress-track" cx="42" cy="42" r="34" />
+                      <circle
+                        className="corner-progress-value"
+                        cx="42"
+                        cy="42"
+                        r="34"
+                        pathLength="100"
+                        style={{ strokeDashoffset: 100 - (progress / 9) * 100 }}
+                      />
+                    </svg>
+                    <strong>
+                      {progress}
+                      <small>/9</small>
+                    </strong>
                   </div>
                   {columns.map((column) => (
                     <div className="column-header" key={column.id}>
@@ -650,6 +669,16 @@ export default function Home() {
                 </div>
               )}
             </div>
+            {isComplete && !isGameLoading && !gameLoadError && (
+              <button
+                aria-haspopup="dialog"
+                className="completed-share-button"
+                onClick={() => setShowResults(true)}
+                type="button"
+              >
+                <span aria-hidden="true">↗</span> Sonucu paylaş
+              </button>
+            )}
           </article>
         </div>
       </section>
@@ -716,81 +745,85 @@ export default function Home() {
             ) : null}
             <form onSubmit={handleSubmit}>
               <label htmlFor="player-search">Oyuncu adı</label>
-              <div className="search-field">
-                <span aria-hidden="true">⌕</span>
-                <input
-                  aria-activedescendant={
-                    results[activeResultIndex]
-                      ? `result-${results[activeResultIndex].id}`
-                      : undefined
-                  }
-                  aria-controls="player-results"
-                  aria-expanded={results.length > 0}
-                  autoComplete="off"
-                  id="player-search"
-                  onChange={(event) => {
-                    const nextQuery = event.target.value;
-                    setQuery(nextQuery);
-                    setFeedback(null);
-                    setActiveResultIndex(0);
-                    if (nextQuery.trim().length < 2) {
-                      setResults([]);
-                      setSearchStatus("idle");
+              <div className="search-control">
+                <div className="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input
+                    aria-activedescendant={
+                      isSearchMenuOpen && results[activeResultIndex]
+                        ? `result-${results[activeResultIndex].id}`
+                        : undefined
                     }
-                  }}
-                  onKeyDown={handleSearchKeyDown}
-                  placeholder={
-                    selectedAnswerCount === undefined
-                      ? "Geçerli oyunculardan birini ara"
-                      : `${selectedAnswerCount} geçerli oyuncudan birini ara`
-                  }
-                  ref={inputRef}
-                  role="combobox"
-                  value={query}
-                />
+                    aria-controls="player-results"
+                    aria-expanded={isSearchMenuOpen}
+                    autoComplete="off"
+                    id="player-search"
+                    onChange={(event) => {
+                      const nextQuery = event.target.value;
+                      setQuery(nextQuery);
+                      setFeedback(null);
+                      setActiveResultIndex(0);
+                      setIsSearchMenuOpen(nextQuery.trim().length >= 2);
+                      if (nextQuery.trim().length < 2) {
+                        setResults([]);
+                        setSearchStatus("idle");
+                      }
+                    }}
+                    onKeyDown={handleSearchKeyDown}
+                    placeholder={
+                      selectedAnswerCount === undefined
+                        ? "Geçerli oyunculardan birini ara"
+                        : `${selectedAnswerCount} geçerli oyuncudan birini ara`
+                    }
+                    ref={inputRef}
+                    role="combobox"
+                    value={query}
+                  />
+                </div>
+
+                {isSearchMenuOpen && query.trim().length >= 2 && (
+                  <div
+                    className="search-results"
+                    id="player-results"
+                    ref={resultsRef}
+                    role="listbox"
+                    aria-label="Oyuncu sonuçları"
+                  >
+                    {searchStatus === "loading" ? (
+                      <p className="search-helper">Oyuncular aranıyor…</p>
+                    ) : searchStatus === "error" ? (
+                      <p className="search-helper">Arama şu anda kullanılamıyor.</p>
+                    ) : results.length === 0 ? (
+                      <p className="search-helper">Bu isimle bir oyuncu bulamadık.</p>
+                    ) : (
+                      results.map((player, index) => (
+                        <button
+                          aria-selected={index === activeResultIndex}
+                          className={index === activeResultIndex ? "is-active" : ""}
+                          id={`result-${player.id}`}
+                          key={player.id}
+                          disabled={isSubmitting}
+                          onClick={() => void choosePlayer(player)}
+                          onMouseEnter={() => setActiveResultIndex(index)}
+                          role="option"
+                          type="button"
+                        >
+                          <span className="player-initials" aria-hidden="true">
+                            {player.name
+                              .split(" ")
+                              .map((part) => part[0])
+                              .slice(0, 2)
+                              .join("")}
+                          </span>
+                          <strong>{player.name}</strong>
+                          <i aria-hidden="true">→</i>
+                        </button>
+                      ))
+                    )}
+                  </div>
+                )}
               </div>
             </form>
-
-            <div
-              className="search-results"
-              id="player-results"
-              role="listbox"
-              aria-label="Oyuncu sonuçları"
-            >
-              {query.trim().length < 2 ? (
-                <p className="search-helper">Aramak için en az 2 harf yaz.</p>
-              ) : searchStatus === "loading" ? (
-                <p className="search-helper">Oyuncular aranıyor…</p>
-              ) : searchStatus === "error" ? (
-                <p className="search-helper">Arama şu anda kullanılamıyor.</p>
-              ) : results.length === 0 ? (
-                <p className="search-helper">Bu isimle bir oyuncu bulamadık.</p>
-              ) : (
-                results.map((player, index) => (
-                  <button
-                    aria-selected={index === activeResultIndex}
-                    className={index === activeResultIndex ? "is-active" : ""}
-                    id={`result-${player.id}`}
-                    key={player.id}
-                    disabled={isSubmitting}
-                    onClick={() => void choosePlayer(player)}
-                    onMouseEnter={() => setActiveResultIndex(index)}
-                    role="option"
-                    type="button"
-                  >
-                    <span className="player-initials" aria-hidden="true">
-                      {player.name
-                        .split(" ")
-                        .map((part) => part[0])
-                        .slice(0, 2)
-                        .join("")}
-                    </span>
-                    <strong>{player.name}</strong>
-                    <i aria-hidden="true">→</i>
-                  </button>
-                ))
-              )}
-            </div>
             {feedback && (
               <p className={`feedback ${feedback.tone}`} role="status">
                 {feedback.tone === "success" ? "✓" : "!"} {feedback.text}

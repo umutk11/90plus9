@@ -7,6 +7,7 @@ type ClubGroupMode =
   | "champion_squad"
   | "champion_appearance";
 type CareerMode = "clubs" | "appearances";
+export type ClubTier = 1 | 2 | 3;
 
 export type GridCriterion = {
   id: string;
@@ -14,6 +15,7 @@ export type GridCriterion = {
   label: string;
   mark: string;
   sourceClubId?: number;
+  clubTier?: ClubTier;
   positionGroup?: PositionGroup;
   rawSubPosition?: string;
   isoAlpha2?: string;
@@ -25,8 +27,14 @@ export type GridCriterion = {
   sourcePlayerId?: number;
 };
 
-function club(id: string, label: string, mark: string, sourceClubId: number): GridCriterion {
-  return { id, kind: "club", label, mark, sourceClubId };
+function club(
+  id: string,
+  label: string,
+  mark: string,
+  sourceClubId: number,
+  clubTier: ClubTier,
+): GridCriterion {
+  return { id, kind: "club", label, mark, sourceClubId, clubTier };
 }
 
 function position(
@@ -70,42 +78,39 @@ function teammate(id: string, label: string, mark: string, sourcePlayerId: numbe
 }
 
 export const gridCriterionCatalog: readonly GridCriterion[] = [
-  // 35 takım
-  club("trabzonspor", "Trabzonspor", "TS", 449),
-  club("kayserispor", "Kayserispor", "KYS", 3205),
-  club("kasimpasa", "Kasımpaşa", "KPA", 10484),
-  club("antalyaspor", "Antalyaspor", "ANT", 589),
-  club("konyaspor", "Konyaspor", "KON", 2293),
-  club("rizespor", "Çaykur Rizespor", "RİZ", 126),
-  club("sivasspor", "Sivasspor", "SİV", 2381),
-  club("fenerbahce", "Fenerbahçe", "FB", 36),
-  club("galatasaray", "Galatasaray", "GS", 141),
-  club("besiktas", "Beşiktaş", "BJK", 114),
-  club("basaksehir", "Başakşehir", "BŞK", 6890),
-  club("genclerbirligi", "Gençlerbirliği", "GB", 820),
-  club("alanyaspor", "Alanyaspor", "ALA", 11282),
-  club("goztepe", "Göztepe", "GÖZ", 1467),
-  club("ankaragucu", "MKE Ankaragücü", "AG", 868),
-  club("karagumruk", "Fatih Karagümrük", "FKG", 6646),
-  club("gaziantep_fk", "Gaziantep FK", "GFK", 2832),
-  club("bursaspor", "Bursaspor", "BUR", 20),
-  club("yeni_malatyaspor", "Yeni Malatyaspor", "YMS", 19789),
-  club("karabukspor", "Kardemir Karabükspor", "KRB", 1506),
-  club("akhisarspor", "Akhisarspor", "AKH", 19771),
-  club("hatayspor", "Hatayspor", "HAT", 7775),
-  club("adana_demirspor", "Adana Demirspor", "ADS", 3840),
-  club("gaziantepspor", "Gaziantepspor", "GAZ", 524),
-  club("eskisehirspor", "Eskişehirspor", "ES", 825),
-  club("eyupspor", "Eyüpspor", "EYP", 7160),
-  club("erzurumspor", "Erzurumspor", "ERZ", 39722),
-  club("mersin_idman_yurdu", "Mersin İdman Yurdu", "MİY", 3216),
-  club("ankaraspor", "Ankaraspor", "ANK", 2944),
-  club("elazigspor", "Elazığspor", "ELA", 2292),
-  club("istanbulspor", "İstanbulspor", "İST", 924),
-  club("samsunspor", "Samsunspor", "SAM", 152),
-  club("denizlispor", "Denizlispor", "DEN", 833),
-  club("giresunspor", "Giresunspor", "GİR", 11688),
-  club("kayseri_erciyesspor", "Kayseri Erciyesspor", "KER", 6894),
+  // 32 takım: Tier 1 sık, Tier 2 normal, Tier 3 seyrek seçilir.
+  club("fenerbahce", "Fenerbahçe", "FB", 36, 1),
+  club("galatasaray", "Galatasaray", "GS", 141, 1),
+  club("besiktas", "Beşiktaş", "BJK", 114, 1),
+  club("trabzonspor", "Trabzonspor", "TS", 449, 1),
+  club("kayserispor", "Kayserispor", "KYS", 3205, 2),
+  club("kasimpasa", "Kasımpaşa", "KPA", 10484, 2),
+  club("antalyaspor", "Antalyaspor", "ANT", 589, 2),
+  club("konyaspor", "Konyaspor", "KON", 2293, 2),
+  club("rizespor", "Çaykur Rizespor", "RİZ", 126, 2),
+  club("sivasspor", "Sivasspor", "SİV", 2381, 2),
+  club("basaksehir", "Başakşehir", "BŞK", 6890, 2),
+  club("genclerbirligi", "Gençlerbirliği", "GB", 820, 2),
+  club("alanyaspor", "Alanyaspor", "ALA", 11282, 2),
+  club("goztepe", "Göztepe", "GÖZ", 1467, 2),
+  club("ankaragucu", "MKE Ankaragücü", "AG", 868, 2),
+  club("karagumruk", "Fatih Karagümrük", "FKG", 6646, 2),
+  club("gaziantep_fk", "Gaziantep FK", "GFK", 2832, 2),
+  club("bursaspor", "Bursaspor", "BUR", 20, 2),
+  club("hatayspor", "Hatayspor", "HAT", 7775, 2),
+  club("adana_demirspor", "Adana Demirspor", "ADS", 3840, 2),
+  club("gaziantepspor", "Gaziantepspor", "GAZ", 524, 2),
+  club("eyupspor", "Eyüpspor", "EYP", 7160, 2),
+  club("istanbulspor", "İstanbulspor", "İST", 924, 2),
+  club("samsunspor", "Samsunspor", "SAM", 152, 2),
+  club("kocaelispor", "Kocaelispor", "KOC", 120, 2),
+  club("yeni_malatyaspor", "Yeni Malatyaspor", "YMS", 19789, 3),
+  club("karabukspor", "Kardemir Karabükspor", "KRB", 1506, 3),
+  club("akhisarspor", "Akhisarspor", "AKH", 19771, 3),
+  club("eskisehirspor", "Eskişehirspor", "ES", 825, 3),
+  club("giresunspor", "Giresunspor", "GİR", 11688, 3),
+  club("umraniyespor", "Ümraniyespor", "ÜMR", 24245, 3),
+  club("pendikspor", "Pendikspor", "PEN", 3209, 3),
 
   // 13 ana ve ayrıntılı mevki
   position("goalkeeper", "Kaleci", "KL", { positionGroup: "gk" }),
@@ -122,32 +127,24 @@ export const gridCriterionCatalog: readonly GridCriterion[] = [
   position("right_back", "Sağ bek", "SĞB", { rawSubPosition: "Right-Back" }),
   position("left_back", "Sol bek", "SLB", { rawSubPosition: "Left-Back" }),
 
-  // 25 uyruk
-  nationality("turkiye", "Türkiye vatandaşı", "TR"),
-  nationality("brezilya", "Brezilya vatandaşı", "BR"),
-  nationality("portekiz", "Portekiz vatandaşı", "PT"),
-  nationality("nijerya", "Nijerya vatandaşı", "NG"),
-  nationality("senegal", "Senegal vatandaşı", "SN"),
-  nationality("fransa", "Fransa vatandaşı", "FR"),
-  nationality("almanya", "Almanya vatandaşı", "DE"),
-  nationality("fildisi_sahili", "Fildişi Sahili vatandaşı", "CI"),
-  nationality("gana", "Gana vatandaşı", "GH"),
-  nationality("kamerun", "Kamerun vatandaşı", "CM"),
-  nationality("bosna_hersek", "Bosna-Hersek vatandaşı", "BA"),
-  nationality("sirbistan", "Sırbistan vatandaşı", "RS"),
-  nationality("arjantin", "Arjantin vatandaşı", "AR"),
-  nationality("hollanda", "Hollanda vatandaşı", "NL"),
-  nationality("polonya", "Polonya vatandaşı", "PL"),
-  nationality("fas", "Fas vatandaşı", "MA"),
-  nationality("hirvatistan", "Hırvatistan vatandaşı", "HR"),
-  nationality("romanya", "Romanya vatandaşı", "RO"),
-  nationality("demokratik_kongo", "Demokratik Kongo vatandaşı", "CD"),
-  nationality("ispanya", "İspanya vatandaşı", "ES"),
-  nationality("cekya", "Çekya vatandaşı", "CZ"),
-  nationality("belcika", "Belçika vatandaşı", "BE"),
-  nationality("isvec", "İsveç vatandaşı", "SE"),
-  nationality("mali", "Mali vatandaşı", "ML"),
-  nationality("italya", "İtalya vatandaşı", "IT"),
+  // 17 doğrudan uyruk; Afrika ülkeleri tek kıta kriterinde birleştirilir.
+  nationality("turkiye", "Türk", "TR"),
+  nationality("brezilya", "Brezilyalı", "BR"),
+  nationality("portekiz", "Portekizli", "PT"),
+  nationality("fransa", "Fransız", "FR"),
+  nationality("almanya", "Alman", "DE"),
+  nationality("bosna_hersek", "Bosna-Hersekli", "BA"),
+  nationality("sirbistan", "Sırp", "RS"),
+  nationality("arjantin", "Arjantinli", "AR"),
+  nationality("hollanda", "Hollandalı", "NL"),
+  nationality("polonya", "Polonyalı", "PL"),
+  nationality("hirvatistan", "Hırvat", "HR"),
+  nationality("romanya", "Rumen", "RO"),
+  nationality("ispanya", "İspanyol", "ES"),
+  nationality("cekya", "Çek", "CZ"),
+  nationality("belcika", "Belçikalı", "BE"),
+  nationality("isvec", "İsveçli", "SE"),
+  nationality("italya", "İtalyan", "IT"),
 
   // 6 bölgesel uyruk grubu
   region("foreign", "Yabancı oyuncu", "Y", { excludeTurkey: true }),
@@ -155,7 +152,7 @@ export const gridCriterionCatalog: readonly GridCriterion[] = [
     confederation: "UEFA",
     excludeTurkey: true,
   }),
-  region("african", "Afrikalı oyuncu", "AFR", { confederation: "CAF" }),
+  region("african", "Afrikalı", "AFR", { confederation: "CAF" }),
   region("south_american", "Güney Amerikalı", "G.AM", { confederation: "CONMEBOL" }),
   region("asian", "Asyalı oyuncu", "ASY", { confederation: "AFC" }),
   region("north_central_american", "Kuzey/Orta Amerikalı", "K.AM", {
@@ -170,11 +167,14 @@ export const gridCriterionCatalog: readonly GridCriterion[] = [
   clubGroup("champion", "Şampiyon takım kadrosu", "Ş", "champion_squad"),
   clubGroup("champion_appearance", "Şampiyon takımda oynadı", "Ş11", "champion_appearance"),
 
-  // 6 kariyer eşiği
+  // 9 kariyer eşiği
   career("two_clubs", "2+ Süper Lig takımı", "2K", "clubs", 2),
   career("three_clubs", "3+ Süper Lig takımı", "3K", "clubs", 3),
   career("four_clubs", "4+ Süper Lig takımı", "4K", "clubs", 4),
+  career("five_clubs", "5+ Süper Lig takımı", "5K", "clubs", 5),
+  career("twenty_five_appearances", "25+ Süper Lig maçı", "25", "appearances", 25),
   career("fifty_appearances", "50+ Süper Lig maçı", "50", "appearances", 50),
+  career("seventy_five_appearances", "75+ Süper Lig maçı", "75", "appearances", 75),
   career("hundred_appearances", "100+ Süper Lig maçı", "100", "appearances", 100),
   career("hundred_fifty_appearances", "150+ Süper Lig maçı", "150", "appearances", 150),
 
@@ -190,8 +190,8 @@ export const gridCriterionCatalog: readonly GridCriterion[] = [
   teammate("teammate_sneijder", "Sneijder ile takım arkadaşı", "WS", 4673),
 ];
 
-if (gridCriterionCatalog.length !== 100) {
-  throw new Error(`Grid kriter havuzu 100 yerine ${gridCriterionCatalog.length} kriter içeriyor.`);
+if (gridCriterionCatalog.length !== 92) {
+  throw new Error(`Grid kriter havuzu 92 yerine ${gridCriterionCatalog.length} kriter içeriyor.`);
 }
 
 export type GridCellKey = `${string}-${string}`;
